@@ -77,6 +77,8 @@ nav.Desktop {
     .Login {
 
       button {
+        background-color: darken($theme-color, 5%);
+        border: none;
         color: $theme-font-color;
         font-size: 2.5em;
         margin: 5px 10px;

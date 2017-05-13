@@ -40,58 +40,8 @@ footer {
   margin: 0 auto;
 }
 
-// aside.menuMobile {
-//   // display: none;
-//
-//   width: 100vw;
-//   box-sizing: border-box;
-//   position: fixed;
-//   z-index: 0;
-//   top: 65px;
-//   right: 0;
-//   bottom: 0;
-//   background-color: transparentize(darken($theme-color, 10%), 0.1);
-//   color: lighten($theme-color, 50%);
-//   padding: 1em;
-//   box-shadow: 0 0 20px transparentize($theme-color, 0.5);
-//   transform: translateX(0);
-//   transition: transform 200ms ease;
-//
-//   header {
-//     text-align: right;
-//   }
-//
-//   button {
-//     // background-color: transparent;
-//     border: none;
-//     color: inherit;
-//     font-size: inherit;
-//
-//     &:hover {
-//       color: $theme-font-color;
-//     }
-//   }
-//
-//   section {
-//     > ul {
-//       @include reset-list;
-//
-//       input {
-//         background-color: lighten($theme-color, 60%);
-//         color: $theme-color;
-//         border: none;
-//         border-radius: 3px;
-//       }
-//     }
-//   }
-//
-//   &.hidden {
-//     transform: translateX(100vw);
-//     box-shadow: 0 0 0 transparent;
-//   }
-// }
-
 @media only screen and (max-width: 505px) {
+
   .Home {
     padding-top: 70px;
   }
