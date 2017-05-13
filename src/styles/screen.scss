@@ -1,7 +1,6 @@
 @import 'utility';
-
-$base-text-size: 16px;
-$base-font-family: sans-serif;
+@import 'header';
+@import 'logo';
 
 html {
   @include full-height;
@@ -10,4 +9,68 @@ html {
 body {
   margin: 0;
   font: $base-text-size / 1 $base-font-family;
+  background-color: lighten($theme-color, 50%);
+  color: $theme-font-color;
+
+  @include display-hor-center;
+}
+
+.App{
+  background-color: $theme-color;
+  max-width: 1000px;
+  width: 100vw;
+  // min-width: 400px;
+}
+
+.Home {
+  padding-top: 70px;
+}
+
+aside.menu {
+  width: 100vw;
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 0;
+  top: 65px;
+  right: 0;
+  bottom: 0;
+  background-color: transparentize(darken($theme-color, 10%), 0.1);
+  color: lighten($theme-color, 50%);
+  padding: 1em;
+  box-shadow: 0 0 20px transparentize($theme-color, 0.5);
+  transform: translateX(0);
+  transition: transform 200ms ease;
+
+  header {
+    text-align: right;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    font-size: inherit;
+
+    &:hover {
+      color: $theme-font-color;
+    }
+  }
+
+  section {
+    > ul {
+      @include reset-list;
+
+      input {
+        background-color: lighten($theme-color, 30%);
+        color: $theme-color;
+        border: none;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  &.hidden {
+    transform: translateX(100vw);
+    box-shadow: 0 0 0 transparent;
+  }
 }
