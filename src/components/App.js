@@ -7,6 +7,7 @@ import ui from '../ui'
 import Nav from './Nav'
 import Home from './Home'
 import Menu from './Menu'
+import Chat from './Chat'
 
 class App extends Component {
   render () {
@@ -16,10 +17,11 @@ class App extends Component {
         <main>
           <Switch>
             <Route exact path='/' component={Home} />
+            <Route exact path='/user/:name/chat' component={Chat} />
           </Switch>
         </main>
         <footer>
-          ...
+          <div>&copy; 2017 Ryan A Vurva / Forward]-[ypermedia | Built at the Iron Yard</div>
         </footer>
         <Menu />
       </div>

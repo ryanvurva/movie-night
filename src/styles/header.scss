@@ -44,8 +44,25 @@ nav.Desktop {
       color: $theme-font-color;
       cursor: pointer;
 
+      &:link,
+      &:visited {
+        color: $theme-font-color;
+        border: none;
+      }
+
+      &:focus {
+        border: none;
+        box-shadow: none;
+        outline: 0;
+      }
+
       &:hover {
         color: $theme-accent-color;
+      }
+
+      &:active {
+        border: none;
+        box-shadow: none;
       }
     }
   }
@@ -82,6 +99,10 @@ nav.Desktop {
         color: $theme-font-color;
         font-size: 2.5em;
         margin: 5px 10px;
+
+        &:active {
+          border: none;
+        }
       }
     }
   }

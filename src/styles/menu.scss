@@ -1,8 +1,10 @@
 @import 'utility';
 @import 'searchbar';
 
+// Mobile view
+
 aside.menuMobile {
-  // display: none;
+  display: none;
 
   // width: 100vw;
   box-sizing: border-box;
@@ -43,11 +45,89 @@ aside.menuMobile {
         border: none;
         border-radius: 3px;
       }
+
+      a {
+        font-size: 2em;
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+          color: $theme-accent-color;
+        }
+      }
     }
   }
 
   &.hidden {
     transform: translateX(100vw);
     box-shadow: 0 0 0 transparent;
+  }
+}
+
+// Desktop view
+
+aside.menuDesktop {
+  display: block;
+
+  width: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 0;
+  top: 90px;
+  // right: 0;
+  // bottom: 0;
+  background-color: transparentize(darken($theme-color, 10%), 0.1);
+  color: lighten($theme-color, 50%);
+  padding: 1em;
+  box-shadow: 0 0 20px transparentize($theme-color, 0.5);
+  transform: translateY(0);
+  transition: transform 200ms ease;
+
+  header {
+    text-align: right;
+  }
+
+  button {
+    // background-color: transparent;
+    border: none;
+    // color: inherit;
+    font-size: inherit;
+
+    &:hover {
+      color: $theme-font-color;
+    }
+  }
+
+  section {
+    width: 100%;
+
+    > ul {
+      @include display-hor-spaceA;
+      @include reset-list;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+          color: $theme-accent-color;
+        }
+      }
+    }
+  }
+
+  &.hidden {
+    transform: translateY(-100vw);
+    box-shadow: 0 0 0 transparent;
+  }
+}
+
+@media only screen and (max-width: 505px) {
+  aside.menuMobile {
+    display: block;
+  }
+
+  aside.menuDesktop {
+    display: none;
   }
 }

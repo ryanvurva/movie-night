@@ -14,7 +14,7 @@ class Nav extends Component {
         </div>
         <div className='Login'>
           <input type='search' placeholder='search' />
-          <button><i className='fa fa-user' aria-hidden='true' /> <i className='fa fa-caret-down' aria-hidden='true' /> Log in/Sign up</button>
+          <button onClick={() => ui.toggleMenu()}><i className='fa fa-user' aria-hidden='true' /> MENU</button>
         </div>
       </nav>
       <nav className='Mobile'>

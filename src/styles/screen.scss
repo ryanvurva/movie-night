@@ -26,8 +26,9 @@ body {
   // min-width: 400px;
 }
 
-.Home {
-  padding-top: 100px;
+.Home,
+.Chat {
+  padding-top: 150px;
   // height: 80vh;
 }
 
@@ -38,11 +39,13 @@ footer {
   right: 0;
   max-width: 1000px;
   margin: 0 auto;
+  text-align: center;
 }
 
 @media only screen and (max-width: 505px) {
 
-  .Home {
+  .Home,
+  .Chat {
     padding-top: 70px;
   }
 }
