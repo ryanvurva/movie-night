@@ -22,7 +22,6 @@ class Nav extends Component {
           <h1 data-heading='N'><NavLink to='/'>mN</NavLink></h1>
         </div>
         <div className='Login'>
-          <button><i className='fa fa-search' aria-hidden='true' /></button>
           <button onClick={() => ui.toggleMenu()}><i className='fa fa-bars' aria-hidden='true' /></button>
         </div>
       </nav>

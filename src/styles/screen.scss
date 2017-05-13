@@ -1,6 +1,7 @@
 @import 'utility';
 @import 'header';
 @import 'logo';
+@import 'menu';
 
 html {
   @include full-height;
@@ -19,58 +20,79 @@ body {
   background-color: $theme-color;
   max-width: 1000px;
   width: 100vw;
+  overflow-x: hidden;
+  border-left: thin solid darken($theme-color, 10%);
+  border-right: thin solid darken($theme-color, 10%);
   // min-width: 400px;
 }
 
 .Home {
-  padding-top: 70px;
+  padding-top: 100px;
+  // height: 80vh;
 }
 
-aside.menu {
-  width: 100vw;
-  box-sizing: border-box;
-  position: fixed;
-  z-index: 0;
-  top: 65px;
-  right: 0;
+footer {
+  position: absolute;
   bottom: 0;
-  background-color: transparentize(darken($theme-color, 10%), 0.1);
-  color: lighten($theme-color, 50%);
-  padding: 1em;
-  box-shadow: 0 0 20px transparentize($theme-color, 0.5);
-  transform: translateX(0);
-  transition: transform 200ms ease;
+  left: 0;
+  right: 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
-  header {
-    text-align: right;
-  }
+// aside.menuMobile {
+//   // display: none;
+//
+//   width: 100vw;
+//   box-sizing: border-box;
+//   position: fixed;
+//   z-index: 0;
+//   top: 65px;
+//   right: 0;
+//   bottom: 0;
+//   background-color: transparentize(darken($theme-color, 10%), 0.1);
+//   color: lighten($theme-color, 50%);
+//   padding: 1em;
+//   box-shadow: 0 0 20px transparentize($theme-color, 0.5);
+//   transform: translateX(0);
+//   transition: transform 200ms ease;
+//
+//   header {
+//     text-align: right;
+//   }
+//
+//   button {
+//     // background-color: transparent;
+//     border: none;
+//     color: inherit;
+//     font-size: inherit;
+//
+//     &:hover {
+//       color: $theme-font-color;
+//     }
+//   }
+//
+//   section {
+//     > ul {
+//       @include reset-list;
+//
+//       input {
+//         background-color: lighten($theme-color, 60%);
+//         color: $theme-color;
+//         border: none;
+//         border-radius: 3px;
+//       }
+//     }
+//   }
+//
+//   &.hidden {
+//     transform: translateX(100vw);
+//     box-shadow: 0 0 0 transparent;
+//   }
+// }
 
-  button {
-    background-color: transparent;
-    border: none;
-    color: inherit;
-    font-size: inherit;
-
-    &:hover {
-      color: $theme-font-color;
-    }
-  }
-
-  section {
-    > ul {
-      @include reset-list;
-
-      input {
-        background-color: lighten($theme-color, 30%);
-        color: $theme-color;
-        border: none;
-        border-radius: 3px;
-      }
-    }
-  }
-
-  &.hidden {
-    transform: translateX(100vw);
-    box-shadow: 0 0 0 transparent;
+@media only screen and (max-width: 505px) {
+  .Home {
+    padding-top: 70px;
   }
 }

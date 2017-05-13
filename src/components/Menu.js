@@ -4,15 +4,16 @@ import cx from 'classnames'
 import ui from '../ui'
 
 const Menu = () => (
-  <aside className={cx('menu', { hidden: !ui.menuShown })}>
-    {/* <header>
-      <button onClick={() => ui.toggleMenu()}>
-        <i className='fa fa-close' aria-hidden='true' />
-      </button>
-    </header> */}
+  <aside className={cx('menuMobile', { hidden: !ui.menuShown })}>
     <section>
+      <div className='button_box2'>
+        <form className='form-wrapper-2 cf'>
+          <input type='text' placeholder='Search here...' required />
+          <button type='submit'><i className='fa fa-search' aria-hidden='true' /></button>
+        </form>
+      </div>
       <ul>
-        <li><input type='search' placeholder='search' /></li>
+        {/* <li><input type='search' id='search' placeholder='search' /></li> */}
         <li>Log In/Log Out</li>
         <li><i className='fa fa-user' aria-hidden='true' /> - View Profile</li>
         <li>Browse</li>

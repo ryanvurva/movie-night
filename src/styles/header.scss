@@ -3,8 +3,13 @@
 
 header {
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1;
   width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
   background-color: darken($theme-color, 5%);
   border-top: 15px solid $theme-color;
   // border-radius: 8px;
