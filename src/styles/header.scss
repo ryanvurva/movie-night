@@ -38,7 +38,7 @@ nav.Desktop {
 
     button {
       border: none;
-      background-color: transparent;
+      background-color: darken($theme-color, 5%);
       font-size: inherit;
       font-family: inherit;
       color: $theme-font-color;
