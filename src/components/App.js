@@ -33,7 +33,7 @@ class App extends Component {
           </Switch>
         </main>
         <footer>
-          <div>movieNight &copy; 2017 Ryan A Vurva / Forward]-[ypermedia | Built at the Iron Yard</div>
+          <div>movieNight &copy; 2017 Ryan A Vurva</div><div>Forward]-[ypermedia &trade; | Built with <i className='fa fa-heartbeat' aria-hidden='true' /> at the Iron Yard</div>
         </footer>
         <Menu />
       </div>
