@@ -14,7 +14,6 @@ import Profile from './Profile'
 import Reviews from './Reviews'
 import Vault from './Vault'
 import WatchList from './WatchList'
-import Test from './Test'
 
 class App extends Component {
   render () {
