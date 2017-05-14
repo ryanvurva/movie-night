@@ -19,7 +19,7 @@ class Nav extends Component {
       </nav>
       <nav className='Mobile'>
         <div className='Logo'>
-          <h1 data-heading='N'><NavLink to='/'>mN</NavLink></h1>
+          <NavLink to='/'><h1 data-heading='N'>mN</h1></NavLink>
         </div>
         <div className='Login'>
           <button onClick={() => ui.toggleMenu()}><i className='fa fa-bars' aria-hidden='true' /></button>

@@ -1,47 +1,13 @@
 @import 'utility';
 
-h1 {
-  font-size: 65px;
-  margin: 0 10px;
-  font-variant: small-caps;
-  font-family: $secondary-font-family;
-  letter-spacing: 3px;
-  text-shadow: 2px 2px 3px darken($theme-color, 10%);
-  position: absolute;
-
-  &:before {
-		content: attr(data-heading);
-		position: absolute;
-		overflow: hidden;
-		color: $theme-accent-color;
-		// width: 100%;
-		z-index: 2;
-		text-shadow: none;
-		left: 49%;
-		text-align: left;
-		animation: flicker 3s linear infinite;
-	}
-
+.Logo {
   a {
     color: lighten($theme-color, 30%);
     text-decoration: none;
   }
-}
 
-@keyframes flicker {
-	0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
-		opacity: .99;
-		text-shadow: -1px -1px 0 hsla(0, 0%, 100%, 0.4), 1px -1px 0 hsla(0, 0%, 100%, 0.4), -1px 1px 0 hsla(0, 0%, 100%, 0.4), 1px 1px 0 hsla(0, 0%, 100%, 0.4), 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
-	}
-	20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
-		opacity: 0.4;
-		text-shadow: none;
-	}
-}
-
-@media only screen and (max-width: 505px) {
   h1 {
-    font-size: 60px;
+    font-size: 65px;
     margin: 0 10px;
     font-variant: small-caps;
     font-family: $secondary-font-family;
@@ -57,14 +23,52 @@ h1 {
   		// width: 100%;
   		z-index: 2;
   		text-shadow: none;
-  		left: 48%;
+  		left: 49%;
   		text-align: left;
   		animation: flicker 3s linear infinite;
   	}
+  }
+}
 
-    a {
-      color: lighten($theme-color, 30%);
-      text-decoration: none;
+@keyframes flicker {
+	0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+		opacity: .99;
+		text-shadow: -1px -1px 0 hsla(0, 0%, 100%, 0.4), 1px -1px 0 hsla(0, 0%, 100%, 0.4), -1px 1px 0 hsla(0, 0%, 100%, 0.4), 1px 1px 0 hsla(0, 0%, 100%, 0.4), 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
+	}
+	20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+		opacity: 0.4;
+		text-shadow: none;
+	}
+}
+
+@media only screen and (max-width: 505px) {
+  .Logo {
+    h1 {
+      font-size: 60px;
+      margin: 0 10px;
+      font-variant: small-caps;
+      font-family: $secondary-font-family;
+      letter-spacing: 3px;
+      text-shadow: 2px 2px 3px darken($theme-color, 10%);
+      position: absolute;
+
+      &:before {
+    		content: attr(data-heading);
+    		position: absolute;
+    		overflow: hidden;
+    		color: $theme-accent-color;
+    		// width: 100%;
+    		z-index: 2;
+    		text-shadow: none;
+    		left: 48%;
+    		text-align: left;
+    		animation: flicker 3s linear infinite;
+    	}
+
+      a {
+        color: lighten($theme-color, 30%);
+        text-decoration: none;
+      }
     }
   }
 }
