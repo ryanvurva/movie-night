@@ -2,6 +2,10 @@
 @import 'header';
 @import 'logo';
 @import 'menu';
+@import 'comingsoon';
+@import 'browse';
+@import 'profile';
+@import 'vault';
 
 html {
   @include full-height;
@@ -33,71 +37,16 @@ body {
 .WatchList,
 .Vault,
 .LogIn {
-  padding: 140px 10px 0;
+  padding: 140px 0 0;
   display: flex;
   flex-direction: column;
   min-height: 60vh;
-}
-
-.Browse {
-  padding: 95px 0 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 60vh;
-}
-
-.letterArea {
-  // margin-top: 100px;
   width: 100%;
-  border-top: 15px solid darken($theme-color, 5%);
-  border-bottom: 15px solid darken($theme-color, 5%);
-  // padding: auto;
-}
-
-.letterBar {
-  // border-top: 15px solid $theme-color;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  margin: 0;
-  padding: 10px;
-  // border-bottom: 3px solid hsl(0, 0%, 38%);
-  // width: 100vw;
-  // padding-bottom: 15px;
-  // margin-bottom: 0;
-
-  li a {
-    // padding: 0;
-    color:$theme-font-color;
-    text-decoration: none;
-    margin: 0 2px;
-
-    &:hover {
-      color: #fff;
-    }
-  }
-}
-
-.ComingSoon {
-  @include display-hor-center;
-  align-items: baseline;
-  img {
-    margin-left: 20px;
-    animation: rotate-center 1.5s linear infinite both;
-
-    @keyframes rotate-center {
-      0% {
-        transform: rotate(0);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-  }
+  height: 100%;
 }
 
 footer {
-  position: absolute;
+  // position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
@@ -119,9 +68,5 @@ footer {
     padding-top: 70px;
     display: flex;
     flex-direction: column;
-  }
-
-  .letterBar {
-    padding: 0;
   }
 }

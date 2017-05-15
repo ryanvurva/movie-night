@@ -1,0 +1,19 @@
+@import 'utility';
+
+.ComingSoon {
+  @include display-hor-center;
+  align-items: baseline;
+  img {
+    margin-left: 20px;
+    animation: rotate-center 1.5s linear infinite both;
+
+    @keyframes rotate-center {
+      0% {
+        transform: rotate(0);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

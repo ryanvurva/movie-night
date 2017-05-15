@@ -7,6 +7,8 @@ class UI {
   @action toggleMenu () {
     this.menuShown = !this.menuShown
   }
+
+  // @action
 }
 
 const ui = new UI()

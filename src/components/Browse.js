@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
+import ui from '../ui'
 
 const letters = 'abcdefghijklmnopqrstuvwxyz'.split('')
 
@@ -19,7 +20,7 @@ class Browse extends Component {
       <div className='letterSelector'>
         <select name='browse' id='browse'>
           {letters.map((l) => (
-            <option key={l}>
+            <option onFocus={() => ui.toggleMenu()} key={l}>
               {/* need to resolve this issue */}
               {l}
             </option>
@@ -28,7 +29,7 @@ class Browse extends Component {
           <option value='value2'>Value 2</option>
           <option value='value3'>Value 3</option> */}
         </select>
-        <button><i className='fa fa-search' aria-hidden='true' /></button>
+        <button onClick={() => ui.toggleMenu()}><i className='fa fa-search' aria-hidden='true' /></button>
       </div>
     </div>
   }
