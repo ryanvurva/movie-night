@@ -7,7 +7,7 @@ const letters = 'abcdefghijklmnopqrstuvwxyz'.split('')
 class Browse extends Component {
   render () {
     return <div className='Browse'>
-      <div className='letterArea'>
+      <div className='letterArea desktop'>
         <ul className='letterBar'>
           {letters.map((l) => (
             <li key={l}>
@@ -17,10 +17,10 @@ class Browse extends Component {
           <li><NavLink to='/browse/0'>#</NavLink></li>
         </ul>
       </div>
-      <div className='letterSelector'>
-        <select name='browse' id='browse'>
+      <div className='letterSelector mobile'>
+        <select onChange={() => console.log('{l}')} name='browse' id='browse'>
           {letters.map((l) => (
-            <option onFocus={() => ui.toggleMenu()} key={l}>
+            <option key={l}>
               {/* need to resolve this issue */}
               {l}
             </option>
@@ -29,7 +29,7 @@ class Browse extends Component {
           <option value='value2'>Value 2</option>
           <option value='value3'>Value 3</option> */}
         </select>
-        <button onClick={() => ui.toggleMenu()}><i className='fa fa-search' aria-hidden='true' /></button>
+        <button onClick={() => console.log('clicked')}><i className='fa fa-search' aria-hidden='true' /></button>
       </div>
     </div>
   }

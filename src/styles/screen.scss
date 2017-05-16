@@ -6,6 +6,7 @@
 @import 'browse';
 @import 'profile';
 @import 'vault';
+@import 'home';
 
 html {
   @include full-height;
@@ -27,17 +28,26 @@ body {
   overflow-x: hidden;
   border-left: thin solid darken($theme-color, 10%);
   border-right: thin solid darken($theme-color, 10%);
+  display: flex;
+  flex-direction: column;
   // min-width: 400px;
 }
 
+main {
+  flex: 1;
+
+}
+
 .Home,
+.Browse,
 .Chat,
 .Profile,
 .Reviews,
 .WatchList,
 .Vault,
-.LogIn {
-  padding: 140px 0 0;
+.LogIn,
+.Dashboard {
+  padding: 145px 0 0;
   display: flex;
   flex-direction: column;
   min-height: 60vh;
@@ -46,13 +56,22 @@ body {
 }
 
 footer {
-  // position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  // position: fixed;
+  // bottom: 0;
+  // left: 0;
+  // right: 0;
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
+
+  .footer-space-1 {
+    display: flex;
+    justify-content: center;
+
+    div {
+      margin: 0 5px;
+    }
+  }
 }
 
 @media only screen and (max-width: 505px) {

@@ -1,0 +1,56 @@
+@import 'utility';
+
+.Home {
+  section {
+    box-sizing: border-box;
+    padding: 20px;
+
+    .Home-title {
+      width: 100%;
+      @include display-hor-spaceB;
+      align-items: baseline;
+      margin-bottom: 10px;
+      border-bottom: thick solid darken($theme-color, 10%);
+
+      h2 {
+        padding: 0 10px;
+        margin: 0;
+      }
+
+      a {
+        padding: 0 10px;
+        text-decoration: none;
+        color: inherit;
+
+      }
+    }
+
+    .Home-content {
+      box-sizing: border-box;
+      // overflow-x: auto;
+      // want to add scrollable content here
+      width: 100%;
+      @include display-hor-spaceA;
+      padding: 10px;
+
+      .Card {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 20%;
+
+        .Home-image {
+          width: 100%;
+        }
+
+        .Home-info {
+          p {
+            white-space: nowrap;
+            overflow-x: auto;
+            margin: 5px 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -26,45 +26,52 @@ nav.Desktop {
 
   @include display-hor-spaceB;
 
-  .Login {
-    @include display-vert-center;
-    margin: auto 10px;
-    // min-height: 100%;
-    height: 80px;
+  .desktopSearch {
+    margin: 5px;
 
     input {
-      margin: 5px;
+      width: 100%;
+    }
+  }
+
+  .Login {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 3px 10px;
+    cursor: pointer;
+    // @include display-vert-center;
+    // margin: auto 10px;
+    // min-height: 100%;
+    // height: 80px;
+
+    .loginAvatar {
+      width: 1.5em;
+      height: 1.5em;
+    }
+
+    img {
+      width: 1.5em;
+      margin: auto;
     }
 
     button {
       border: none;
-      background-color: darken($theme-color, 5%);
-      font-size: inherit;
+      outline: 0;
+      background-color: transparent;
+      color: inherit;
       font-family: inherit;
-      color: $theme-font-color;
-      cursor: pointer;
-
-      &:link,
-      &:visited {
-        color: $theme-font-color;
-        border: none;
-      }
-
-      &:focus {
-        border: none;
-        box-shadow: none;
-        outline: 0;
-      }
-
-      &:hover {
-        color: $theme-accent-color;
-      }
-
-      &:active {
-        border: none;
-        box-shadow: none;
-      }
+      font-size: inherit;
+      margin: 0;
     }
+
+    &:hover {
+      color: $theme-accent-color;
+    }
+  }
+
+  .Login > div {
+    margin-right: .5em;
   }
 }
 

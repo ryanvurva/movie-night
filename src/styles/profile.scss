@@ -20,6 +20,7 @@
   border: 5px solid darken($theme-color, 10%);
   border-radius: 5px;
   box-shadow: 4px 4px 8px darken($theme-color, 5%);
+  background-color: lighten($theme-color, 20%);
 }
 
 .userName {
@@ -50,6 +51,10 @@
 
     h1, h3, p, a {
       margin: 0 auto 0 5px;
+    }
+
+    .desktop-profile-links {
+      display: none;
     }
   }
 }
