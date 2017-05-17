@@ -26,9 +26,11 @@ class Home extends Component {
             <div className='Home-info'>
               <p>The Fifth Element</p>
               <p>(1997)</p>
-              <button><i className='fa fa-university' aria-hidden='true' /></button>
-              <button><i className='fa fa-eye' aria-hidden='true' /></button>
-              <button><i className='fa fa-pencil-square-o' aria-hidden='true' /></button>
+              <div>
+                <button><i className='fa fa-university' aria-hidden='true' /></button>
+                <button><i className='fa fa-eye' aria-hidden='true' /></button>
+                <button><i className='fa fa-pencil-square-o' aria-hidden='true' /></button>
+              </div>
             </div>
           </div>
           <div className='Card'>
@@ -38,9 +40,11 @@ class Home extends Component {
             <div className='Home-info'>
               <p>The Boondock Saints</p>
               <p>(1999)</p>
-              <button><i className='fa fa-university' aria-hidden='true' /></button>
-              <button><i className='fa fa-eye' aria-hidden='true' /></button>
-              <button><i className='fa fa-pencil-square-o' aria-hidden='true' /></button>
+              <div>
+                <button><i className='fa fa-university' aria-hidden='true' /></button>
+                <button><i className='fa fa-eye' aria-hidden='true' /></button>
+                <button><i className='fa fa-pencil-square-o' aria-hidden='true' /></button>
+              </div>
             </div>
           </div>
           <div className='Card'>
@@ -50,9 +54,11 @@ class Home extends Component {
             <div className='Home-info'>
               <p>Logan</p>
               <p>(2017)</p>
-              <button><i className='fa fa-university' aria-hidden='true' /></button>
-              <button><i className='fa fa-eye' aria-hidden='true' /></button>
-              <button><i className='fa fa-pencil-square-o' aria-hidden='true' /></button>
+              <div>
+                <button><i className='fa fa-university' aria-hidden='true' /></button>
+                <button><i className='fa fa-eye' aria-hidden='true' /></button>
+                <button><i className='fa fa-pencil-square-o' aria-hidden='true' /></button>
+              </div>
             </div>
           </div>
           <div className='Card'>
@@ -62,9 +68,11 @@ class Home extends Component {
             <div className='Home-info'>
               <p>Rogue One</p>
               <p>(2016)</p>
-              <button><i className='fa fa-university' aria-hidden='true' /></button>
-              <button><i className='fa fa-eye' aria-hidden='true' /></button>
-              <button><i className='fa fa-pencil-square-o' aria-hidden='true' /></button>
+              <div>
+                <button><i className='fa fa-university' aria-hidden='true' /></button>
+                <button><i className='fa fa-eye' aria-hidden='true' /></button>
+                <button><i className='fa fa-pencil-square-o' aria-hidden='true' /></button>
+              </div>
             </div>
           </div>
         </div>
@@ -82,9 +90,11 @@ class Home extends Component {
             <div className='Home-info'>
               <p>Better Call Saul</p>
               <p>(2016)</p>
-              <button><i className='fa fa-university' aria-hidden='true' /></button>
-              <button><i className='fa fa-eye' aria-hidden='true' /></button>
-              <button><i className='fa fa-pencil-square-o' aria-hidden='true' /></button>
+              <div>
+                <button><i className='fa fa-university' aria-hidden='true' /></button>
+                <button><i className='fa fa-eye' aria-hidden='true' /></button>
+                <button><i className='fa fa-pencil-square-o' aria-hidden='true' /></button>
+              </div>
             </div>
           </div>
           <div className='Card'>
@@ -94,9 +104,11 @@ class Home extends Component {
             <div className='Home-info'>
               <p>Game of Thrones</p>
               <p>(2011)</p>
-              <button><i className='fa fa-university' aria-hidden='true' /></button>
-              <button><i className='fa fa-eye' aria-hidden='true' /></button>
-              <button><i className='fa fa-pencil-square-o' aria-hidden='true' /></button>
+              <div>
+                <button><i className='fa fa-university' aria-hidden='true' /></button>
+                <button><i className='fa fa-eye' aria-hidden='true' /></button>
+                <button><i className='fa fa-pencil-square-o' aria-hidden='true' /></button>
+              </div>
             </div>
           </div>
           <div className='Card'>
@@ -106,9 +118,11 @@ class Home extends Component {
             <div className='Home-info'>
               <p>House of Cards</p>
               <p>(2013)</p>
-              <button><i className='fa fa-university' aria-hidden='true' /></button>
-              <button><i className='fa fa-eye' aria-hidden='true' /></button>
-              <button><i className='fa fa-pencil-square-o' aria-hidden='true' /></button>
+              <div>
+                <button><i className='fa fa-university' aria-hidden='true' /></button>
+                <button><i className='fa fa-eye' aria-hidden='true' /></button>
+                <button><i className='fa fa-pencil-square-o' aria-hidden='true' /></button>
+              </div>
             </div>
           </div>
           <div className='Card'>
@@ -118,9 +132,11 @@ class Home extends Component {
             <div className='Home-info'>
               <p>Rick & Morty</p>
               <p>(2013)</p>
-              <button><i className='fa fa-university' aria-hidden='true' /></button>
-              <button><i className='fa fa-eye' aria-hidden='true' /></button>
-              <button><i className='fa fa-pencil-square-o' aria-hidden='true' /></button>
+              <div>
+                <button><i className='fa fa-university' aria-hidden='true' /></button>
+                <button><i className='fa fa-eye' aria-hidden='true' /></button>
+                <button><i className='fa fa-pencil-square-o' aria-hidden='true' /></button>
+              </div>
             </div>
           </div>
         </div>

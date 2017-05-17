@@ -4,7 +4,7 @@ import gravatar from 'gravatar'
 import ui from '../ui'
 import auth from './utils/auth'
 
-import blankUser from '../images/user.svg'
+// import blankUser from '../images/user.svg'
 
 class Nav extends Component {
   render () {

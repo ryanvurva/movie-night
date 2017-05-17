@@ -49,6 +49,12 @@
             overflow-x: auto;
             margin: 5px 0;
           }
+
+          div {
+            margin: 15px 0 0;
+            display: flex;
+            justify-content: space-around;
+          }
         }
       }
     }

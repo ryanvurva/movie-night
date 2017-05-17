@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import gravatar from 'gravatar'
-import Ryan from '../images/avatars/robocop.svg'
+// import Ryan from '../images/avatars/robocop.svg'
 
 class Profile extends Component {
   render () {
