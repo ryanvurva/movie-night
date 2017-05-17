@@ -62,6 +62,35 @@ aside.menuMobile {
     transform: translateX(100vw);
     box-shadow: 0 0 0 transparent;
   }
+
+  .Login {
+    margin: 15px 0 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .loginAvatar {
+      img {
+        margin-right: 1em;
+        width: 3em;
+        border-radius: 25px;
+      }
+    }
+
+    button {
+      border: none;
+      outline: 0;
+      background-color: transparent;
+      color: inherit;
+      font-family: inherit;
+      font-size: inherit;
+      margin: 0;
+    }
+
+    &:hover {
+      color: $theme-accent-color;
+    }
+  }
 }
 
 // Desktop view

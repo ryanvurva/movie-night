@@ -12,7 +12,6 @@ import TMDB from '../images/powered-by-rectangle-blue.svg'
 import Browse from './Browse'
 import Chat from './Chat'
 import Home from './Home'
-import LogIn from './LogIn'
 import Menu from './Menu'
 import Nav from './Nav'
 import Profile from './Profile'
@@ -37,7 +36,6 @@ class App extends Component {
             <Route exact path='/reviews/:name' component={Reviews} />
             <Route exact path='/watchlist/:name' component={WatchList} />
             <Route exact path='/vault/:name' component={Vault} />
-            <Route exact path='/auth0' component={LogIn} />
           </Switch>
         </main>
         <footer>

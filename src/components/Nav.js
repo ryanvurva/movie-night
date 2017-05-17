@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
-import gravatar from 'gravatar'
+// import gravatar from 'gravatar'
 import ui from '../ui'
-import auth from './utils/auth'
+// import auth from './utils/auth'
 
-// import blankUser from '../images/user.svg'
+import Login from './Login'
 
 class Nav extends Component {
   render () {
@@ -18,12 +18,7 @@ class Nav extends Component {
             <input type='search' placeholder='search' />
           </div>
           {/* TODO */}
-          <div className='Login'>
-            <div className='loginAvatar'>
-              <img src={gravatar.url('ryanvurva@gmail.com')} />
-            </div>
-            <button onClick={() => auth.signIn()}>Log in/Sign up</button>
-          </div>
+          <Login />
         </div>
         {/* <div className='Login'>
           <input type='search' placeholder='search' /> */}

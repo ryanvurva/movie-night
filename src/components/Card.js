@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
+import { observer } from 'mobx-react'
 
 import Buttons from './Buttons'
 
@@ -7,6 +8,7 @@ import auth from './utils/auth'
 
 import fifthElement from '../images/movies/fifth-element.jpg'
 
+@observer
 class Card extends Component {
   render () {
     return <div className='Card'>
