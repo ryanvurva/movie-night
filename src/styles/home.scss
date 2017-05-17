@@ -83,6 +83,25 @@
           }
         }
       }
+
+      .Home-review-section {
+        border: thin solid darken($theme-color, 10%);
+
+        .Critic {
+          border-bottom: thin solid darken($theme-color, 10%);
+
+          a {
+            padding: .5em;
+            text-decoration: none;
+            color: $theme-accent-color;
+          }
+        }
+
+        .Opinion {
+          // border: thin solid darken($theme-color, 10%);
+          padding: .5em;
+        }
+      }
     }
   }
 

@@ -28,6 +28,7 @@ body {
   overflow-x: hidden;
   border-left: thin solid darken($theme-color, 10%);
   border-right: thin solid darken($theme-color, 10%);
+  box-shadow: 0 0 10px darken($theme-color, 10%);
   display: flex;
   flex-direction: column;
   // min-width: 400px;
