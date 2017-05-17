@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom'
 import { observer } from 'mobx-react'
 import cx from 'classnames'
 import ui from '../ui'
-
 import auth from './utils/auth'
 
 const Menu = () => (

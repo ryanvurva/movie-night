@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { observer } from 'mobx-react'
 
-import auth from './utils/auth'
+// import auth from './utils/auth'
 
 import TMDB from '../images/powered-by-rectangle-blue.svg'
 
@@ -19,7 +19,7 @@ import Profile from './Profile'
 import Reviews from './Reviews'
 import Vault from './Vault'
 import WatchList from './WatchList'
-import Dashboard from './Dashboard'
+// import Dashboard from './Dashboard'
 
 @observer
 class App extends Component {
@@ -29,8 +29,8 @@ class App extends Component {
         <Nav />
         <main>
           <Switch>
-            {auth.isSignedIn ? <Route exact path='/' component={Dashboard} /> : <Route exact path='/' component={Home} />}
-            {/* <Route exact path='/' component={Home} /> */}
+            {/* {auth.isSignedIn ? <Route exact path='/' component={Dashboard} /> : <Route exact path='/' component={Home} />} */}
+            <Route exact path='/' component={Home} />
             <Route path='/browse/:letter' component={Browse} />
             <Route exact path='/:name' component={Profile} />
             <Route exact path='/chat/:name' component={Chat} />

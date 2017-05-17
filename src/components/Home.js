@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 
-import fifthElement from '../images/movies/fifth-element.jpg'
+import Card from './Card'
+
+// import fifthElement from '../images/movies/fifth-element.jpg'
 import boondockSaints from '../images/movies/boondock-saints.jpg'
 import Logan from '../images/movies/Logan.jpg'
 import rogueOne from '../images/movies/rogue-one.jpg'
@@ -19,28 +21,17 @@ class Home extends Component {
           <NavLink to='/movies/new-releases'>...see all</NavLink>
         </div>
         <div className='Home-content'>
+          {/* card component example idea.  includes login/button change for home page */}
+          <Card />
+          {/* need to figure out how to pass different values to card component for each individual card */}
           <div className='Card'>
             <div className='Home-image'>
-              <img src={fifthElement} alt='' width='100%' />
+              <NavLink to='/movie/the-boondock-saints'><img src={boondockSaints} alt='' width='100%' /></NavLink>
             </div>
             <div className='Home-info'>
-              <p>The Fifth Element</p>
-              <p>(1997)</p>
-              <div>
-                <button><i className='fa fa-university' aria-hidden='true' /></button>
-                <button><i className='fa fa-eye' aria-hidden='true' /></button>
-                <button><i className='fa fa-pencil-square-o' aria-hidden='true' /></button>
-              </div>
-            </div>
-          </div>
-          <div className='Card'>
-            <div className='Home-image'>
-              <img src={boondockSaints} alt='' width='100%' />
-            </div>
-            <div className='Home-info'>
-              <p>The Boondock Saints</p>
+              <NavLink to='/movie/the-boondock-saints'><p>The Boondock Saints</p></NavLink>
               <p>(1999)</p>
-              <div>
+              <div className='Buttons'>
                 <button><i className='fa fa-university' aria-hidden='true' /></button>
                 <button><i className='fa fa-eye' aria-hidden='true' /></button>
                 <button><i className='fa fa-pencil-square-o' aria-hidden='true' /></button>
@@ -49,12 +40,12 @@ class Home extends Component {
           </div>
           <div className='Card'>
             <div className='Home-image'>
-              <img src={Logan} alt='' width='100%' />
+              <NavLink to='/movie/logan'><img src={Logan} alt='' width='100%' /></NavLink>
             </div>
             <div className='Home-info'>
-              <p>Logan</p>
+              <NavLink to='/movie/logan'><p>Logan</p></NavLink>
               <p>(2017)</p>
-              <div>
+              <div className='Buttons'>
                 <button><i className='fa fa-university' aria-hidden='true' /></button>
                 <button><i className='fa fa-eye' aria-hidden='true' /></button>
                 <button><i className='fa fa-pencil-square-o' aria-hidden='true' /></button>
@@ -63,12 +54,12 @@ class Home extends Component {
           </div>
           <div className='Card'>
             <div className='Home-image'>
-              <img src={rogueOne} alt='' width='100%' />
+              <NavLink to='/movie/rogue-one'><img src={rogueOne} alt='' width='100%' /></NavLink>
             </div>
             <div className='Home-info'>
-              <p>Rogue One</p>
+              <NavLink to='/movie/rogue-one'><p>Rogue One</p></NavLink>
               <p>(2016)</p>
-              <div>
+              <div className='Buttons'>
                 <button><i className='fa fa-university' aria-hidden='true' /></button>
                 <button><i className='fa fa-eye' aria-hidden='true' /></button>
                 <button><i className='fa fa-pencil-square-o' aria-hidden='true' /></button>
@@ -85,12 +76,12 @@ class Home extends Component {
         <div className='Home-content'>
           <div className='Card'>
             <div className='Home-image'>
-              <img src={Saul} alt='' width='100%' />
+              <NavLink to='/tv/better-call-saul'><img src={Saul} alt='' width='100%' /></NavLink>
             </div>
             <div className='Home-info'>
-              <p>Better Call Saul</p>
+              <NavLink to='/tv/better-call-saul'><p>Better Call Saul</p></NavLink>
               <p>(2016)</p>
-              <div>
+              <div className='Buttons'>
                 <button><i className='fa fa-university' aria-hidden='true' /></button>
                 <button><i className='fa fa-eye' aria-hidden='true' /></button>
                 <button><i className='fa fa-pencil-square-o' aria-hidden='true' /></button>
@@ -99,12 +90,12 @@ class Home extends Component {
           </div>
           <div className='Card'>
             <div className='Home-image'>
-              <img src={Thrones} alt='' width='100%' />
+              <NavLink to='/tv/game-of-thrones'><img src={Thrones} alt='' width='100%' /></NavLink>
             </div>
             <div className='Home-info'>
-              <p>Game of Thrones</p>
+              <NavLink to='/tv/game-of-thrones'><p>Game of Thrones</p></NavLink>
               <p>(2011)</p>
-              <div>
+              <div className='Buttons'>
                 <button><i className='fa fa-university' aria-hidden='true' /></button>
                 <button><i className='fa fa-eye' aria-hidden='true' /></button>
                 <button><i className='fa fa-pencil-square-o' aria-hidden='true' /></button>
@@ -113,12 +104,12 @@ class Home extends Component {
           </div>
           <div className='Card'>
             <div className='Home-image'>
-              <img src={houseCards} alt='' width='100%' />
+              <NavLink to='/tv/house-of-cards'><img src={houseCards} alt='' width='100%' /></NavLink>
             </div>
             <div className='Home-info'>
-              <p>House of Cards</p>
+              <NavLink to='/tv/house-of-cards'><p>House of Cards</p></NavLink>
               <p>(2013)</p>
-              <div>
+              <div className='Buttons'>
                 <button><i className='fa fa-university' aria-hidden='true' /></button>
                 <button><i className='fa fa-eye' aria-hidden='true' /></button>
                 <button><i className='fa fa-pencil-square-o' aria-hidden='true' /></button>
@@ -127,12 +118,12 @@ class Home extends Component {
           </div>
           <div className='Card'>
             <div className='Home-image'>
-              <img src={rickMorty} alt='' width='100%' />
+              <NavLink to='/tv/rick-and-morty'><img src={rickMorty} alt='' width='100%' /></NavLink>
             </div>
             <div className='Home-info'>
-              <p>Rick & Morty</p>
+              <NavLink to='/tv/rick-and-morty'><p>Rick & Morty</p></NavLink>
               <p>(2013)</p>
-              <div>
+              <div className='Buttons'>
                 <button><i className='fa fa-university' aria-hidden='true' /></button>
                 <button><i className='fa fa-eye' aria-hidden='true' /></button>
                 <button><i className='fa fa-pencil-square-o' aria-hidden='true' /></button>
