@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
-import gravatar from 'gravatar'
-// import Ryan from '../images/avatars/robocop.svg'
+// import { NavLink } from 'react-router-dom'
+// import gravatar from 'gravatar'
+import Ryan from '../images/Ryan-3.jpg'
 
 class Profile extends Component {
   render () {
     return <div className='Profile'>
       <div className='profileHeader'>
         <div className='profilePic'>
-          <img src={gravatar.url('ryanvurva@gmail.com')} alt='user profile image' width='100%' height='100%' />
+          <img src={Ryan} alt='user profile image' width='100%' height='100%' />
+          {/* <img src={gravatar.url('ryanvurva@gmail.com')} alt='user profile image' width='100%' height='100%' /> */}
         </div>
         <div>
           <div className='userName'>

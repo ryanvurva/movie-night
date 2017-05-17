@@ -107,11 +107,37 @@
 
   @media only screen and (max-width: 505px) {
     section {
+      .Home-title {
+        font-size: .8em;
+      }
       .Home-content {
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline;
+        overflow-x: auto;
+        box-sizing: none;
+        width: auto;
+
         .Card {
+          width: 40vw;
+          margin-right: 1em;
+
+          .Home-image {
+            // width:auto;
+
+            img {
+              width: 40vw;
+            }
+          }
+
           .Home-info {
             .Buttons {
-              display: none;
+              padding: 0;
+              border: 0px solid transparent;
+              background-color: transparent;
+              box-shadow: none;
+              outline: 0;
+              // display: none;
             }
           }
         }
