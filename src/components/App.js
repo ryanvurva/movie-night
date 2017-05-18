@@ -19,6 +19,7 @@ import Reviews from './Reviews'
 import Vault from './Vault'
 import WatchList from './WatchList'
 import Review from './Review'
+import MovieOverlay from './MovieOverlay'
 
 @observer
 class App extends Component {
@@ -29,13 +30,13 @@ class App extends Component {
         <main>
           <Switch>
             {/* {auth.isSignedIn ? <Route exact path='/' component={Dashboard} /> : <Route exact path='/' component={Home} />} */}
-            <Route exact path='/' component={Home} />
             <Route path='/browse/:letter' component={Browse} />
             <Route exact path='/:name' component={Profile} />
             <Route exact path='/chat/:name' component={Chat} />
             <Route exact path='/reviews/:name' component={Reviews} />
             <Route exact path='/watchlist/:name' component={WatchList} />
             <Route exact path='/vault/:name' component={Vault} />
+            <Route path='/' component={Home} />
           </Switch>
         </main>
         <footer>
@@ -50,6 +51,7 @@ class App extends Component {
         </footer>
         <Menu />
         <Review />
+        <Route path='/movie/:id' component={MovieOverlay} />
       </div>
     </Router>
   }

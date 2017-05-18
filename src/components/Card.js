@@ -11,7 +11,7 @@ import fifthElement from '../images/movies/fifth-element.jpg'
 @observer
 class Card extends Component {
   render () {
-    return <div className='Card'>
+    return <div className={'Card'}>
       <div className='Home-image'>
         <NavLink to='/movie/the-fifth-element'><img src={fifthElement} alt='' width='100%' /></NavLink>
       </div>

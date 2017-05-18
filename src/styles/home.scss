@@ -29,20 +29,29 @@
       // box-sizing: border-box;
       overflow-x: auto;
       display: flex;
+      flex-direction: row;
       justify-content: flex-start;
       align-items: baseline;
       // want to add scrollable content here
-      width: auto;
+      // width: auto;
       // @include display-hor-spaceA;
       padding: 10px;
       border-bottom: thick solid darken($theme-color, 10%);
 
+      // button {
+      //   border: none;
+      //   color: $theme-font-color;
+      //   outline: 0;
+      //   background-color: transparent;
+      // }
+
       .Card {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        width: 20vw;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: flex-start;
         margin-right: 1.7em;
+        width: 20vw;
+        background-color: #333;
 
         .Home-image {
           // width: 100%;
