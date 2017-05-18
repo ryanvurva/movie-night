@@ -94,11 +94,16 @@
               font-size: 1em;
               background-color: transparent;
 
+              &:visited {
+                color: $theme-accent-color;
+              }
+
               &:hover {
                 color: $theme-accent-color;
               }
 
               &:active {
+                color: $theme-accent-color;
                 outline: 0;
               }
             }

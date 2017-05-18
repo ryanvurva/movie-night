@@ -18,7 +18,7 @@ import Profile from './Profile'
 import Reviews from './Reviews'
 import Vault from './Vault'
 import WatchList from './WatchList'
-// import Dashboard from './Dashboard'
+import Ebert from './ReviewModal'
 
 @observer
 class App extends Component {
@@ -49,6 +49,7 @@ class App extends Component {
           <div>Built with <i className='fa fa-heartbeat' aria-hidden='true' /> at the Iron Yard</div>
         </footer>
         <Menu />
+        <Ebert />
       </div>
     </Router>
   }
