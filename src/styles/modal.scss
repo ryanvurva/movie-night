@@ -1,6 +1,6 @@
 @import 'utility';
 
-.ReviewModal {
+.Overlay {
   z-index: 2;
   position: fixed;
   top: 0;
@@ -9,43 +9,85 @@
   left: 0;
   background-color: transparentize(darken($theme-color, 10%), .1);
   display: flex;
-  // display: none;
+  // this is to hide the modal
+  display: none;
   align-items: center;
   justify-content: center;
 
   .Modal {
     z-index: 3;
     width: 80vw;
-    height: 80vh;
+    max-width: 800px;
+    max-height: 600px;
     border: thick solid darken($theme-color, 10%);
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: $theme-color;
+    box-shadow: 0 0 20px lighten($theme-color, 5%);
     padding: 1em;
     box-sizing: border-box;
 
-    .Siskel {
+    h2 {
+      margin: 5px auto;
+      border-bottom: thin solid darken($theme-color, 10%);
+    }
+
+    .Review {
+      box-sizing: border-box;
       display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
       margin: 0 auto;
       width: 100%;
-      height: 100%;
 
-      .whatMovie {
+      .Siskel {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        img {
+          width: 90%;
+        }
+
         p {
           margin: .7em 0 0;
         }
       }
 
-      form {
-        width: 100%;
-        height: 100%;
+      .Ebert {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        margin: 0 auto;
 
-        textarea {
-          width: calc(95%);
-          height: calc(90%);
-          background-color: lighten($theme-color, 50%);
-          color: darken($theme-font-color, 80%);
+        form {
+          margin: auto;
+          padding: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+
+          textarea {
+            flex: 1;
+            padding: 5px;
+            width: calc(100% - 10px);
+            background-color: lighten($theme-color, 50%);
+            color: darken($theme-font-color, 80%);
+            margin: auto;
+          }
+        }
+
+        .reviewButtons {
+          margin: 10px auto;
+          display: flex;
+          justify-content: flex-end;
+          width: 90%;
+
+          button {
+            margin: 0 2px;
+            background-color: transparent;
+            border: none;
+            outline: 0;
+            color: $theme-font-color;
+          }
         }
       }
     }
