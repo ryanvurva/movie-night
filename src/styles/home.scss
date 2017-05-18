@@ -26,11 +26,14 @@
     }
 
     .Home-content {
-      box-sizing: border-box;
-      // overflow-x: auto;
+      // box-sizing: border-box;
+      overflow-x: auto;
+      display: flex;
+      justify-content: flex-start;
+      align-items: baseline;
       // want to add scrollable content here
-      width: 100%;
-      @include display-hor-spaceA;
+      width: auto;
+      // @include display-hor-spaceA;
       padding: 10px;
       border-bottom: thick solid darken($theme-color, 10%);
 
@@ -38,10 +41,11 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        width: 20%;
+        width: 20vw;
+        margin-right: 1.7em;
 
         .Home-image {
-          width: 100%;
+          // width: 100%;
           // transition: all 1s ease;
 
           &:hover {
@@ -49,6 +53,7 @@
           }
 
           img {
+            width: 20vw;
             border: thin solid transparent;
             box-shadow: 0 0 10px darken($theme-color, 10%);
 

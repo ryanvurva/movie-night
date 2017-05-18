@@ -17,8 +17,8 @@ class Home extends Component {
     return <div className='Home'>
       <section>
         <div className='Home-title'>
-          <h2>New Realease Movies</h2>
-          <NavLink to='/movies/new-releases'>...see all</NavLink>
+          <h2>Popluar Movies</h2>
+          <NavLink to='/movies/popular'>...see all</NavLink>
         </div>
         <div className='Home-content'>
           {/* card component example idea.  includes login/button change for home page */}
@@ -66,6 +66,10 @@ class Home extends Component {
               </div>
             </div>
           </div>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
         </div>
       </section>
       <section>
