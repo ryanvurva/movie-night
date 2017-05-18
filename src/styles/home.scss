@@ -85,6 +85,23 @@
             display: flex;
             // display: none;
             justify-content: space-around;
+
+            button {
+              border: none;
+              box-shadow: none;
+              outline: 0;
+              color: $theme-font-color;
+              font-size: 1em;
+              background-color: transparent;
+
+              &:hover {
+                color: $theme-accent-color;
+              }
+
+              &:active {
+                outline: 0;
+              }
+            }
           }
         }
       }
@@ -137,12 +154,16 @@
 
           .Home-info {
             .Buttons {
-              padding: 0;
-              border: 0px solid transparent;
-              background-color: transparent;
-              box-shadow: none;
-              outline: 0;
-              // display: none;
+              button {
+                // padding: 0;
+                border: 0px solid transparent;
+                background-color: transparent;
+                box-shadow: none;
+                outline: 0;
+                font-size: 1em;
+                color: $theme-font-color
+                // display: none;
+              }
             }
           }
         }
