@@ -33,7 +33,23 @@ class Home extends Component {
     // images: [fifthElement, boondockSaints, Anchorman, rogueOne, fightClub, findingNemo, forrestGump, ID4, ironMan, jurassicPark, Logan, pulpFiction, Shawshank, toyStory, Twister],
     // titles: ['The Fifth Element', 'The Boondock Saints', 'Anchorman The Legend of Ron Burgundy', 'Rogue One, A Star Wars Story', 'Fight Club', 'Finding Nemo', 'Forrest Gump', 'Independence Day', 'Iron Man', 'Jurassic Park', 'Logan', 'Pulp Fiction', 'The Shawshank Redemption', 'Toy Story', 'Twister'],
     // dates: ['1997', '1999', '2004', '2016', '1999', '2003', '1994', '1996', '2008', '1993', '2017', '1994', '1994', '1995', '1996'],
-    movies: [{image: fifthElement, title: 'The Fifth Element', date: '1997'}, {image: boondockSaints, title: 'The Boondock Saints', date: '1999'}, {image: Anchorman, title: 'Anchorman The Legend of Ron Burgundy', date: '2004'}, {image: rogueOne, title: 'Rogue One, A Star Wars Story', date: '2016'}, {image: fightClub, title: 'Fight Club', date: '1999'}, {image: findingNemo, title: 'Finding Nemo', date: '2003'}, {image: forrestGump, title: 'Forrest Gump', date: '1994'}, {image: ID4, title: 'Independence Day', date: '1996'}, {image: ironMan, title: 'Iron Man', date: '2008'}, {image: jurassicPark, title: 'Jurassic Park', date: '1993'}, {image: Logan, title: 'Logan', date: '2017'}, {image: pulpFiction, title: 'Pulp Fiction', date: '1994'}, {image: Shawshank, title: 'The Shawshank Redemption', date: '1994'}, {image: toyStory, title: 'Toy Story', date: '1995'}, {image: Twister, title: 'Twister', date: '1996'}]
+    movies: [
+    {image: fifthElement, title: 'The Fifth Element', date: '1997'},
+    {image: boondockSaints, title: 'The Boondock Saints', date: '1999'},
+    {image: Anchorman, title: 'Anchorman The Legend of Ron Burgundy', date: '2004'},
+    {image: rogueOne, title: 'Rogue One, A Star Wars Story', date: '2016'},
+    {image: fightClub, title: 'Fight Club', date: '1999'},
+    {image: findingNemo, title: 'Finding Nemo', date: '2003'},
+    {image: forrestGump, title: 'Forrest Gump', date: '1994'},
+    {image: ID4, title: 'Independence Day', date: '1996'},
+    {image: ironMan, title: 'Iron Man', date: '2008'},
+    {image: jurassicPark, title: 'Jurassic Park', date: '1993'},
+    {image: Logan, title: 'Logan', date: '2017'},
+    {image: pulpFiction, title: 'Pulp Fiction', date: '1994'},
+    {image: Shawshank, title: 'The Shawshank Redemption', date: '1994'},
+    {image: toyStory, title: 'Toy Story', date: '1995'},
+    {image: Twister, title: 'Twister', date: '1996'}
+    ]
   }
   render () {
     const { movies } = this.state
@@ -49,7 +65,7 @@ class Home extends Component {
     return <div className='Home'>
       <section>
         <div className='Home-title'>
-          <h2>Popluar Movies</h2>
+          <h2>Popular Movies</h2>
           <NavLink to='/movies/popular'>...see all</NavLink>
         </div>
         <div className='Home-content'>

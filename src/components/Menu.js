@@ -19,9 +19,7 @@ const Menu = () => (
         </div>
         <MobileLogin />
         <ul>
-          {/* <MobileLogin /> */}
-          {/* <li onClick={() => auth.signIn()}><NavLink to='/auth0'><i className='fa fa-lock' aria-hidden='true' /> - Log In/Out</NavLink></li> */}
-          <li onClick={() => ui.toggleMenu()}><NavLink to='/:name'><i className='fa fa-id-card-o' aria-hidden='true' /> - View Profile</NavLink></li>
+          {auth.isSignedIn ? <li onClick={() => ui.toggleMenu()}><NavLink to='/:name'><i className='fa fa-id-card-o' aria-hidden='true' /> - View Profile</NavLink></li> : null}
           <li onClick={() => ui.toggleMenu()}><NavLink to='/browse/movies'><i className='fa fa-film' aria-hidden='true' /> - Movies</NavLink></li>
           <li onClick={() => ui.toggleMenu()}><NavLink to='/browse/tv'><i className='fa fa-television' aria-hidden='true' /> - TV</NavLink></li>
           <li onClick={() => ui.toggleMenu()}><NavLink to='/reviews/:name'><i className='fa fa-address-book-o' aria-hidden='true' /> - Reviews</NavLink></li>
