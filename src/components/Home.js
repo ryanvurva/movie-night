@@ -7,10 +7,21 @@ import Buttons from './Buttons'
 
 import auth from './utils/auth'
 
-// import fifthElement from '../images/movies/fifth-element.jpg'
+import fifthElement from '../images/movies/fifth-element.jpg'
 import boondockSaints from '../images/movies/boondock-saints.jpg'
-import Ron from '../images/movies/anchorman.jpg'
+import Anchorman from '../images/movies/anchorman.jpg'
 import rogueOne from '../images/movies/rogue-one.jpg'
+import fightClub from '../images/movies/fight-club.jpg'
+import findingNemo from '../images/movies/finding-nemo.jpg'
+import forrestGump from '../images/movies/forrest-gump.jpg'
+import ID4 from '../images/movies/id4.jpg'
+import ironMan from '../images/movies/iron-man.jpg'
+import jurassicPark from '../images/movies/jurassic-park.jpg'
+import Logan from '../images/movies/Logan.jpg'
+import pulpFiction from '../images/movies/pulp-fiction.jpg'
+import Shawshank from '../images/movies/shawshank.jpg'
+import toyStory from '../images/movies/toy-story.jpg'
+import Twister from '../images/movies/twister.jpg'
 import Saul from '../images/tv/better-call-saul.jpg'
 import Thrones from '../images/tv/game-of-thrones.jpg'
 import houseCards from '../images/tv/house-cards.gif'
@@ -18,7 +29,23 @@ import rickMorty from '../images/tv/rick-morty.jpg'
 
 @observer
 class Home extends Component {
+  state = {
+    // images: [fifthElement, boondockSaints, Anchorman, rogueOne, fightClub, findingNemo, forrestGump, ID4, ironMan, jurassicPark, Logan, pulpFiction, Shawshank, toyStory, Twister],
+    // titles: ['The Fifth Element', 'The Boondock Saints', 'Anchorman The Legend of Ron Burgundy', 'Rogue One, A Star Wars Story', 'Fight Club', 'Finding Nemo', 'Forrest Gump', 'Independence Day', 'Iron Man', 'Jurassic Park', 'Logan', 'Pulp Fiction', 'The Shawshank Redemption', 'Toy Story', 'Twister'],
+    // dates: ['1997', '1999', '2004', '2016', '1999', '2003', '1994', '1996', '2008', '1993', '2017', '1994', '1994', '1995', '1996'],
+    movies: [{image: fifthElement, title: 'The Fifth Element', date: '1997'}, {image: boondockSaints, title: 'The Boondock Saints', date: '1999'}, {image: Anchorman, title: 'Anchorman The Legend of Ron Burgundy', date: '2004'}, {image: rogueOne, title: 'Rogue One, A Star Wars Story', date: '2016'}, {image: fightClub, title: 'Fight Club', date: '1999'}, {image: findingNemo, title: 'Finding Nemo', date: '2003'}, {image: forrestGump, title: 'Forrest Gump', date: '1994'}, {image: ID4, title: 'Independence Day', date: '1996'}, {image: ironMan, title: 'Iron Man', date: '2008'}, {image: jurassicPark, title: 'Jurassic Park', date: '1993'}, {image: Logan, title: 'Logan', date: '2017'}, {image: pulpFiction, title: 'Pulp Fiction', date: '1994'}, {image: Shawshank, title: 'The Shawshank Redemption', date: '1994'}, {image: toyStory, title: 'Toy Story', date: '1995'}, {image: Twister, title: 'Twister', date: '1996'}]
+  }
   render () {
+    const { movies } = this.state
+    const cards = movies.map(({image, title, date}, i) => {
+      return <Card
+        image={image}
+        title={title}
+        date={date}
+        position={i}
+        key={i}
+      />
+    })
     return <div className='Home'>
       <section>
         <div className='Home-title'>
@@ -26,43 +53,7 @@ class Home extends Component {
           <NavLink to='/movies/popular'>...see all</NavLink>
         </div>
         <div className='Home-content'>
-          {/* card component example idea.  includes login/button change for home page */}
-          <Card />
-          {/* need to figure out how to pass different values to card component for each individual card */}
-          <div className='Card'>
-            <div className='Home-image'>
-              <NavLink to='/movie/the-boondock-saints'><img src={boondockSaints} alt='' width='100%' /></NavLink>
-            </div>
-            <div className='Home-info'>
-              <NavLink to='/movie/the-boondock-saints'><p>The Boondock Saints</p></NavLink>
-              <p>(1999)</p>
-              {auth.isSignedIn ? <Buttons /> : null}
-            </div>
-          </div>
-          <div className='Card'>
-            <div className='Home-image'>
-              <NavLink to='/movie/anchorman'><img src={Ron} alt='' width='100%' /></NavLink>
-            </div>
-            <div className='Home-info'>
-              <NavLink to='/movie/anchorman'><p>Anchorman</p></NavLink>
-              <p>(2004)</p>
-              {auth.isSignedIn ? <Buttons /> : null}
-            </div>
-          </div>
-          <div className='Card'>
-            <div className='Home-image'>
-              <NavLink to='/movie/rogue-one'><img src={rogueOne} alt='' width='100%' /></NavLink>
-            </div>
-            <div className='Home-info'>
-              <NavLink to='/movie/rogue-one'><p>Rogue One</p></NavLink>
-              <p>(2016)</p>
-              {auth.isSignedIn ? <Buttons /> : null}
-            </div>
-          </div>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {cards}
         </div>
       </section>
       <section>

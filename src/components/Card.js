@@ -6,18 +6,18 @@ import Buttons from './Buttons'
 
 import auth from './utils/auth'
 
-import fifthElement from '../images/movies/fifth-element.jpg'
+// import fifthElement from '../images/movies/fifth-element.jpg'
 
 @observer
 class Card extends Component {
   render () {
-    return <div className={'Card'}>
+    return <div className='Card'>
       <div className='Home-image'>
-        <NavLink to='/movie/the-fifth-element'><img src={fifthElement} alt='' width='100%' /></NavLink>
+        <NavLink to='/movie/the-fifth-element'><img src={this.props.image} alt='' width='100%' /></NavLink>
       </div>
       <div className='Home-info'>
-        <NavLink to='/movie/the-fifth-element'><p>The Fifth Element</p></NavLink>
-        <p>(1997)</p>
+        <NavLink to='/movie/the-fifth-element'><p>{this.props.title}</p></NavLink>
+        <p>({this.props.date})</p>
         {auth.isSignedIn ? <Buttons /> : null}
       </div>
     </div>
