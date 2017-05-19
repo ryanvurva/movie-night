@@ -34,7 +34,8 @@ const Menu = () => (
     <aside className='menuDesktop'>
       <section>
         <ul>
-          <li><NavLink to='/:name'><i className='fa fa-id-card-o' aria-hidden='true' /> - View Profile</NavLink></li>
+          {auth.isSignedIn ? <li><NavLink to='/:name'><i className='fa fa-id-card-o' aria-hidden='true' /> - View Profile</NavLink></li> : <button onClick={() => auth.signIn()}><i className='fa fa-lock' aria-hidden='true' /> - Log in/Sign up</button>}
+          {/* <li><NavLink to='/:name'><i className='fa fa-id-card-o' aria-hidden='true' /> - View Profile</NavLink></li> */}
           <li>|</li>
           <li><NavLink to='/browse/movies'><i className='fa fa-film' aria-hidden='true' /> - Movies</NavLink></li>
           <li>|</li>

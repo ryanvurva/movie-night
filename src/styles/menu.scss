@@ -143,6 +143,18 @@ aside.menuDesktop {
           color: $theme-accent-color;
         }
       }
+
+      button {
+        border: none;
+        background-color: transparent;
+        color: inherit;
+        font-size: inherit;
+        font-family: $base-font-family;
+
+        &:hover {
+          color: $theme-accent-color;
+        }
+      }
     }
   }
 

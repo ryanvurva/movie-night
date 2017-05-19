@@ -13,11 +13,11 @@ class MovieOverlay extends Component {
   render () {
     return <div className='Overlay'>
       <div className='inner'>
-        <div className='Movie-image'>
+        <div className='Review-image'>
           {/* ... */}
           {/* <img src={fifthElement} alt='' width='60%' /> */}
         </div>
-        <div className='Movie-info'>
+        <div className='Review-info'>
           <p>The Fifth Element</p>
           <p>(1997)</p>
           {auth.isSignedIn ? <Buttons /> : null}

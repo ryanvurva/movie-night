@@ -2,13 +2,15 @@
 @import 'header';
 @import 'logo';
 @import 'menu';
-@import 'comingsoon';
-@import 'browse';
+@import 'movies';
+@import 'tv';
 @import 'profile';
 @import 'vault';
 @import 'home';
-@import 'modal';
+@import 'review';
 @import 'movieoverlay';
+@import 'tvoverlay';
+@import 'reviewoverlay';
 
 html {
   @include full-height;

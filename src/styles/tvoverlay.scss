@@ -14,11 +14,11 @@
     justify-content: flex-start;
     // align-items: flex-start;
 
-    .Movie-image {
+    .TV-image {
       min-width: 200px;
       min-height: 300px;
       // border: thick solid red;
-      background-image: url('../images/movies/fifth-element.jpg');
+      background-image: url('../images/tv/better-call-saul.jpg');
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
@@ -30,7 +30,7 @@
       }
     }
 
-    .Movie-info {
+    .TV-info {
       // flex: 1;
     }
   }

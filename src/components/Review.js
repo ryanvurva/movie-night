@@ -8,7 +8,7 @@ import fifthElement from '../images/movies/fifth-element.jpg'
 @observer
 class ReviewModal extends Component {
   render () {
-    return <div className='Overlay'>
+    return <div className='overlay'>
       <div className='Modal'>
         <h2>What do <em>you</em> think?</h2>
         <div className='Review'>

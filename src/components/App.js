@@ -9,7 +9,8 @@ import TMDB from '../images/powered-by-rectangle-blue.svg'
 // import cx from 'classnames'
 // import ui from '../ui'
 
-import Browse from './Browse'
+import Movies from './Movies'
+import TV from './Tv'
 import Chat from './Chat'
 import Home from './Home'
 import Menu from './Menu'
@@ -20,6 +21,8 @@ import Vault from './Vault'
 import WatchList from './WatchList'
 import Review from './Review'
 import MovieOverlay from './MovieOverlay'
+import TvOverlay from './TvOverlay'
+import ReviewOverlay from './ReviewOverlay'
 
 @observer
 class App extends Component {
@@ -30,7 +33,8 @@ class App extends Component {
         <main>
           <Switch>
             {/* {auth.isSignedIn ? <Route exact path='/' component={Dashboard} /> : <Route exact path='/' component={Home} />} */}
-            <Route path='/browse/:letter' component={Browse} />
+            <Route path='/browse/movies' component={Movies} />
+            <Route path='/browse/tv' component={TV} />
             <Route exact path='/:name' component={Profile} />
             <Route exact path='/chat/:name' component={Chat} />
             <Route exact path='/reviews/:name' component={Reviews} />
@@ -52,6 +56,8 @@ class App extends Component {
         <Menu />
         <Review />
         <Route path='/movie/:id' component={MovieOverlay} />
+        <Route path='/tv/:id' component={TvOverlay} />
+        <Route path='/review/:id' component={ReviewOverlay} />
       </div>
     </Router>
   }

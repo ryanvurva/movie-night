@@ -68,3 +68,16 @@ $theme-accent-color: hsl(64, 97%, 51%);
   background-size: cover;
   background-attachment: fixed;
 }
+
+.overlay-base {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: transparentize(black, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}

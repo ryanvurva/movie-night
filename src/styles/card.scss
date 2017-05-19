@@ -1,0 +1,106 @@
+@import 'utility';
+
+.Card {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: flex-start;
+  margin-right: 1.7em;
+  width: 20vw;
+  // background-color: #333;
+
+  .Home-image {
+    // width: 100%;
+    // transition: all 1s ease;
+
+    &:hover {
+      // transform: scale(1.9em);
+    }
+
+    img {
+      width: 20vw;
+      border: thin solid transparent;
+      box-shadow: 0 0 10px darken($theme-color, 10%);
+
+      &:hover {
+        border: 1px solid $theme-accent-color;
+        box-shadow: 0 0 10px lighten($theme-color, 30%);
+      }
+    }
+  }
+
+  .Home-info {
+    p {
+      white-space: nowrap;
+      overflow-x: auto;
+      margin: 5px 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+
+      &:hover {
+        color: $theme-accent-color;
+      }
+    }
+
+    .Buttons {
+      margin: 15px 0 0;
+      display: flex;
+      // display: none;
+      justify-content: space-around;
+
+      button {
+        border: none;
+        box-shadow: none;
+        outline: 0;
+        color: $theme-font-color;
+        font-size: 1em;
+        background-color: transparent;
+
+        &:visited {
+          color: $theme-accent-color;
+        }
+
+        &:hover {
+          color: $theme-accent-color;
+        }
+
+        &:active {
+          color: $theme-accent-color;
+          outline: 0;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 505px) {
+  .Card {
+    width: 40vw;
+    margin-right: 1em;
+
+    .Home-image {
+      // width:auto;
+
+      img {
+        width: 40vw;
+      }
+    }
+
+    .Home-info {
+      .Buttons {
+        button {
+          // padding: 0;
+          border: 0px solid transparent;
+          background-color: transparent;
+          box-shadow: none;
+          outline: 0;
+          font-size: 1em;
+          color: $theme-font-color
+          // display: none;
+        }
+      }
+    }
+  }
+}

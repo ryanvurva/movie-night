@@ -13,13 +13,13 @@ class MovieOverlay extends Component {
   render () {
     return <div className='Overlay'>
       <div className='inner'>
-        <div className='Movie-image'>
+        <div className='TV-image'>
           {/* ... */}
           {/* <img src={fifthElement} alt='' width='60%' /> */}
         </div>
-        <div className='Movie-info'>
-          <p>The Fifth Element</p>
-          <p>(1997)</p>
+        <div className='TV-info'>
+          <p>Better Call Saul</p>
+          <p>(2016)</p>
           {auth.isSignedIn ? <Buttons /> : null}
           <NavLink to='/'>x</NavLink>
         </div>
