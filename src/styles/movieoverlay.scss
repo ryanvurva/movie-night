@@ -31,7 +31,52 @@
     }
 
     .Movie-info {
-      // flex: 1;
+      button {
+        background-color: lighten($theme-color, 30%);
+        // border: none;
+        border-radius: 3px;
+      }
+      a {
+        color: $theme-color;
+        font-size: 2em;
+        text-decoration: none;
+      }
+
+      .Movie-description {
+        // max-height: 100px;
+        // white-space: nowrap;
+        // overflow: hidden;
+        // width: 100%;
+
+        p {
+
+        }
+      }
+      .Buttons {
+        button {
+          background-color: transparent;
+          border: none;
+          color: $theme-font-color;
+          font-size: inherit;
+          margin-right: 5px;
+          cursor: pointer;
+
+          &:hover {
+            color: $theme-accent-color;
+          }
+        }
+
+        a {
+          color: $theme-font-color;
+          text-decoration: none;
+          margin: 0 7px;
+          font-size: $base-text-size;
+
+          &:hover {
+            color: $theme-accent-color;
+          }
+        }
+      }
     }
   }
 }

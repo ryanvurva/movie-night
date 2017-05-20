@@ -44,13 +44,13 @@ main {
 }
 
 .Home,
-.Browse,
 .Chat,
 .Profile,
 .Reviews,
 .WatchList,
 .Vault,
-.Dashboard {
+.Movies,
+.Tv {
   padding: 145px 0 0;
   display: flex;
   flex-direction: column;
