@@ -1,6 +1,6 @@
 @import 'utility';
 
-.Overlay {
+.tvOverlay {
   @extend .overlay-base;
 
   .inner {
@@ -31,7 +31,134 @@
     }
 
     .TV-info {
+      button {
+        background-color: lighten($theme-color, 30%);
+        // border: none;
+        border-radius: 3px;
+      }
+      a {
+        color: $theme-color;
+        font-size: 2em;
+        text-decoration: none;
+      }
+
+      .Tv-description {
+        // max-height: 100px;
+        // white-space: nowrap;
+        // overflow: hidden;
+        // width: 100%;
+
+        p {
+
+        }
+      }
+      .Buttons {
+        button {
+          background-color: transparent;
+          border: none;
+          color: $theme-font-color;
+          font-size: inherit;
+          margin-right: 5px;
+          cursor: pointer;
+
+          &:hover {
+            color: $theme-accent-color;
+          }
+        }
+
+        a {
+          color: $theme-font-color;
+          text-decoration: none;
+          margin: 0 7px;
+          font-size: $base-text-size;
+
+          &:hover {
+            color: $theme-accent-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 505px) {
+  .tvOverlay {
+    display: flex;
+    flex-direction: column;
+    // justify-content: flex-start;
+    // align-items: flex-start;
+  }
+  .inner {
+    width: 80vw;
+    background-color: #222;
+    padding: 10px;
+    box-shadow: 0 0 10px black;
+    display: block;
+    // flex-direction: column;
+    // justify-content: flex-start;
+
+    .TV-image {
+      min-width: 200px;
+      min-height: 300px;
+      background-image: url('../images/tv/better-call-saul.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin: 15px;
       // flex: 1;
+
+      img {
+        // width: 50%;
+      }
+    }
+
+    .TV-info {
+      button {
+        background-color: lighten($theme-color, 30%);
+        // border: none;
+        border-radius: 3px;
+      }
+      a {
+        color: $theme-color;
+        font-size: 2em;
+        text-decoration: none;
+      }
+
+      .Tv-description {
+        // max-height: 100px;
+        // white-space: nowrap;
+        // overflow: hidden;
+        // width: 100%;
+
+        p {
+
+        }
+      }
+      .Buttons {
+        button {
+          background-color: transparent;
+          border: none;
+          color: $theme-font-color;
+          font-size: inherit;
+          margin-right: 5px;
+          cursor: pointer;
+
+          &:hover {
+            color: $theme-accent-color;
+          }
+        }
+
+        a {
+          color: $theme-font-color;
+          text-decoration: none;
+          margin: 0 7px;
+          font-size: $base-text-size;
+
+          &:hover {
+            color: $theme-accent-color;
+          }
+        }
+      }
     }
   }
 }

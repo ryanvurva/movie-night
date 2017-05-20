@@ -1,4 +1,82 @@
 @import 'utility';
+@import 'card';
+
+.TV {
+  section {
+    box-sizing: border-box;
+    padding: 20px;
+
+    .TV-title {
+      width: 100%;
+      @include display-hor-spaceB;
+      align-items: baseline;
+      margin-bottom: 10px;
+      border-bottom: thick solid darken($theme-color, 10%);
+
+      h2 {
+        padding: 0 10px;
+        margin: 0;
+      }
+
+      a {
+        padding: 0 10px;
+        text-decoration: none;
+        color: inherit;
+
+      }
+    }
+
+    .TV-content {
+      // box-sizing: border-box;
+      overflow-x: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: baseline;
+      // want to add scrollable content here
+      // width: auto;
+      // @include display-hor-spaceA;
+      padding: 10px;
+      border-bottom: thick solid darken($theme-color, 10%);
+
+      .Home-review-section {
+        border: thin solid darken($theme-color, 10%);
+
+        .Critic {
+          border-bottom: thin solid darken($theme-color, 10%);
+
+          a {
+            padding: .5em;
+            text-decoration: none;
+            color: $theme-accent-color;
+          }
+        }
+
+        .Opinion {
+          // border: thin solid darken($theme-color, 10%);
+          padding: .5em;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 505px) {
+    section {
+      .Home-title {
+        font-size: .8em;
+      }
+      .Home-content {
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline;
+        overflow-x: auto;
+        box-sizing: none;
+        width: auto;
+      }
+    }
+  }
+}
+@import 'utility';
 
 
 

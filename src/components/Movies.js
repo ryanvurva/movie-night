@@ -66,20 +66,20 @@ class Movies extends Component {
     }).reverse()
     return <div className='Movies'>
       <section>
-        <div className='Home-title'>
+        <div className='Movies-title'>
           <h2>Featured Movies</h2>
           <NavLink to='/movies/featured'>...see all</NavLink>
         </div>
-        <div className='Home-content'>
+        <div className='Movies-content'>
           {cards}
         </div>
       </section>
       <section>
-        <div className='Home-title'>
+        <div className='Movies-title'>
           <h2>Popular Movies</h2>
           <NavLink to='/movies/popular'>...see all</NavLink>
         </div>
-        <div className='Home-content'>
+        <div className='Movies-content'>
           {cards2}
         </div>
       </section>

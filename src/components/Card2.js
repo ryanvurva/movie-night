@@ -9,14 +9,14 @@ import auth from './utils/auth'
 // import fifthElement from '../images/movies/fifth-element.jpg'
 
 @observer
-class Card extends Component {
+class Card2 extends Component {
   render () {
     return <div className='Card'>
       <div className='Card-image'>
-        <NavLink to={`/movie/${this.props.title}`}><img src={this.props.image} alt='' width='100%' /></NavLink>
+        <NavLink to={`/tv/${this.props.title}`}><img src={this.props.image} alt='' width='100%' /></NavLink>
       </div>
       <div className='Card-info'>
-        <NavLink to={`/movie/${this.props.title}`}><p>{this.props.title}</p></NavLink>
+        <NavLink to={`/tv/${this.props.title}`}><p>{this.props.title}</p></NavLink>
         <p>({this.props.date})</p>
         {auth.isSignedIn ? <Buttons /> : null}
       </div>
@@ -24,4 +24,4 @@ class Card extends Component {
   }
 }
 
-export default Card
+export default Card2

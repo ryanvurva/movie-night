@@ -6,7 +6,7 @@
     box-sizing: border-box;
     padding: 20px;
 
-    .Home-title {
+    .Movies-title {
       width: 100%;
       @include display-hor-spaceB;
       align-items: baseline;
@@ -26,7 +26,7 @@
       }
     }
 
-    .Home-content {
+    .Movies-content {
       // box-sizing: border-box;
       overflow-x: auto;
       display: flex;
