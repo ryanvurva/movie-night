@@ -19,10 +19,10 @@ import Profile from './Profile'
 import Reviews from './Reviews'
 import Vault from './Vault'
 import WatchList from './WatchList'
-import Review from './Review'
-import MovieOverlay from './MovieOverlay'
-import TvOverlay from './TvOverlay'
-import ReviewOverlay from './ReviewOverlay'
+// import MovieOverlay from './MovieOverlay'
+// import TvOverlay from './TvOverlay'
+// import ReviewOverlay from './ReviewOverlay'
+import Overlay from './Overlay'
 
 @observer
 class App extends Component {
@@ -35,7 +35,7 @@ class App extends Component {
             {/* {auth.isSignedIn ? <Route exact path='/' component={Dashboard} /> : <Route exact path='/' component={Home} />} */}
             <Route path='/browse/movies' component={Movies} />
             <Route path='/browse/tv' component={TV} />
-            <Route exact path='/:name' component={Profile} />
+            <Route exact path='/user/:name' component={Profile} />
             <Route exact path='/chat/:name' component={Chat} />
             <Route exact path='/reviews/:name' component={Reviews} />
             <Route exact path='/watchlist/:name' component={WatchList} />
@@ -54,10 +54,10 @@ class App extends Component {
           <div>Built with <i className='fa fa-heartbeat' aria-hidden='true' /> at the Iron Yard</div>
         </footer>
         <Menu />
-        <Review />
-        <Route path='/movie/:id' component={MovieOverlay} />
-        <Route path='/tv/:id' component={TvOverlay} />
-        <Route path='/review/:id' component={ReviewOverlay} />
+        {/* <Route path='/movie/:id' component={MovieOverlay} /> */}
+        {/* <Route path='/tv/:id' component={TvOverlay} /> */}
+        {/* <Route path='/review/:id' component={ReviewOverlay} /> */}
+        <Route exact path='/overlay' component={Overlay} />
       </div>
     </Router>
   }

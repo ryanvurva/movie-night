@@ -1,0 +1,151 @@
+@import 'utility';
+@import 'reviewoverlay';
+
+.Overlay {
+  @extend .overlay-base;
+
+  .inner {
+    // height: 60vw;
+    width: 55vw;
+    background-color: #222;
+    padding: 10px;
+    box-shadow: 0 0 20px darken($theme-color, 30%);
+    display: flex;
+
+    .overlayLeft {
+      flex: 1;
+
+      img {
+        width: 100%;
+        max-width: 400px;
+      }
+
+      .userFeatures {
+
+        .Buttons {
+          padding: 5px 20px;
+          display: flex;
+          justify-content: space-between;
+          margin: 0 auto;
+
+          a {
+            color: inherit;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .overlayRight {
+      padding: 0 0 0 10px;
+      flex: 1;
+
+      display: flex;
+      flex-direction: column;
+
+      .overlayHeader {
+        background-color: darken($theme-color, 5%);
+        padding: 5px 5px 10px;
+
+        .Title {
+          display: flex;
+          justify-content: flex-start;
+          align-items: baseline;
+          padding-bottom: 3px;
+          border-bottom: thin solid darken($theme-color, 10%);
+
+          div {
+            // max-width: 25%;
+            // white-space: nowrap;
+            overflow-x: auto;
+            overflow: hidden;
+
+            h2 {
+              padding: 0 1em 0 0;
+              // margin: 0 1em 0 0;
+            }
+          }
+
+          p {
+            margin: 0 .3em;
+          }
+        }
+
+        .userPopularity {
+          margin-top: .3em;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          a {
+            color: $theme-font-color;
+            text-decoration: none;
+            margin: 0 .5em;
+
+            &:hover {
+              color: $theme-accent-color;
+            }
+          }
+
+          button {
+            background-color: transparent;
+            border: none;
+            color: $theme-font-color;
+            font-size: inherit;
+            cursor: pointer;
+
+            &:focus {
+              outline: 0;
+            }
+
+            &:hover {
+              color: $theme-accent-color;
+            }
+          }
+        }
+      }
+
+      .aboutThis {
+        flex: 1;
+        margin-top: 5px;
+        padding: 0 0 0 5px;
+        max-height: 400px;
+        overflow-y: auto;
+
+        p {
+          padding: 0;
+          margin: 0;
+        }
+      }
+
+      .exitOverlay {
+        display: flex;
+        justify-content: flex-end;
+        padding: 0 5px;
+        a {
+          color: $theme-font-color;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .Overlay {
+    .inner {
+      width: 80vw;
+    }
+  }
+}
+
+@media only screen and (max-width: 505px) {
+  .Overlay {
+    .inner {
+      width: 90vw;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

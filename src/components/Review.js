@@ -1,33 +1,26 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 import { observer } from 'mobx-react'
 
-import ui from '../ui'
-
-import fifthElement from '../images/movies/fifth-element.jpg'
-
 @observer
-class ReviewModal extends Component {
+class MovieOverlay extends Component {
+  _goBack () {
+    window.history.back()
+  }
   render () {
-    return <div className='overlay'>
-      <div className='Modal'>
-        <h2>What do <em>you</em> think?</h2>
-        <div className='Review'>
-          <div className='Siskel'>
-            <img src={fifthElement} />
-            <p>The Fifth Element</p>
-          </div>
-          <div className='Ebert'>
-            <form>
-              <textarea placeholder='Write a review...' />
-            </form>
-            <div className='reviewButtons'>
-              <button onClick={() => ui.toggleReview}>X</button><button>SUBMIT</button>
-            </div>
-          </div>
+    return <div className='reviewOverlay'>
+      <div className='inner'>
+        <div className='Review-image' />
+        <div className='Review-info'>
+          <p>The Fifth Element (1997)</p>
+          <form>
+            <textarea placeholder='Write a review...' />
+          </form>
+          <button>SUBMIT</button><button><NavLink to='#' onClick={this._goBack}>x</NavLink></button>
         </div>
       </div>
     </div>
   }
 }
 
-export default ReviewModal
+export default MovieOverlay

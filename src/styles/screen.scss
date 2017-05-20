@@ -8,9 +8,10 @@
 @import 'vault';
 @import 'home';
 @import 'review';
-@import 'movieoverlay';
-@import 'tvoverlay';
-@import 'reviewoverlay';
+// @import 'movieoverlay';
+// @import 'tvoverlay';
+// @import 'reviewoverlay';
+@import 'overlay';
 
 html {
   @include full-height;
@@ -82,12 +83,12 @@ footer {
 
   .Home,
   .Chat,
-  .Browse,
   .Profile,
   .Reviews,
   .WatchList,
   .Vault,
-  .LogIn {
+  .Movies,
+  .TV {
     padding-top: 70px;
     display: flex;
     flex-direction: column;
