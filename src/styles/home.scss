@@ -39,22 +39,28 @@
       padding: 10px;
       border-bottom: thick solid darken($theme-color, 10%);
 
-      .Home-review-section {
-        border: thin solid darken($theme-color, 10%);
+      .Home-review-card {
+        width: 100%;
+        margin-right: 1em;
 
-        .Critic {
-          border-bottom: thin solid darken($theme-color, 10%);
+        .Home-review-section {
+          border: thin solid darken($theme-color, 10%);
 
-          a {
-            padding: .5em;
-            text-decoration: none;
-            color: $theme-accent-color;
+          .Critic {
+            width: 90vw;
+            border-bottom: thin solid darken($theme-color, 10%);
+
+            a {
+              padding: .5em;
+              text-decoration: none;
+              color: $theme-accent-color;
+            }
           }
-        }
 
-        .Opinion {
-          // border: thin solid darken($theme-color, 10%);
-          padding: .5em;
+          .Opinion {
+            // border: thin solid darken($theme-color, 10%);
+            padding: .5em;
+          }
         }
       }
     }
