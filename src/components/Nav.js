@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 // import gravatar from 'gravatar'
-import ui from '../ui'
+import ui from './utils/ui'
 // import auth from './utils/auth'
 
 import Login from './Login'

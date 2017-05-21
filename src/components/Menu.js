@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { observer } from 'mobx-react'
 import cx from 'classnames'
-import ui from '../ui'
+import ui from './utils/ui'
 import auth from './utils/auth'
 
 import MobileLogin from './MobileLogin'
@@ -41,7 +41,7 @@ const Menu = () => (
           <li>|</li>
           <li><NavLink to='/reviews/:name'><i className='fa fa-address-book-o' aria-hidden='true' /> - Reviews</NavLink></li>
           <li>|</li>
-          <li><NavLink to='/chat/:name' title='...pre-beta'><i className='fa fa-comments' aria-hidden='true' /> - Chat <i className='fa fa-exclamation-circle' aria-hidden='true' /></NavLink></li>
+          <li><NavLink to='/chat/:name' title='...pre-beta'><i className='fa fa-comments-o' aria-hidden='true' /> - Chat <i className='fa fa-exclamation-circle' aria-hidden='true' /></NavLink></li>
         </ul>
       </section>
     </aside>

@@ -2,11 +2,10 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { observer } from 'mobx-react'
 
+// import store from './utils/store'
+
 import Card from './Card'
 import Card2 from './Card2'
-// import Buttons from './Buttons'
-
-// import auth from './utils/auth'
 
 import fifthElement from '../images/movies/fifth-element.jpg'
 import boondockSaints from '../images/movies/boondock-saints.jpg'
@@ -43,9 +42,6 @@ import walkingDead from '../images/tv/walking-dead.jpg'
 @observer
 class Home extends Component {
   state = {
-    // images: [fifthElement, boondockSaints, Anchorman, rogueOne, fightClub, findingNemo, forrestGump, ID4, ironMan, jurassicPark, Logan, pulpFiction, Shawshank, toyStory, Twister],
-    // titles: ['The Fifth Element', 'The Boondock Saints', 'Anchorman The Legend of Ron Burgundy', 'Rogue One, A Star Wars Story', 'Fight Club', 'Finding Nemo', 'Forrest Gump', 'Independence Day', 'Iron Man', 'Jurassic Park', 'Logan', 'Pulp Fiction', 'The Shawshank Redemption', 'Toy Story', 'Twister'],
-    // dates: ['1997', '1999', '2004', '2016', '1999', '2003', '1994', '1996', '2008', '1993', '2017', '1994', '1994', '1995', '1996'],
     movies: [
     {image: fifthElement, title: 'The Fifth Element', date: '1997'},
     {image: boondockSaints, title: 'The Boondock Saints', date: '1999'},

@@ -3,7 +3,7 @@ import { observer } from 'mobx-react'
 import gravatar from 'gravatar'
 
 import auth from './utils/auth'
-import ui from '../ui'
+// import ui from '../ui'
 import blankUser from '../images/user.svg'
 
 @observer

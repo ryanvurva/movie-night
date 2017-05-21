@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { observer } from 'mobx-react'
 
-import Buttons from './Buttons'
+// import Buttons from './Buttons'
 
-import auth from './utils/auth'
+// import auth from './utils/auth'
 
 // import fifthElement from '../images/movies/fifth-element.jpg'
 
@@ -18,7 +18,7 @@ class Card2 extends Component {
       <div className='Card-info'>
         <NavLink to={`/overlay/tv/${this.props.title}`}><p>{this.props.title}</p></NavLink>
         <p>({this.props.date})</p>
-        {auth.isSignedIn ? <Buttons /> : null}
+        {/* {auth.isSignedIn ? <Buttons /> : null} */}
       </div>
     </div>
   }

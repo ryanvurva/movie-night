@@ -4,46 +4,116 @@
 // page.  having issues with the layout of certain features that grids
 // might solve
 
-.profileHeader {
-  margin: 0;
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  border-bottom: 15px solid darken($theme-color, 5%);
-}
-
-.profilePic {
-  width: 30vw;
-  height:30vw;
-  margin: 10px;
-  border: 5px solid darken($theme-color, 10%);
-  border-radius: 5px;
-  box-shadow: 4px 4px 8px darken($theme-color, 5%);
-  background-color: lighten($theme-color, 20%);
-}
-
-.userName {
-  display: flex;
-  justify-content: flex-start;
-  align-items: baseline;
-
-  h1, h3, a {
-    margin: 0 auto 0 1em;
+.Profile {
+  .profileHeader {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-bottom: 15px solid darken($theme-color, 5%);
   }
 
-  a {
-    text-decoration: none;
-    color: inherit;
+  .profilePic {
+    width: 30vw;
+    height:30vw;
+    margin: 10px;
+    border: 5px solid darken($theme-color, 10%);
+    border-radius: 5px;
+    box-shadow: 4px 4px 8px darken($theme-color, 5%);
+    background-color: lighten($theme-color, 20%);
+  }
 
-    &:focus,
-    &:hover {
-      color: $theme-accent-color;
+  .profileInfo {
+    flex: 1;
+  }
+
+  .userName {
+    @include display-hor-spaceB;
+    align-items: baseline;
+    border-bottom: thin solid darken($theme-color, 5%);
+
+    h1 {
+      margin: 0;
+    }
+
+    .likes {
+      margin-right: 1em;
+    }
+
+    button {
+      background-color: transparent;
+      border: none;
+      text-decoration: none;
+      font-family: inherit;
+      font-size: 1.5em;
+      color: inherit;
+
+      &:focus,
+      &:hover {
+        color: $theme-accent-color;
+      }
+    }
+  }
+
+  section {
+    box-sizing: border-box;
+    padding: 20px;
+
+    .Home-title {
+      width: 100%;
+      @include display-hor-spaceB;
+      align-items: baseline;
+      margin-bottom: 10px;
+      border-bottom: thick solid darken($theme-color, 10%);
+
+      h2 {
+        padding: 0 10px;
+        margin: 0;
+      }
+
+      a {
+        padding: 0 10px;
+        text-decoration: none;
+        color: inherit;
+
+      }
+    }
+
+    .Home-content {
+      // box-sizing: border-box;
+      overflow-x: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: baseline;
+      // want to add scrollable content here
+      // width: auto;
+      // @include display-hor-spaceA;
+      padding: 10px;
+      border-bottom: thick solid darken($theme-color, 10%);
+
+      .Home-review-section {
+        border: thin solid darken($theme-color, 10%);
+
+        .Critic {
+          border-bottom: thin solid darken($theme-color, 10%);
+
+          a {
+            padding: .5em;
+            text-decoration: none;
+            color: $theme-accent-color;
+          }
+        }
+
+        .Opinion {
+          // border: thin solid darken($theme-color, 10%);
+          padding: .5em;
+        }
+      }
     }
   }
 }
-
-
 
 @media only screen and (max-width: 505px) {
   .userName {
