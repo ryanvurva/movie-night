@@ -57,7 +57,7 @@ class App extends Component {
         {/* <Route path='/movie/:id' component={MovieOverlay} /> */}
         {/* <Route path='/tv/:id' component={TvOverlay} /> */}
         {/* <Route path='/review/:id' component={ReviewOverlay} /> */}
-        <Route exact path='/overlay' component={Overlay} />
+        <Route path='/overlay/:type' component={Overlay} />
       </div>
     </Router>
   }

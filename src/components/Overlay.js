@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-// import { NavLink } from 'react-router-dom'
+import { withRouter, Route } from 'react-router-dom'
 import { observer } from 'mobx-react'
 
-// import TvOverlay from './TvOverlay'
-// import MovieOverlay from './MovieOverlay'
+import TvOverlay from './TvOverlay'
+import MovieOverlay from './MovieOverlay'
 import ReviewOverlay from './ReviewOverlay'
-// import Buttons from './Buttons'
 
 // import auth from './utils/auth.js'
 
@@ -18,11 +17,14 @@ class Overlay extends Component {
   }
   render () {
     return <div className='Overlay'>
+      <Route exact path='/overlay/movie/:title' component={MovieOverlay} />
+      <Route exact path='/overlay/tv/:title' component={TvOverlay} />
+      <Route exact path='/overlay/review/:title' component={ReviewOverlay} />
       {/* <TvOverlay /> */}
       {/* <MovieOverlay /> */}
-      <ReviewOverlay />
+      {/* <ReviewOverlay /> */}
     </div>
   }
 }
 
-export default Overlay
+export default withRouter(Overlay)

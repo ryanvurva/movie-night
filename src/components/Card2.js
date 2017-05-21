@@ -13,10 +13,10 @@ class Card2 extends Component {
   render () {
     return <div className='Card'>
       <div className='Card-image'>
-        <NavLink to={`/tv/${this.props.title}`}><img src={this.props.image} alt='' width='100%' /></NavLink>
+        <NavLink to={`/overlay/tv/${this.props.title}`}><img src={this.props.image} alt='' width='100%' /></NavLink>
       </div>
       <div className='Card-info'>
-        <NavLink to={`/tv/${this.props.title}`}><p>{this.props.title}</p></NavLink>
+        <NavLink to={`/overlay/tv/${this.props.title}`}><p>{this.props.title}</p></NavLink>
         <p>({this.props.date})</p>
         {auth.isSignedIn ? <Buttons /> : null}
       </div>
