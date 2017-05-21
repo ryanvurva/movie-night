@@ -4,9 +4,9 @@ import { observer } from 'mobx-react'
 
 import Card from './Card'
 import Card2 from './Card2'
-import Buttons from './Buttons'
+// import Buttons from './Buttons'
 
-import auth from './utils/auth'
+// import auth from './utils/auth'
 
 import fifthElement from '../images/movies/fifth-element.jpg'
 import boondockSaints from '../images/movies/boondock-saints.jpg'
@@ -114,7 +114,7 @@ class Home extends Component {
       </section>
       <section>
         <div className='Home-title'>
-          <h2>Popluar TV Series</h2>
+          <h2>Popular TV Series</h2>
           <NavLink to='/tv/popular'>...see all</NavLink>
         </div>
         <div className='Home-content'>

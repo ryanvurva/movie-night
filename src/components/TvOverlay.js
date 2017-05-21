@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { observer } from 'mobx-react'
 
 import Buttons from './Buttons'
+import LikeButtons from './LikeButtons'
 
 import auth from './utils/auth'
 
@@ -30,10 +31,7 @@ class TvOverlay extends Component {
           </div>
           <div className='userPopularity'>
             <NavLink to='/reviews/:show'>12 reviews</NavLink>
-            <div className='likes'>
-              <button><i className='fa fa-thumbs-o-up' aria-hidden='true' /> 122</button>
-              <button><i className='fa fa-thumbs-o-down' aria-hidden='true' /> 43</button>
-            </div>
+            {auth.isSignedIn ? <LikeButtons /> : null}
           </div>
         </div>
         <div className='aboutThis'>
