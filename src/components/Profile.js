@@ -104,12 +104,12 @@ class Profile extends Component {
     return <div className='Profile'>
       <div className='profileHeader'>
         <div className='profilePic'>
-          <img src={Ryan} alt='user profile image' width='100%' height='100%' />
+          <img src={auth.profile.picture} alt='user profile image' width='100%' height='100%' />
           {/* <img src={gravatar.url('ryanvurva@gmail.com')} alt='user profile image' width='100%' height='100%' /> */}
         </div>
         <div className='profileInfo'>
           <div className='userName'>
-            <h1>Ryan Vurva</h1>
+            <h1>{auth.profile.name}</h1>
             {auth.isSignedIn ? <LikeButtons /> : null}
           </div>
           <div>

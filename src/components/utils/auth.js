@@ -26,6 +26,7 @@ class Auth {
           })
         }
         this.profile = profile
+        console.log(profile)
       })
     })
 

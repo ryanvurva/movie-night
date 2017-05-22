@@ -6,6 +6,7 @@ import { observer } from 'mobx-react'
 
 import TMDB from '../images/powered-by-rectangle-blue.svg'
 
+import api from './utils/api'
 // import cx from 'classnames'
 // import ui from '../ui'
 

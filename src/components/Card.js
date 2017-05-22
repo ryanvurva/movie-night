@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { observer } from 'mobx-react'
 
+// import * as api from './utils/api'
+// import store from './utils/store'
+
 // import Buttons from './Buttons'
 
 // import auth from './utils/auth'
@@ -11,7 +14,7 @@ class Card extends Component {
   render () {
     return <div className='Card'>
       <div className='Card-image'>
-        <NavLink to={`/overlay/movie/${this.props.title}`}><img src={this.props.image} alt='' width='100%' /></NavLink>
+        <NavLink to={`/overlay/movie/${this.props.title}`}><img src={`https://image.tmdb.org/t/p/w500${this.props.image}`} alt='' width='100%' /></NavLink>
       </div>
       <div className='Card-info'>
         <NavLink to={`/overlay/movie/${this.props.title}`}><p>{this.props.title}</p></NavLink>

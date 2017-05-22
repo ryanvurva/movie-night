@@ -46,12 +46,13 @@ nav.Desktop {
     // height: 80px;
 
     .loginAvatar {
-      width: 1.5em;
-      height: 1.5em;
+      width: 1em;
+      height: 1em;
+      font-size: 2em;
     }
 
     img {
-      width: 1.5em;
+      width: 1.1em;
       margin: auto;
       border-radius: 25px;
     }
@@ -72,7 +73,7 @@ nav.Desktop {
   }
 
   .Login > div {
-    margin-right: .5em;
+    // margin-right: .5em;
   }
 }
 
