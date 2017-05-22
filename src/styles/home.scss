@@ -40,14 +40,17 @@
       border-bottom: thick solid darken($theme-color, 10%);
 
       .Home-review-card {
-        width: 100%;
+        // width: 100%;
         margin-right: 1em;
 
         .Home-review-section {
+          width: 90vw;
+          max-width: 940px;
           border: thin solid darken($theme-color, 10%);
+          margin-right: .7em;
 
           .Critic {
-            width: 90vw;
+            // width: 90vw;
             border-bottom: thin solid darken($theme-color, 10%);
 
             a {

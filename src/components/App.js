@@ -11,7 +11,7 @@ import TMDB from '../images/powered-by-rectangle-blue.svg'
 
 import Movies from './Movies'
 import TV from './Tv'
-import Chat from './Chat'
+// import Chat from './Chat'
 import Home from './Home'
 import Menu from './Menu'
 import Nav from './Nav'
@@ -33,7 +33,7 @@ class App extends Component {
             <Route exact path='/browse/movies' component={Movies} />
             <Route exact path='/browse/tv' component={TV} />
             <Route exact path='/user/:name' component={Profile} />
-            <Route exact path='/chat/:name' component={Chat} />
+            {/* <Route exact path='/chat/:name' component={Chat} /> */}
             <Route exact path='/reviews/:name' component={Reviews} />
             <Route exact path='/watchlist/:name' component={WatchList} />
             <Route exact path='/vault/:name' component={Vault} />

@@ -12,46 +12,46 @@
     justify-content: flex-start;
     align-items: flex-start;
     border-bottom: 15px solid darken($theme-color, 5%);
-  }
 
-  .profilePic {
-    width: 30vw;
-    height:30vw;
-    margin: 10px;
-    border: 5px solid darken($theme-color, 10%);
-    border-radius: 5px;
-    box-shadow: 4px 4px 8px darken($theme-color, 5%);
-    background-color: lighten($theme-color, 20%);
-  }
-
-  .profileInfo {
-    flex: 1;
-  }
-
-  .userName {
-    @include display-hor-spaceB;
-    align-items: baseline;
-    border-bottom: thin solid darken($theme-color, 5%);
-
-    h1 {
-      margin: 0;
+    .profilePic {
+      width: 30vw;
+      height:30vw;
+      margin: 10px;
+      border: 5px solid darken($theme-color, 10%);
+      border-radius: 5px;
+      box-shadow: 4px 4px 8px darken($theme-color, 5%);
+      background-color: lighten($theme-color, 20%);
     }
 
-    .likes {
-      margin-right: 1em;
-    }
+    .profileInfo {
+      flex: 1;
 
-    button {
-      background-color: transparent;
-      border: none;
-      text-decoration: none;
-      font-family: inherit;
-      font-size: 1.5em;
-      color: inherit;
+      .userName {
+        @include display-hor-spaceB;
+        align-items: baseline;
+        border-bottom: thin solid darken($theme-color, 5%);
 
-      &:focus,
-      &:hover {
-        color: $theme-accent-color;
+        h1 {
+          margin: 0;
+        }
+
+        .likes {
+          margin-right: 1em;
+        }
+
+        button {
+          background-color: transparent;
+          border: none;
+          text-decoration: none;
+          font-family: inherit;
+          font-size: 1.5em;
+          color: inherit;
+
+          &:focus,
+          &:hover {
+            color: $theme-accent-color;
+          }
+        }
       }
     }
   }
@@ -94,14 +94,16 @@
       border-bottom: thick solid darken($theme-color, 10%);
 
       .reviewCard {
-        width: 100%;
+        // width: 90vw;
         margin-right: 1em;
 
         .review-section {
+          width: 90vw;
+          max-width: 940px;
           border: thin solid darken($theme-color, 10%);
 
           .Critic {
-            width: 90vw;
+            // width: 90vw;
             border-bottom: thin solid darken($theme-color, 10%);
 
             a {

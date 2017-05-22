@@ -10,12 +10,12 @@ aside.menuMobile {
   box-sizing: border-box;
   position: fixed;
   z-index: 0;
-  top: 65px;
+  top: 0;
   right: 0;
   bottom: 0;
   background-color: transparentize(darken($theme-color, 10%), 0.1);
   color: lighten($theme-color, 50%);
-  padding: 1em;
+  padding: 80px 1em 1em;
   box-shadow: 0 0 20px transparentize($theme-color, 0.5);
   transform: translateX(0);
   transition: transform 200ms ease;

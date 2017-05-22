@@ -38,7 +38,6 @@
     .overlayRight {
       padding: 0 0 0 10px;
       flex: 1;
-
       display: flex;
       flex-direction: column;
 
@@ -47,22 +46,15 @@
         padding: 5px 5px 10px;
 
         .Title {
+          margin: 0;
           display: flex;
           justify-content: flex-start;
           align-items: baseline;
           padding-bottom: 3px;
           border-bottom: thin solid darken($theme-color, 10%);
 
-          div {
-            // max-width: 25%;
-            // white-space: nowrap;
-            overflow-x: auto;
-            overflow: hidden;
-
-            h2 {
-              padding: 0 1em 0 0;
-              margin: 0;
-            }
+          h2 {
+            margin: 0;
           }
 
           p {

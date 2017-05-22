@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { observer } from 'mobx-react'
 
-import Buttons from './Buttons'
+// import Buttons from './Buttons'
 import LikeButtons from './LikeButtons'
 
 import auth from './utils/auth'
@@ -18,9 +18,9 @@ class ReviewOverlay extends Component {
     return <div className='inner'>
       <div className='overlayLeft'>
         <img src={pic} />
-        <div className='userFeatures'>
+        {/* <div className='userFeatures'>
           {auth.isSignedIn ? <Buttons /> : null}
-        </div>
+        </div> */}
       </div>
       <div className='overlayRight'>
         <div className='overlayHeader'>

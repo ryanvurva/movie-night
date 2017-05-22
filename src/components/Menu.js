@@ -25,7 +25,7 @@ const Menu = () => (
           <li onClick={() => ui.toggleMenu()}><NavLink to='/reviews/:name'><i className='fa fa-address-book-o' aria-hidden='true' /> - Reviews</NavLink></li>
           <li onClick={() => ui.toggleMenu()}><NavLink to='/watchlist/:name'><i className='fa fa-eye' aria-hidden='true' /> - Watch List</NavLink></li>
           <li onClick={() => ui.toggleMenu()}><NavLink to='/vault/:name'><i className='fa fa-university' aria-hidden='true' /> - Vaults</NavLink></li>
-          <li onClick={() => ui.toggleMenu()}><NavLink to='/chat/:name' title='...pre-beta'><i className='fa fa-comments' aria-hidden='true' /> - Chat <i className='fa fa-exclamation-circle' aria-hidden='true' /></NavLink></li>
+          {/* <li onClick={() => ui.toggleMenu()}><NavLink to='/chat/:name' title='...pre-beta'><i className='fa fa-comments' aria-hidden='true' /> - Chat <i className='fa fa-exclamation-circle' aria-hidden='true' /></NavLink></li> */}
         </ul>
       </section>
     </aside>
@@ -40,8 +40,8 @@ const Menu = () => (
           <li><NavLink to='/browse/tv'><i className='fa fa-television' aria-hidden='true' /> - TV</NavLink></li>
           <li>|</li>
           <li><NavLink to='/reviews/:name'><i className='fa fa-address-book-o' aria-hidden='true' /> - Reviews</NavLink></li>
-          <li>|</li>
-          <li><NavLink to='/chat/:name' title='...pre-beta'><i className='fa fa-comments-o' aria-hidden='true' /> - Chat <i className='fa fa-exclamation-circle' aria-hidden='true' /></NavLink></li>
+          {/* <li>|</li> */}
+          {/* <li><NavLink to='/chat/:name' title='...pre-beta'><i className='fa fa-comments-o' aria-hidden='true' /> - Chat <i className='fa fa-exclamation-circle' aria-hidden='true' /></NavLink></li> */}
         </ul>
       </section>
     </aside>
