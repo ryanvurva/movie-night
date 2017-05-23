@@ -7,10 +7,10 @@ class Store {
 
   @action load () {
     if (auth.isSignedIn) {
-      console.log('here')
+      // console.log('here')
       api.get('/movie/popular').then((data) => {
         this.movies = data
-        console.log(data)
+        // console.log(data)
       })
     }
   }

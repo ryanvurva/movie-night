@@ -6,14 +6,14 @@ import { observer } from 'mobx-react'
 
 import TMDB from '../images/powered-by-rectangle-blue.svg'
 
-import api from './utils/api'
+// import api from './utils/api'
 // import cx from 'classnames'
 // import ui from '../ui'
 
 import Movies from './Movies'
 import TV from './Tv'
 // import Chat from './Chat'
-import Home from './Home'
+import Home from './Test'
 import Menu from './Menu'
 import Nav from './Nav'
 import Profile from './Profile'
