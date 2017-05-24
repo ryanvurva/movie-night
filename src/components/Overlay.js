@@ -12,14 +12,11 @@ import ReviewOverlay from './ReviewOverlay'
 
 @observer
 class Overlay extends Component {
-  _goBack () {
-    window.history.back()
-  }
   render () {
     return <div className='Overlay'>
-      <Route exact path='/overlay/movie/:title' component={MovieOverlay} />
-      <Route exact path='/overlay/tv/:title' component={TvOverlay} />
-      <Route exact path='/overlay/review/:title' component={ReviewOverlay} />
+      <Route exact path='/overlay/movie/:id' component={MovieOverlay} />
+      <Route exact path='/overlay/tv/:id' component={TvOverlay} />
+      <Route exact path='/overlay/review/:id' component={ReviewOverlay} />
       {/* <TvOverlay /> */}
       {/* <MovieOverlay /> */}
       {/* <ReviewOverlay /> */}

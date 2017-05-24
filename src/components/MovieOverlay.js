@@ -6,18 +6,32 @@ import Buttons from './Buttons'
 import LikeButtons from './LikeButtons'
 
 import auth from './utils/auth'
+import { get } from './utils/api'
 
 import pic from '../images/movies/rogue-one.jpg'
 
 @observer
 class MovieOverlay extends Component {
+  state = {
+    thisMovie: []
+  }
   _goBack () {
     window.history.back()
   }
+
+  componentDidMount () {
+    get(`/movie/${this.props.match.params.id}`).then((data) => {
+      // console.log(data)
+      this.setState({ thisMovie: data })
+    })
+    // console.log(`do a fetch to /movies/${this.props.match.params.id}`)
+  }
+
   render () {
+    const movie = this.state.thisMovie
     return <div className='inner'>
       <div className='overlayLeft'>
-        <img src={pic} />
+        <img src={`http://image.tmdb.org/t/p/w342${movie.poster_path}`} />
         <div className='userFeatures'>
           {auth.isSignedIn ? <Buttons /> : null}
         </div>
@@ -26,10 +40,10 @@ class MovieOverlay extends Component {
         <div className='overlayHeader'>
           <div className='Title'>
             <div>
-              <h2>Rogue One, A Star Wars Movie</h2>
+              <h2>{movie.title}</h2>
+              {/* <h2>Rogue One, A Star Wars Story</h2> */}
             </div>
-            <p>(2016)</p>
-            <p>PG-13</p>
+            <p>{movie.release_date}</p>
           </div>
           <div className='userPopularity'>
             <NavLink to='/reviews/:movie'>73 reviews</NavLink>
@@ -37,7 +51,7 @@ class MovieOverlay extends Component {
           </div>
         </div>
         <div className='aboutThis'>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>{movie.overview}</p>
         </div>
         <div className='exitOverlay'>
           <NavLink to='#' onClick={this._goBack}><i className='fa fa-times-circle' aria-hidden='true' /> close</NavLink>

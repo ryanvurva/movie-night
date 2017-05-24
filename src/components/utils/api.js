@@ -6,7 +6,7 @@ const get = (path, query) => {
   if (query) {
     url += '&query=' + query
   }
-  console.log(url)
+  // console.log(url)
   return window.fetch(url).then((response) => {
     return response.json()
   })

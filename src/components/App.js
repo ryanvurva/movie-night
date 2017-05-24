@@ -13,7 +13,7 @@ import TMDB from '../images/powered-by-rectangle-blue.svg'
 import Movies from './Movies'
 import TV from './Tv'
 // import Chat from './Chat'
-import Home from './Test'
+import Home from './Home'
 import Menu from './Menu'
 import Nav from './Nav'
 import Profile from './Profile'
@@ -38,7 +38,7 @@ class App extends Component {
             <Route exact path='/reviews/:name' component={Reviews} />
             <Route exact path='/watchlist/:name' component={WatchList} />
             <Route exact path='/vault/:name' component={Vault} />
-            <Route path='/' component={Home} />
+            <Route exact path='/' component={Home} />
           </Switch>
         </main>
         <footer>

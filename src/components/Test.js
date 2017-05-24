@@ -5,62 +5,92 @@ import { observer } from 'mobx-react'
 import { get } from './utils/api'
 // import store from './utils/store'
 
-import Card3 from './Card'
-// import Card2 from './Card2'
+import Card from './Card'
+import Card2 from './Card2'
 
 @observer
 class Home extends Component {
   state = {
-    movies: []
-    // tv: []
+    popularMovies: [],
+    playingMovies: [],
+    upcomingMovies: [],
+    popularTv: [],
+    topRatedTv: []
   }
 
   componentWillMount () {
     get('/movie/popular').then((data) => {
-      console.log(data.results)
-      this.setState({ movies: data.results })
+      // console.log(data.results)
+      this.setState({ popularMovies: data.results })
+    })
+    get('/movie/now_playing').then((data) => {
+      // console.log(data.results)
+      this.setState({ playingMovies: data.results })
+    })
+    get('/movie/upcoming').then((data) => {
+      // console.log(data.results)
+      this.setState({ upcomingMovies: data.results })
+    })
+    get('/tv/popular').then((data) => {
+      // console.log(data.results)
+      this.setState({ popularTv: data.results })
+    })
+    get('/tv/top_rated').then((data) => {
+      // console.log(data.results)
+      this.setState({ topRatedTv: data.results })
     })
   }
-
-  componentDidMount () {
-    get('/movie/popular').then((data) => {
-      // console.log(data)
-      this.setState({ movies: data.results })
-    })
-  }
-
-  // componentWillUpdate () {
-  //   get('/movie/popular').then((data) => {
-  //     console.log(data)
-  //     this.setState({ movies: data })
-  //   })
-  // }
   render () {
-    // api.get('/movie/popular').then((data) => {
-    //   console.log(data)
-    //   this.setState({ movies: data.results })
-    // })
-
-    const { movies } = this.state
-    const movieCards = movies.map((movieItem, i) => {
-      return <Card3
-        image={movieItem.backdrop_path}
+    const { popularMovies } = this.state
+    const popularMovieCards = popularMovies.map((movieItem, i) => {
+      return <Card
+        image={movieItem.poster_path}
         title={movieItem.title}
         date={movieItem.release_date}
         position={i}
         key={i}
       />
     })
-    // const { tv } = this.state
-    // const tvCards = tv.map((tvItem, i) => {
-    //   return <Card2
-    //     image={tvItem.image}
-    //     title={tvItem.title}
-    //     date={tvItem.date}
-    //     position={i}
-    //     key={i}
-    //   />
-    // })
+    const { playingMovies } = this.state
+    const playingMovieCards = playingMovies.map((movieItem, i) => {
+      return <Card
+        image={movieItem.poster_path}
+        title={movieItem.title}
+        date={movieItem.release_date}
+        position={i}
+        key={i}
+      />
+    })
+    const { upcomingMovies } = this.state
+    const upcomingMovieCards = upcomingMovies.map((movieItem, i) => {
+      return <Card
+        image={movieItem.poster_path}
+        title={movieItem.title}
+        date={movieItem.release_date}
+        position={i}
+        key={i}
+      />
+    })
+    const { popularTv } = this.state
+    const popularTvCards = popularTv.map((tvItem, i) => {
+      return <Card2
+        image={tvItem.poster_path}
+        title={tvItem.name}
+        date={tvItem.first_air_date}
+        position={i}
+        key={i}
+      />
+    })
+    const { topRatedTv } = this.state
+    const topRatedTvCards = topRatedTv.map((tvItem, i) => {
+      return <Card2
+        image={tvItem.poster_path}
+        title={tvItem.name}
+        date={tvItem.first_air_date}
+        position={i}
+        key={i}
+      />
+    })
     return <div className='Home'>
       <section>
         <div className='Home-title'>
@@ -68,7 +98,25 @@ class Home extends Component {
           <NavLink to='/movies/popular'>...see all</NavLink>
         </div>
         <div className='Home-content'>
-          {movieCards}
+          {popularMovieCards}
+        </div>
+      </section>
+      <section>
+        <div className='Home-title'>
+          <h2>In Theaters</h2>
+          <NavLink to='/movies/latest'>...see all</NavLink>
+        </div>
+        <div className='Home-content'>
+          {playingMovieCards}
+        </div>
+      </section>
+      <section>
+        <div className='Home-title'>
+          <h2>Coming Soon</h2>
+          <NavLink to='/movies/upcoming'>...see all</NavLink>
+        </div>
+        <div className='Home-content'>
+          {upcomingMovieCards}
         </div>
       </section>
       <section>
@@ -77,7 +125,16 @@ class Home extends Component {
           <NavLink to='/tv/popular'>...see all</NavLink>
         </div>
         <div className='Home-content'>
-          {/* {tvCards} */}
+          {popularTvCards}
+        </div>
+      </section>
+      <section>
+        <div className='Home-title'>
+          <h2>Top Rated TV Series</h2>
+          <NavLink to='/tv/popular'>...see all</NavLink>
+        </div>
+        <div className='Home-content'>
+          {topRatedTvCards}
         </div>
       </section>
       <section>
