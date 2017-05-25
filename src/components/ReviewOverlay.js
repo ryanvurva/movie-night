@@ -6,30 +6,35 @@ import { observer } from 'mobx-react'
 import LikeButtons from './LikeButtons'
 
 import auth from './utils/auth'
+import { get } from './utils/api'
 
-import pic from '../images/movies/Logan.jpg'
+// import pic from '../images/movies/Logan.jpg'
 
 @observer
 class ReviewOverlay extends Component {
+  state = {
+    thisMovie: []
+  }
   _goBack () {
     window.history.back()
   }
+  componentDidMount () {
+    get(`/movie/${this.props.match.params.id}`).then((data) => {
+      this.setState({ thisMovie: data })
+    })
+  }
   render () {
+    const review = this.state.thisMovie
     return <div className='inner'>
       <div className='overlayLeft'>
-        <img src={pic} />
-        {/* <div className='userFeatures'>
-          {auth.isSignedIn ? <Buttons /> : null}
-        </div> */}
+        <img src={`http://image.tmdb.org/t/p/w342${review.poster_path}`} />
       </div>
       <div className='overlayRight'>
         <div className='overlayHeader'>
           <div className='Title'>
             <div>
-              <h2>Logan</h2>
+              <h2>{review.title}</h2>
             </div>
-            <p>(2017)</p>
-            <p>R</p>
           </div>
           <div className='userPopularity'>
             <NavLink to='/reviews/:movie'>58 reviews</NavLink>

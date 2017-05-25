@@ -8,7 +8,7 @@ import LikeButtons from './LikeButtons'
 import auth from './utils/auth'
 import { get } from './utils/api'
 
-import pic from '../images/movies/rogue-one.jpg'
+// import pic from '../images/movies/rogue-one.jpg'
 
 @observer
 class MovieOverlay extends Component {
@@ -33,7 +33,7 @@ class MovieOverlay extends Component {
       <div className='overlayLeft'>
         <img src={`http://image.tmdb.org/t/p/w342${movie.poster_path}`} />
         <div className='userFeatures'>
-          {auth.isSignedIn ? <Buttons /> : null}
+          {auth.isSignedIn ? <Buttons id={movie.id} /> : null}
         </div>
       </div>
       <div className='overlayRight'>
@@ -41,9 +41,8 @@ class MovieOverlay extends Component {
           <div className='Title'>
             <div>
               <h2>{movie.title}</h2>
-              {/* <h2>Rogue One, A Star Wars Story</h2> */}
             </div>
-            <p>{movie.release_date}</p>
+            <p>({movie.release_date})</p>
           </div>
           <div className='userPopularity'>
             <NavLink to='/reviews/:movie'>73 reviews</NavLink>

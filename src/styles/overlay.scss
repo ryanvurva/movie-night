@@ -47,9 +47,9 @@
 
         .Title {
           margin: 0;
-          display: flex;
-          justify-content: flex-start;
-          align-items: baseline;
+          // display: flex;
+          // justify-content: flex-start;
+          // align-items: baseline;
           padding-bottom: 3px;
           border-bottom: thin solid darken($theme-color, 10%);
 
@@ -166,7 +166,13 @@
 @media only screen and (max-width: 505px) {
   .Overlay {
     .inner {
+      display: block;
+      overflow-y: auto;
       width: 90vw;
+      height: 92vh;
+      border-bottom: 10px solid #222;
+      border-top: 10px solid #222;
+      padding-top: 0;
       img {
         width: 100%;
       }
