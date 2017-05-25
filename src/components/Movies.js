@@ -1,86 +1,221 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+// import { NavLink } from 'react-router-dom'
 import { observer } from 'mobx-react'
+
 // import auth from './utils/auth.js'
 // import ui from '../ui'
+import { get } from './utils/api'
 
 import Card from './Card'
 // import Buttons from './Buttons'
 
-import fifthElement from '../images/movies/fifth-element.jpg'
-import boondockSaints from '../images/movies/boondock-saints.jpg'
-import Anchorman from '../images/movies/anchorman.jpg'
-import rogueOne from '../images/movies/rogue-one.jpg'
-import fightClub from '../images/movies/fight-club.jpg'
-import findingNemo from '../images/movies/finding-nemo.jpg'
-import forrestGump from '../images/movies/forrest-gump.jpg'
-import ID4 from '../images/movies/id4.jpg'
-import ironMan from '../images/movies/iron-man.jpg'
-import jurassicPark from '../images/movies/jurassic-park.jpg'
-import Logan from '../images/movies/Logan.jpg'
-import pulpFiction from '../images/movies/pulp-fiction.jpg'
-import Shawshank from '../images/movies/shawshank.jpg'
-import toyStory from '../images/movies/toy-story.jpg'
-import Twister from '../images/movies/twister.jpg'
-
 @observer
 class Movies extends Component {
   state = {
-    movies: [
-    {image: fifthElement, title: 'The Fifth Element', date: '1997'},
-    {image: boondockSaints, title: 'The Boondock Saints', date: '1999'},
-    {image: Anchorman, title: 'Anchorman The Legend of Ron Burgundy', date: '2004'},
-    {image: rogueOne, title: 'Rogue One, A Star Wars Story', date: '2016'},
-    {image: fightClub, title: 'Fight Club', date: '1999'},
-    {image: findingNemo, title: 'Finding Nemo', date: '2003'},
-    {image: forrestGump, title: 'Forrest Gump', date: '1994'},
-    {image: ID4, title: 'Independence Day', date: '1996'},
-    {image: ironMan, title: 'Iron Man', date: '2008'},
-    {image: jurassicPark, title: 'Jurassic Park', date: '1993'},
-    {image: Logan, title: 'Logan', date: '2017'},
-    {image: pulpFiction, title: 'Pulp Fiction', date: '1994'},
-    {image: Shawshank, title: 'The Shawshank Redemption', date: '1994'},
-    {image: toyStory, title: 'Toy Story', date: '1995'},
-    {image: Twister, title: 'Twister', date: '1996'}
-    ]
+    popularMovies: [],
+    genres: [],
+    action: [],
+    animation: [],
+    comedy: [],
+    family: [],
+    scienceFiction: [],
+    horror: [],
+    documentary: []
+  }
+  componentDidMount () {
+    get('/movie/popular').then((data) => {
+      this.setState({ popularMovies: data.results })
+    })
+    get('/genre/movie/list').then((data) => {
+      this.setState({ genres: data.genres })
+    })
+    get('/genre/28/movies').then((data) => {
+      this.setState({ action: data.results })
+    })
+    get('/genre/16/movies').then((data) => {
+      this.setState({ animation: data.results })
+    })
+    get('/genre/35/movies').then((data) => {
+      console.log(data.results)
+      this.setState({ comedy: data.results })
+    })
+    get('/genre/10751/movies').then((data) => {
+      console.log(data.results)
+      this.setState({ family: data.results })
+    })
+    get('/genre/878/movies').then((data) => {
+      console.log(data.results)
+      this.setState({ scienceFiction: data.results })
+    })
+    get('/genre/27/movies').then((data) => {
+      console.log(data.results)
+      this.setState({ horror: data.results })
+    })
+    get('/genre/99/movies').then((data) => {
+      console.log(data.results)
+      this.setState({ documentary: data.results })
+    })
   }
   render () {
-    const { movies } = this.state
-    const cards = movies.map(({image, title, date}, i) => {
+    const { popularMovies } = this.state
+    const popularMovieCards = popularMovies.map((movieItem, i) => {
       return <Card
-        image={image}
-        title={title}
-        date={date}
-        position={i}
-        key={i}
-      />
-    })
-    const cards2 = movies.map(({image, title, date}, i) => {
-      return <Card
-        image={image}
-        title={title}
-        date={date}
+        image={movieItem.poster_path}
+        title={movieItem.title}
+        date={movieItem.release_date}
+        id={movieItem.id}
         position={i}
         key={i}
       />
     }).reverse()
+    const { action } = this.state
+    const actionMovies = action.map((movieItem, i) => {
+      return <Card
+        image={movieItem.poster_path}
+        title={movieItem.title}
+        date={movieItem.release_date}
+        id={movieItem.id}
+        position={i}
+        key={i}
+      />
+    })
+    const { animation } = this.state
+    const animatedMovies = animation.map((movieItem, i) => {
+      return <Card
+        image={movieItem.poster_path}
+        title={movieItem.title}
+        date={movieItem.release_date}
+        id={movieItem.id}
+        position={i}
+        key={i}
+      />
+    })
+    const { comedy } = this.state
+    const comedyMovies = comedy.map((movieItem, i) => {
+      return <Card
+        image={movieItem.poster_path}
+        title={movieItem.title}
+        date={movieItem.release_date}
+        id={movieItem.id}
+        position={i}
+        key={i}
+      />
+    })
+    const { family } = this.state
+    const familyMovies = family.map((movieItem, i) => {
+      return <Card
+        image={movieItem.poster_path}
+        title={movieItem.title}
+        date={movieItem.release_date}
+        id={movieItem.id}
+        position={i}
+        key={i}
+      />
+    })
+    const { scienceFiction } = this.state
+    const scienceMovies = scienceFiction.map((movieItem, i) => {
+      return <Card
+        image={movieItem.poster_path}
+        title={movieItem.title}
+        date={movieItem.release_date}
+        id={movieItem.id}
+        position={i}
+        key={i}
+      />
+    })
+    const { horror } = this.state
+    const horrorMovies = horror.map((movieItem, i) => {
+      return <Card
+        image={movieItem.poster_path}
+        title={movieItem.title}
+        date={movieItem.release_date}
+        id={movieItem.id}
+        position={i}
+        key={i}
+      />
+    })
+    const { documentary } = this.state
+    const docMovies = documentary.map((movieItem, i) => {
+      return <Card
+        image={movieItem.poster_path}
+        title={movieItem.title}
+        date={movieItem.release_date}
+        id={movieItem.id}
+        position={i}
+        key={i}
+      />
+    })
     return <div className='Movies'>
       <section>
         <div className='Movies-title'>
           <h2>Featured Movies</h2>
-          <NavLink to='/movies/featured'>...see all</NavLink>
+          {/* <NavLink to='/movies/featured'>...see all</NavLink> */}
         </div>
         <div className='Movies-content'>
-          {cards}
+          {popularMovieCards}
         </div>
       </section>
       <section>
         <div className='Movies-title'>
-          <h2>Popular Movies</h2>
-          <NavLink to='/movies/popular'>...see all</NavLink>
+          <h2>Action</h2>
+          {/* <NavLink to='/movies/featured'>...see all</NavLink> */}
         </div>
         <div className='Movies-content'>
-          {cards2}
+          {actionMovies}
+        </div>
+      </section>
+      <section>
+        <div className='Movies-title'>
+          <h2>Animated</h2>
+          {/* <NavLink to='/movies/featured'>...see all</NavLink> */}
+        </div>
+        <div className='Movies-content'>
+          {animatedMovies}
+        </div>
+      </section>
+      <section>
+        <div className='Movies-title'>
+          <h2>Comedies</h2>
+          {/* <NavLink to='/movies/featured'>...see all</NavLink> */}
+        </div>
+        <div className='Movies-content'>
+          {comedyMovies}
+        </div>
+      </section>
+      <section>
+        <div className='Movies-title'>
+          <h2>Family</h2>
+          {/* <NavLink to='/movies/featured'>...see all</NavLink> */}
+        </div>
+        <div className='Movies-content'>
+          {familyMovies}
+        </div>
+      </section>
+      <section>
+        <div className='Movies-title'>
+          <h2>Science Fiction</h2>
+          {/* <NavLink to='/movies/featured'>...see all</NavLink> */}
+        </div>
+        <div className='Movies-content'>
+          {scienceMovies}
+        </div>
+      </section>
+      <section>
+        <div className='Movies-title'>
+          <h2>Horror</h2>
+          {/* <NavLink to='/movies/featured'>...see all</NavLink> */}
+        </div>
+        <div className='Movies-content'>
+          {horrorMovies}
+        </div>
+      </section>
+      <section>
+        <div className='Movies-title'>
+          <h2>Documentaries</h2>
+          {/* <NavLink to='/movies/featured'>...see all</NavLink> */}
+        </div>
+        <div className='Movies-content'>
+          {docMovies}
         </div>
       </section>
     </div>

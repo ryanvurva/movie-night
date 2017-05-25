@@ -20,19 +20,15 @@ class Home extends Component {
 
   componentDidMount () {
     get('/movie/popular').then((data) => {
-      // console.log(data.results)
       this.setState({ popularMovies: data.results })
     })
     get('/movie/now_playing').then((data) => {
-      // console.log(data.results)
       this.setState({ playingMovies: data.results })
     })
     get('/movie/upcoming').then((data) => {
-      // console.log(data.results)
       this.setState({ upcomingMovies: data.results })
     })
     get('/tv/popular').then((data) => {
-      // console.log(data.results)
       this.setState({ popularTv: data.results })
     })
     get('/tv/top_rated').then((data) => {
