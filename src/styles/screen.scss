@@ -9,6 +9,7 @@
 @import 'vault';
 @import 'home';
 @import 'overlay';
+@import 'search';
 
 html {
   @include full-height;
@@ -48,6 +49,7 @@ main {
 .WatchList,
 .Vault,
 .Movies,
+.Search,
 .TV {
   padding: 145px 0 0;
   display: flex;

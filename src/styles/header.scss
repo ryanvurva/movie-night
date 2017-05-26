@@ -29,9 +29,12 @@ nav.Desktop {
   .desktopSearch {
     margin: 5px;
 
-    input {
-      width: 100%;
+    form {
+      input {
+        width: 100%;
+      }
     }
+
   }
 
   .Login {

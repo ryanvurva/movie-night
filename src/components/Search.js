@@ -9,8 +9,7 @@ import { get } from './utils/api'
 class Search extends Component {
   state = {
     query: null,
-    entries: [],
-    type: []
+    entries: []
   }
 
   componentDidMount () {

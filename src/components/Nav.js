@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
-// import gravatar from 'gravatar'
+
 import ui from './utils/ui'
-// import auth from './utils/auth'
+// import { get } from './utils/api'
 
 import Login from './Login'
+import Searchform from './Searchform'
 
 class Nav extends Component {
   render () {
@@ -15,16 +16,10 @@ class Nav extends Component {
         </div>
         <div className='desktopSearch'>
           <div>
-            <input type='search' placeholder='search' />
+            <Searchform />
           </div>
-          {/* TODO */}
           <Login />
         </div>
-        {/* <div className='Login'>
-          <input type='search' placeholder='search' /> */}
-        {/* <button><i className='fa fa-user' aria-hidden='true' /> Log in/Sign up</button> */}
-        {/* <button><img src={blankUser} /> Log in/Sign up</button>
-        </div> */}
       </nav>
       <nav className='Mobile'>
         <div className='Logo'>

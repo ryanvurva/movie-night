@@ -21,6 +21,7 @@ import Reviews from './Reviews'
 import Vault from './Vault'
 import WatchList from './WatchList'
 import Overlay from './Overlay'
+import Search from './Test'
 
 @observer
 class App extends Component {
@@ -34,7 +35,7 @@ class App extends Component {
             <Route exact path='/browse/movies' component={Movies} />
             <Route exact path='/browse/tv' component={TV} />
             <Route exact path='/user/:name' component={Profile} />
-            {/* <Route exact path='/chat/:name' component={Chat} /> */}
+            <Route exact path='/search/:query' component={Search} />
             <Route exact path='/reviews/:name' component={Reviews} />
             <Route exact path='/watchlist/:name' component={WatchList} />
             <Route exact path='/vault/:name' component={Vault} />

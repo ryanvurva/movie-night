@@ -23,7 +23,7 @@ class TV extends Component {
       this.setState({ airingToday: data.results })
     })
     get('/tv/top_rated').then((data) => {
-      console.log(data.results)
+      // console.log(data.results)
       this.setState({ topRated: data.results })
     })
     // get('/discover/tv').then((data) => {
