@@ -96,7 +96,7 @@ class Home extends Component {
       <section>
         <div className='Home-title'>
           <h2>Popular Movies</h2>
-          <NavLink to='/movies/popular'>...see all</NavLink>
+          {/* <NavLink to='/movies/popular'>...see all</NavLink> */}
         </div>
         <div className='Home-content'>
           {popularMovieCards}
@@ -105,7 +105,7 @@ class Home extends Component {
       <section>
         <div className='Home-title'>
           <h2>In Theaters</h2>
-          <NavLink to='/movies/latest'>...see all</NavLink>
+          {/* <NavLink to='/movies/latest'>...see all</NavLink> */}
         </div>
         <div className='Home-content'>
           {playingMovieCards}
@@ -114,7 +114,7 @@ class Home extends Component {
       <section>
         <div className='Home-title'>
           <h2>Coming Soon</h2>
-          <NavLink to='/movies/upcoming'>...see all</NavLink>
+          {/* <NavLink to='/movies/upcoming'>...see all</NavLink> */}
         </div>
         <div className='Home-content'>
           {upcomingMovieCards}
@@ -123,7 +123,7 @@ class Home extends Component {
       <section>
         <div className='Home-title'>
           <h2>Popular TV Series</h2>
-          <NavLink to='/tv/popular'>...see all</NavLink>
+          {/* <NavLink to='/tv/popular'>...see all</NavLink> */}
         </div>
         <div className='Home-content'>
           {popularTvCards}
@@ -132,7 +132,7 @@ class Home extends Component {
       <section>
         <div className='Home-title'>
           <h2>Top Rated TV Series</h2>
-          <NavLink to='/tv/top-rated'>...see all</NavLink>
+          {/* <NavLink to='/tv/top-rated'>...see all</NavLink> */}
         </div>
         <div className='Home-content'>
           {topRatedTvCards}
@@ -141,7 +141,7 @@ class Home extends Component {
       <section>
         <div className='Home-title'>
           <h2>Recent Reviews</h2>
-          <NavLink to='/reviews'>...see all</NavLink>
+          {/* <NavLink to='/reviews'>...see all</NavLink> */}
         </div>
         <div className='Home-content'>
           <div className='Home-review-card'>

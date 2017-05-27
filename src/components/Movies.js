@@ -36,23 +36,23 @@ class Movies extends Component {
       this.setState({ animation: data.results })
     })
     get('/genre/35/movies').then((data) => {
-      console.log(data.results)
+      // console.log(data.results)
       this.setState({ comedy: data.results })
     })
     get('/genre/10751/movies').then((data) => {
-      console.log(data.results)
+      // console.log(data.results)
       this.setState({ family: data.results })
     })
     get('/genre/878/movies').then((data) => {
-      console.log(data.results)
+      // console.log(data.results)
       this.setState({ scienceFiction: data.results })
     })
     get('/genre/27/movies').then((data) => {
-      console.log(data.results)
+      // console.log(data.results)
       this.setState({ horror: data.results })
     })
     get('/genre/99/movies').then((data) => {
-      console.log(data.results)
+      // console.log(data.results)
       this.setState({ documentary: data.results })
     })
   }

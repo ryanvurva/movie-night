@@ -15,6 +15,14 @@ class Store {
     }
   }
 
+  @action _submit = (event) => {
+    event.preventDefault()
+    const query = this.refs.query.value
+    const path = query.length > 0 ? `/search/${query}` : '/'
+    this.refs.query.value = ''
+    this.props.history.push(path)
+  }
+
   // @action addItem (text) {
   //   api.post('/items', { item: { text } })
   //     .then(data => this.items.push(data))

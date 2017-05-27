@@ -30,7 +30,6 @@ class Search extends Component {
   //       this.setState({ entries: data.results })
   //     })
   //   }
-  //   this.doSearch()
   // }
 
   render () {
