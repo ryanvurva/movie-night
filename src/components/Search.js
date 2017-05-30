@@ -4,12 +4,15 @@ import Card from './Card'
 // import Card2 from './Card2'
 // import EntryList from './EntryList'
 
+import defaultPic from '../images/default.jpg'
+
 import { get } from './utils/api'
 
 class Search extends Component {
   state = {
     query: null,
-    entries: []
+    entries: [],
+    type: []
   }
 
   componentDidMount () {
@@ -30,11 +33,23 @@ class Search extends Component {
   //       this.setState({ entries: data.results })
   //     })
   //   }
+  //   this.doSearch()
   // }
 
   render () {
     const { entries } = this.state
     const results = entries.map((movieItem, i) => {
+      if (movieItem.title === null || movieItem.title === undefined) {
+        movieItem.title = movieItem.name
+      }
+      if (movieItem.release_date === null || movieItem.release_date === undefined) {
+        movieItem.release_date = movieItem.first_air_date
+      }
+      if (movieItem.poster_path === null || movieItem.poster_path === undefined) {
+        movieItem.poster_path = defaultPic
+      } else {
+        movieItem.poster_path = 'http://image.tmdb.org/t/p/w342' + movieItem.poster_path
+      }
       return <Card
         image={movieItem.poster_path}
         title={movieItem.title}

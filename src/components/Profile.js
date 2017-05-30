@@ -10,6 +10,8 @@ import LikeButtons from './LikeButtons'
 import Card from './Card'
 import Card2 from './Card2'
 
+import defaultPic from '../images/default.jpg'
+
 class Profile extends Component {
   state = {
     movies: [],
@@ -28,6 +30,11 @@ class Profile extends Component {
   render () {
     const { movies } = this.state
     const movieCards = movies.map((movieItem, i) => {
+      if (movieItem.poster_path === null || movieItem.poster_path === undefined) {
+        movieItem.poster_path = defaultPic
+      } else {
+        movieItem.poster_path = 'http://image.tmdb.org/t/p/w342' + movieItem.poster_path
+      }
       return <Card
         image={movieItem.poster_path}
         title={movieItem.title}

@@ -16,12 +16,12 @@ import TV from './Tv'
 import Home from './Home'
 import Menu from './Menu'
 import Nav from './Nav'
-import Profile from './Profile'
+import Profile from './Test.js'
 import Reviews from './Reviews'
 import Vault from './Vault'
 import WatchList from './WatchList'
 import Overlay from './Overlay'
-import Search from './Test'
+import Search from './Search'
 
 @observer
 class App extends Component {

@@ -9,6 +9,8 @@ import { get } from './utils/api'
 import Card from './Card'
 // import Buttons from './Buttons'
 
+import defaultPic from '../images/default.jpg'
+
 @observer
 class Movies extends Component {
   state = {
@@ -59,8 +61,13 @@ class Movies extends Component {
   render () {
     const { popularMovies } = this.state
     const popularMovieCards = popularMovies.map((movieItem, i) => {
+      if (movieItem.poster_path === null || movieItem.poster_path === undefined) {
+        movieItem.newPP = defaultPic
+      } else {
+        movieItem.newPP = 'http://image.tmdb.org/t/p/w342' + movieItem.poster_path
+      }
       return <Card
-        image={movieItem.poster_path}
+        image={movieItem.newPP}
         title={movieItem.title}
         date={movieItem.release_date}
         id={movieItem.id}
@@ -70,8 +77,13 @@ class Movies extends Component {
     }).reverse()
     const { action } = this.state
     const actionMovies = action.map((movieItem, i) => {
+      if (movieItem.poster_path === null || movieItem.poster_path === undefined) {
+        movieItem.newPP = defaultPic
+      } else {
+        movieItem.newPP = 'http://image.tmdb.org/t/p/w342' + movieItem.poster_path
+      }
       return <Card
-        image={movieItem.poster_path}
+        image={movieItem.newPP}
         title={movieItem.title}
         date={movieItem.release_date}
         id={movieItem.id}
@@ -81,8 +93,13 @@ class Movies extends Component {
     })
     const { animation } = this.state
     const animatedMovies = animation.map((movieItem, i) => {
+      if (movieItem.poster_path === null || movieItem.poster_path === undefined) {
+        movieItem.newPP = defaultPic
+      } else {
+        movieItem.newPP = 'http://image.tmdb.org/t/p/w342' + movieItem.poster_path
+      }
       return <Card
-        image={movieItem.poster_path}
+        image={movieItem.newPP}
         title={movieItem.title}
         date={movieItem.release_date}
         id={movieItem.id}
@@ -92,8 +109,13 @@ class Movies extends Component {
     })
     const { comedy } = this.state
     const comedyMovies = comedy.map((movieItem, i) => {
+      if (movieItem.poster_path === null || movieItem.poster_path === undefined) {
+        movieItem.newPP = defaultPic
+      } else {
+        movieItem.newPP = 'http://image.tmdb.org/t/p/w342' + movieItem.poster_path
+      }
       return <Card
-        image={movieItem.poster_path}
+        image={movieItem.newPP}
         title={movieItem.title}
         date={movieItem.release_date}
         id={movieItem.id}
@@ -103,8 +125,13 @@ class Movies extends Component {
     })
     const { family } = this.state
     const familyMovies = family.map((movieItem, i) => {
+      if (movieItem.poster_path === null || movieItem.poster_path === undefined) {
+        movieItem.newPP = defaultPic
+      } else {
+        movieItem.newPP = 'http://image.tmdb.org/t/p/w342' + movieItem.poster_path
+      }
       return <Card
-        image={movieItem.poster_path}
+        image={movieItem.newPP}
         title={movieItem.title}
         date={movieItem.release_date}
         id={movieItem.id}
@@ -114,8 +141,13 @@ class Movies extends Component {
     })
     const { scienceFiction } = this.state
     const scienceMovies = scienceFiction.map((movieItem, i) => {
+      if (movieItem.poster_path === null || movieItem.poster_path === undefined) {
+        movieItem.newPP = defaultPic
+      } else {
+        movieItem.newPP = 'http://image.tmdb.org/t/p/w342' + movieItem.poster_path
+      }
       return <Card
-        image={movieItem.poster_path}
+        image={movieItem.newPP}
         title={movieItem.title}
         date={movieItem.release_date}
         id={movieItem.id}
@@ -125,8 +157,13 @@ class Movies extends Component {
     })
     const { horror } = this.state
     const horrorMovies = horror.map((movieItem, i) => {
+      if (movieItem.poster_path === null || movieItem.poster_path === undefined) {
+        movieItem.newPP = defaultPic
+      } else {
+        movieItem.newPP = 'http://image.tmdb.org/t/p/w342' + movieItem.poster_path
+      }
       return <Card
-        image={movieItem.poster_path}
+        image={movieItem.newPP}
         title={movieItem.title}
         date={movieItem.release_date}
         id={movieItem.id}
@@ -136,8 +173,13 @@ class Movies extends Component {
     })
     const { documentary } = this.state
     const docMovies = documentary.map((movieItem, i) => {
+      if (movieItem.poster_path === null || movieItem.poster_path === undefined) {
+        movieItem.newPP = defaultPic
+      } else {
+        movieItem.newPP = 'http://image.tmdb.org/t/p/w342' + movieItem.poster_path
+      }
       return <Card
-        image={movieItem.poster_path}
+        image={movieItem.newPP}
         title={movieItem.title}
         date={movieItem.release_date}
         id={movieItem.id}
