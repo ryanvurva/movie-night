@@ -58,7 +58,7 @@ class Profile extends Component {
     const movieCards = movies.map((movieItem, i) => {
       console.log(movieItem)
       return <Card
-        image={movieItem.}
+        image={movieItem.poster_path}
         title={movieItem.title}
         date={movieItem.releaseDate}
         position={i}
