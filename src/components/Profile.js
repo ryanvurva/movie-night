@@ -93,8 +93,8 @@ class Profile extends Component {
           </div>
           <div>
             <p>Reviews: {this.state.reviews.length}</p>
-            <p>Vault: {this.state.movies.length}</p>
-            <p>Watch-List: {this.state.tv.length}</p>
+            <p>Vault: {this.state.vault.length}</p>
+            <p>Watch-List: {this.watchlist.length}</p>
           </div>
         </div>
       </div>
