@@ -1,14 +1,27 @@
-const TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE0OTYwODI5NzQsImNsaWVudElkIjoiY2l2Z29zNmNqMDE5MjAxODRucDAxZGRkMiIsInByb2plY3RJZCI6ImNqMnFjaHNtaTZ0MDYwMTAzNG8xaW9zaDgiLCJwZXJtYW5lbnRBdXRoVG9rZW5JZCI6ImNqM2FoNmI4NW02dGowMTMwejJ3ZXRpcTQifQ.lz4tXTqyzwmesB3JbP-TSlRD_JHcaqWxoQeH9wsMfgc'
 const API_BASE = 'https://api.graphcms.com/simple/v1/movienight'
 
-const get = (path, query) => {
-  let url = API_BASE + path + '?api_key=' + TOKEN
-  if (query) {
-    url += '&query=' + query + '&include_adult=false'
-  }
-  return window.fetch(url).then((response) => {
-    return response.json()
-  })
+const query = (query) => {
+  return window.fetch(API_BASE, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      query: `query {
+        ${query}
+      }`
+    })
+  }).then(r => r.json())
+}
+
+const mutation = (mutation) => {
+  return window.fetch(API_BASE, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      query: `mutation {
+        ${mutation}
+      }`
+    })
+  }).then(r => r.json())
 }
 
 // const post = (path, body) => {
@@ -24,4 +37,4 @@ const get = (path, query) => {
 //   })
 // }
 
-export { get }
+export { query, mutation }

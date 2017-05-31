@@ -1,6 +1,7 @@
 import Auth0Lock from 'auth0-lock'
 import IdTokenVerifier from 'idtoken-verifier'
 import { observable, autorun, computed, action } from 'mobx'
+import { query, mutation } from './graphql'
 // import store from './store'
 
 const CLIENT_ID = '2MbGCIU5HQ-wJo325Nu_SrP7g0yPNQtq'
@@ -9,6 +10,7 @@ const CLIENT_DOMAIN = 'movienight.auth0.com'
 class Auth {
   @observable token
   @observable profile
+  @observable cmsProfileId
 
   constructor () {
     this.token = window.localStorage.getItem('auth:token')
@@ -32,6 +34,7 @@ class Auth {
 
     autorun(() => {
       this.checkExpiration()
+      this.createProfile()
       if (this.isSignedIn) {
         window.localStorage.setItem('auth:token', this.token)
         window.localStorage.setItem('auth:profile', JSON.stringify(this.profile))
@@ -65,9 +68,26 @@ class Auth {
   }
 
   @computed get isSignedIn () {
-    return this.token && this.profile
+    return this.token && this.profile && this.cmsProfileId
+  }
+
+  @action createProfile () {
+    if (this.profile) {
+      query(`ProfileMN(authID: "${this.profile.user_id}") { id }`).then(({ data }) => {
+        if (data.ProfileMN) {
+          mutation(`updateProfileMN(id: "${data.ProfileMN.id}", fullName: "${this.profile.name}", picture: "${this.profile.picture_large}") {id}`).then(({ data }) => {
+            this.cmsProfileId = data.updateProfileMN.id
+          })
+        } else {
+          mutation(`createProfileMN(authID: "${this.profile.user_id}", fullName: "${this.profile.name}", picture: "${this.profile.picture_large}") {id}`).then(({ data }) => {
+            this.cmsProfileId = data.createProfileMN.id
+          })
+        }
+      })
+    }
   }
 }
 
 const auth = new Auth()
+window.auth = auth
 export default auth

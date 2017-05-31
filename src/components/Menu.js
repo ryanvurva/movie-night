@@ -30,7 +30,7 @@ class Menu extends Component {
           </div> */}
           <MobileLogin />
           <ul>
-            {auth.isSignedIn ? <li onClick={() => ui.toggleMenu()}><NavLink to={`/user/${auth.profile.name}`}><i className='fa fa-id-card-o' aria-hidden='true' /> - View Profile</NavLink></li> : null}
+            {auth.isSignedIn ? <li onClick={() => ui.toggleMenu()}><NavLink to={`/user/${auth.cmsProfileId}`}><i className='fa fa-id-card-o' aria-hidden='true' /> - View Profile</NavLink></li> : null}
             <li onClick={() => ui.toggleMenu()}><NavLink to='/browse/movies'><i className='fa fa-film' aria-hidden='true' /> - Movies</NavLink></li>
             <li onClick={() => ui.toggleMenu()}><NavLink to='/browse/tv'><i className='fa fa-television' aria-hidden='true' /> - TV</NavLink></li>
             <li onClick={() => ui.toggleMenu()}><NavLink to='/reviews/:name'><i className='fa fa-address-book-o' aria-hidden='true' /> - Reviews</NavLink></li>
@@ -43,7 +43,7 @@ class Menu extends Component {
       <aside className='menuDesktop'>
         <section>
           <ul>
-            {auth.isSignedIn ? <li><NavLink to={`/user/${auth.profile.name}`}><i className='fa fa-id-card-o' aria-hidden='true' /> - View Profile</NavLink></li> : <button onClick={() => auth.signIn()}><i className='fa fa-lock' aria-hidden='true' /> - Log in/Sign up</button>}
+            {auth.isSignedIn ? <li><NavLink to={`/user/${auth.cmsProfileId}`}><i className='fa fa-id-card-o' aria-hidden='true' /> - View Profile</NavLink></li> : <button onClick={() => auth.signIn()}><i className='fa fa-lock' aria-hidden='true' /> - Log in/Sign up</button>}
             {/* <li><NavLink to='/:name'><i className='fa fa-id-card-o' aria-hidden='true' /> - View Profile</NavLink></li> */}
             <li>|</li>
             <li><NavLink to='/browse/movies'><i className='fa fa-film' aria-hidden='true' /> - Movies</NavLink></li>

@@ -34,7 +34,7 @@ class App extends Component {
             {/* {auth.isSignedIn ? <Route exact path='/' component={Dashboard} /> : <Route exact path='/' component={Home} />} */}
             <Route exact path='/browse/movies' component={Movies} />
             <Route exact path='/browse/tv' component={TV} />
-            <Route exact path='/user/:name' component={Profile} />
+            <Route exact path='/user/:id' component={Profile} />
             <Route exact path='/search/:query' component={Search} />
             <Route exact path='/reviews/:name' component={Reviews} />
             <Route exact path='/watchlist/:name' component={WatchList} />
