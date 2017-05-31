@@ -3,12 +3,10 @@ import { NavLink } from 'react-router-dom'
 import { observer } from 'mobx-react'
 
 // import Buttons from './Buttons'
-import LikeButtons from './LikeButtons'
+// import LikeButtons from './LikeButtons'
 
-import auth from './utils/auth'
+// import auth from './utils/auth'
 import { get } from './utils/api'
-
-// import pic from '../images/movies/Logan.jpg'
 
 @observer
 class ReviewOverlay extends Component {
@@ -36,10 +34,10 @@ class ReviewOverlay extends Component {
               <h2>{review.title}</h2>
             </div>
           </div>
-          <div className='userPopularity'>
+          {/* <div className='userPopularity'>
             <NavLink to='/reviews/:movie'>58 reviews</NavLink>
             {auth.isSignedIn ? <LikeButtons /> : null}
-          </div>
+          </div> */}
         </div>
         <div className='aboutThis'>
           <form>

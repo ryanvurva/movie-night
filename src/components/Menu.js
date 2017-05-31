@@ -34,9 +34,9 @@ class Menu extends Component {
             {auth.isSignedIn ? <li onClick={() => ui.toggleMenu()}><NavLink to={`/user/${auth.cmsProfileId}`}><i className='fa fa-id-card-o' aria-hidden='true' /> - View Profile</NavLink></li> : null}
             <li onClick={() => ui.toggleMenu()}><NavLink to='/browse/movies'><i className='fa fa-film' aria-hidden='true' /> - Movies</NavLink></li>
             <li onClick={() => ui.toggleMenu()}><NavLink to='/browse/tv'><i className='fa fa-television' aria-hidden='true' /> - TV</NavLink></li>
-            <li onClick={() => ui.toggleMenu()}><NavLink to='/reviews/:name'><i className='fa fa-address-book-o' aria-hidden='true' /> - Reviews</NavLink></li>
-            <li onClick={() => ui.toggleMenu()}><NavLink to='/watchlist/:name'><i className='fa fa-eye' aria-hidden='true' /> - Watch List</NavLink></li>
-            <li onClick={() => ui.toggleMenu()}><NavLink to='/vault/:name'><i className='fa fa-university' aria-hidden='true' /> - Vaults</NavLink></li>
+            {/* <li onClick={() => ui.toggleMenu()}><NavLink to='/reviews/:name'><i className='fa fa-address-book-o' aria-hidden='true' /> - Reviews</NavLink></li> */}
+            {/* <li onClick={() => ui.toggleMenu()}><NavLink to='/watchlist/:name'><i className='fa fa-eye' aria-hidden='true' /> - Watch List</NavLink></li> */}
+            {/* <li onClick={() => ui.toggleMenu()}><NavLink to='/vault/:name'><i className='fa fa-university' aria-hidden='true' /> - Vaults</NavLink></li> */}
             {/* <li onClick={() => ui.toggleMenu()}><NavLink to='/chat/:name' title='...pre-beta'><i className='fa fa-comments' aria-hidden='true' /> - Chat <i className='fa fa-exclamation-circle' aria-hidden='true' /></NavLink></li> */}
           </ul>
         </section>

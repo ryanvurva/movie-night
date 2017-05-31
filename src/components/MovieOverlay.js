@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { observer } from 'mobx-react'
 
 import Buttons from './Buttons'
-import LikeButtons from './LikeButtons'
+// import LikeButtons from './LikeButtons'
 
 import auth from './utils/auth'
 import { get } from './utils/api'
@@ -44,10 +44,10 @@ class MovieOverlay extends Component {
             </div>
             <p>({movie.release_date})</p>
           </div>
-          <div className='userPopularity'>
+          {/* <div className='userPopularity'>
             <NavLink to='/reviews/:movie'>73 reviews</NavLink>
             {auth.isSignedIn ? <LikeButtons /> : null}
-          </div>
+          </div> */}
         </div>
         <div className='aboutThis'>
           <p>{movie.overview}</p>
