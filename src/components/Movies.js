@@ -2,12 +2,9 @@ import React, { Component } from 'react'
 // import { NavLink } from 'react-router-dom'
 import { observer } from 'mobx-react'
 
-// import auth from './utils/auth.js'
-// import ui from '../ui'
 import { get } from './utils/api'
 
 import Card from './Card'
-// import Buttons from './Buttons'
 
 import defaultPic from '../images/default.jpg'
 

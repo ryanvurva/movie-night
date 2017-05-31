@@ -1,18 +1,14 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { observer } from 'mobx-react'
-// import gravatar from 'gravatar'
 
 import auth from './utils/auth'
 import { get } from './utils/api'
-// import store from './utils/store.js'
 
 import defaultImage from '../images/default.jpg'
 
 import LikeButtons from './LikeButtons'
 import ReviewCard from './ReviewCard'
-// import Card from './Card3'
-// import Card2 from './Card2'
 
 @observer
 class Profile extends Component {
@@ -69,22 +65,10 @@ class Profile extends Component {
   }
 
   render () {
-    // const { tv } = this.state
-    // const tvCards = tv.map((tvItem, i) => {
-    //   return <Card2
-    //     image={tvItem.poster_path}
-    //     title={tvItem.name}
-    //     date={tvItem.first_air_date}
-    //     position={i}
-    //     key={i}
-    //   />
-    // })
-    // const { reviews } = this.state
     return <div className='Profile'>
       <div className='profileHeader'>
         <div className='profilePic'>
           <img src={this.state.picture} alt='user profile image' width='100%' height='100%' />
-          {/* <img src={gravatar.url('ryanvurva@gmail.com')} alt='user profile image' width='100%' height='100%' /> */}
         </div>
         <div className='profileInfo'>
           <div className='userName'>
@@ -94,7 +78,7 @@ class Profile extends Component {
           <div>
             <p>Reviews: {this.state.reviews.length}</p>
             <p>Vault: {this.state.vault.length}</p>
-            <p>Watch-List: {this.watchlist.length}</p>
+            <p>Watch-List: {this.state.watchlist.length}</p>
           </div>
         </div>
       </div>
@@ -105,9 +89,9 @@ class Profile extends Component {
             {/* <NavLink to='#'>...see all</NavLink> */}
           </div>
           <div className='Home-content'>
-            {this.state.movies.map((content) => {
+            {this.state.vault.map((content) => {
               const [type, id] = content.split(':')
-              return <VaultCard type={type} id={id} key={content} />
+              return <ProfileCard type={type} id={id} key={content} />
             })}
           </div>
         </section>
@@ -117,7 +101,10 @@ class Profile extends Component {
             {/* <NavLink to='#'>...see all</NavLink> */}
           </div>
           <div className='Home-content'>
-            {/* {tvCards} */}
+            {this.state.watchlist.map((content) => {
+              const [type, id] = content.split(':')
+              return <ProfileCard type={type} id={id} key={content} />
+            })}
           </div>
         </section>
         <section>
@@ -136,7 +123,7 @@ class Profile extends Component {
   }
 }
 
-class VaultCard extends Component {
+class ProfileCard extends Component {
   state = {
     image: defaultImage,
     title: '...',
