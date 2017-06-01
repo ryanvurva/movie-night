@@ -86,6 +86,16 @@ class Auth {
       })
     }
   }
+
+  // @action increaseKudos () {
+  //   query(`ProfileMN(authID: "${this.profile.user_id}") { id }`).then(({ data }) => {
+  //     if (data.ProfileMN) {
+  //       mutation(`updateProfileMN(id: "${data.ProfileMN.id}", fullName: "${this.profile.name}", picture: "${this.profile.picture_large}") {id}`).then(({ data }) => {
+  //         this.cmsProfileId = data.updateProfileMN.id
+  //       })
+  //     }
+  //   })
+  // }
 }
 
 const auth = new Auth()

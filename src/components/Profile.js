@@ -2,20 +2,22 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { observer } from 'mobx-react'
 
-import auth from './utils/auth'
+// import auth from './utils/auth'
 import { get } from './utils/api'
+import { mutation } from './utils/graphql'
 
 import defaultImage from '../images/default.jpg'
 
-import LikeButtons from './LikeButtons'
+// import LikeButtons from './LikeButtons'
 import ReviewCard from './ReviewCard'
 
 @observer
 class Profile extends Component {
   state = {
+    id: '',
     fullName: '',
     picture: '',
-    kudos: [],
+    kudos: '',
     vault: [],
     watchlist: [],
     reviews: []
@@ -46,22 +48,32 @@ class Profile extends Component {
       })
     }).then(res => res.json())
       .then(({ data }) => {
-        console.log(data)
         this.setState({
           fullName: data.ProfileMN.fullName,
           picture: data.ProfileMN.picture,
-          user: data.ProfileMN.id,
+          id: data.ProfileMN.id,
+          kudos: data.ProfileMN.kudos,
           vault: data.ProfileMN.vault || [],
           watchlist: data.ProfileMN.watchlist || [],
-          kudos: data.ProfileMN.kudos,
-          reviews: data.ProfileMN.reviewRef
+          reviews: data.ProfileMN.reviewRef || []
         })
-        console.log(this.state.vault)
-        console.log(this.state.watchlist)
-        console.log(this.state.kudos)
-        console.log(this.state.reviews)
-        console.log(auth.profile)
+        // console.log(this.state.vault)
+        // console.log(this.state.watchlist)
+        // console.log(this.state.kudos)
+        // console.log(this.state.reviews)
+        // console.log(auth.profile)
       })
+  }
+  increaseKudos (plusOne) {
+    mutation(`updateProfileMN(id: "${this.state.id}", kudos: ${plusOne}) {kudos}`).then(({ data }) => {
+      console.log(data)
+      this.setState({ kudos: data.updateProfileMN.kudos })
+    })
+  }
+  _submit = (event) => {
+    event.preventDefault()
+    const plusOne = this.state.kudos + 1
+    this.increaseKudos(plusOne)
   }
 
   render () {
@@ -73,7 +85,10 @@ class Profile extends Component {
         <div className='profileInfo'>
           <div className='userName'>
             <h1>{this.state.fullName}</h1>
-            {auth.isSignedIn ? <LikeButtons kudos={this.state.kudos} /> : null}
+            <div className='likes'>
+              <button onClick={this._submit}><i className='fa fa-thumbs-o-up' aria-hidden='true' /> {this.state.kudos}</button>
+            </div>
+            {/* {auth.isSignedIn ? <LikeButtons kudos={this.state.kudos} /> : null} */}
           </div>
           <div>
             <p>Reviews: {this.state.reviews.length}</p>
@@ -132,7 +147,7 @@ class ProfileCard extends Component {
 
   componentDidMount () {
     get(`/${this.props.type}/${this.props.id}`).then((data) => {
-      console.log(data.title)
+      // console.log(data.title)
       const image = data.poster_path ? `https://image.tmdb.org/t/p/w342${data.poster_path}` : defaultImage
       if (this.props.type === 'movie') {
         this.setState({

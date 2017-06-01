@@ -12,7 +12,7 @@ import TMDB from '../images/powered-by-rectangle-blue.svg'
 
 import Movies from './Movies'
 import TV from './Tv'
-// import Chat from './Chat'
+// import Splash from './Splash'
 import Home from './Home'
 import Menu from './Menu'
 import Nav from './Nav'
@@ -31,7 +31,7 @@ class App extends Component {
         <Nav />
         <main>
           <Switch>
-            {/* {auth.isSignedIn ? <Route exact path='/' component={Dashboard} /> : <Route exact path='/' component={Home} />} */}
+            {/* {auth.isSignedIn ? <Route exact path='/' component={Splash} /> : <Route exact path='/' component={Home} />} */}
             <Route exact path='/browse/movies' component={Movies} />
             <Route exact path='/browse/tv' component={TV} />
             <Route exact path='/user/:id' component={Profile} />

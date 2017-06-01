@@ -51,7 +51,6 @@ class Movies extends Component {
       this.setState({ horror: data.results })
     })
     get('/genre/99/movies').then((data) => {
-      // console.log(data.results)
       this.setState({ documentary: data.results })
     })
   }
