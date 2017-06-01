@@ -7,7 +7,7 @@ import { observer } from 'mobx-react'
 
 import auth from './utils/auth'
 import { get } from './utils/api'
-import { query, mutation } from './utils/graphql'
+import { mutation } from './utils/graphql'
 
 // import pic from '../images/movies/rogue-one.jpg'
 
@@ -20,7 +20,6 @@ class MovieOverlay extends Component {
   }
   componentDidMount () {
     get(`/movie/${this.props.match.params.id}`).then((data) => {
-      console.log(data)
       this.setState({ thisMovie: data })
     })
     window.fetch('https://api.graphcms.com/simple/v1/movienight', {
@@ -40,33 +39,48 @@ class MovieOverlay extends Component {
           vault: data.ProfileMN.vault || [],
           watchlist: data.ProfileMN.watchlist || []
         })
-        console.log(data)
-        console.log(this.state.vault)
-        console.log(this.state.watchlist)
       })
   }
-  _goBack () {
-    window.history.back()
-  }
   addToVault (newVault) {
-    mutation(`mutation {
-      updateProfileMN(authID: "${auth.profile.user_id}" vault: "${newVault}") {
+    mutation(`
+      updateProfileMN(id: "${auth.cmsProfileId}" vault: ${JSON.stringify(newVault)}) {
         vault
       }
-    }`)
+    `).then((response) => {
+      console.log('added', response)
+    })
   }
-  addToWatchlist () {
-    // mutation(``)
+  addToWatchlist (newWatchList) {
+    mutation(`
+      updateProfileMN(id: "${auth.cmsProfileId}" watchlist: ${JSON.stringify(newWatchList)}) {
+        watchlist
+      }
+    `).then((response) => {
+      console.log('added', response)
+    })
   }
   _vault = (event) => {
     event.preventDefault()
-    // const { vault } = this.state
-    // const newVault = vault + 'movie:${this.props.match.params.id}'
-    // this.setState({ vault: newVault })
-    // addToVault(newVault)
+    const { vault } = this.state
+    const newItem = `movie:${this.props.match.params.id}`
+    if (!vault.includes(newItem)) {
+      const newVault = [...vault, newItem]
+      this.addToVault([...vault, newItem])
+      this.setState({ vault: newVault })
+    }
   }
   _watch = (event) => {
     event.preventDefault()
+    const { watchlist } = this.state
+    const newItem = `movie:${this.props.match.params.id}`
+    if (!watchlist.includes(newItem)) {
+      const newWatchList = [...watchlist, newItem]
+      this.addToWatchList([...watchlist, newItem])
+      this.setState({ watchlist: newWatchList })
+    }
+  }
+  _goBack () {
+    window.history.back()
   }
 
   render () {
@@ -76,8 +90,8 @@ class MovieOverlay extends Component {
         <img src={`http://image.tmdb.org/t/p/w342${movie.poster_path}`} />
         <div className='userFeatures'>
           <div className='Buttons'>
-            <button onClick={this._vault}><i className='fa fa-university' aria-hidden='true' /></button>
-            <button onClick={this._watch}><i className='fa fa-eye' aria-hidden='true' /></button>
+            <button onClick={this._vault} disabled={this.state.vault.includes(`movie:${movie.id}`)}><i className='fa fa-university' aria-hidden='true' /></button>
+            <button onClick={this._watch} disabled={this.state.watchlist.includes(`movie:${movie.id}`)}><i className='fa fa-eye' aria-hidden='true' /></button>
             <NavLink to={`/overlay/review/movie/${movie.id}`}><i className='fa fa-pencil-square-o' aria-hidden='true' /></NavLink>
           </div>
           {/* {auth.isSignedIn ? <Buttons id={movie.id} /> : null} */}
