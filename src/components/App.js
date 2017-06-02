@@ -36,9 +36,9 @@ class App extends Component {
             <Route exact path='/browse/tv' component={TV} />
             <Route exact path='/user/:id' component={Profile} />
             <Route exact path='/search/:query' component={Search} />
-            <Route exact path='/reviews/:name' component={Reviews} />
-            <Route exact path='/watchlist/:name' component={WatchList} />
-            <Route exact path='/vault/:name' component={Vault} />
+            <Route exact path='/reviews' component={Reviews} />
+            {/* <Route exact path='/watchlist/:name' component={WatchList} /> */}
+            {/* <Route exact path='/vault/:name' component={Vault} /> */}
             <Route exact path='/' component={Home} />
           </Switch>
         </main>

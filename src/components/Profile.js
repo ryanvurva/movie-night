@@ -129,7 +129,7 @@ class Profile extends Component {
           </div>
           <div className='Home-content'>
             {this.state.reviews.map((review, i) => {
-              return <ReviewCard key={i} {...review} />
+              return <ReviewCard key={i} {...review} name={this.state.fullName} />
             })}
           </div>
         </section>

@@ -4,65 +4,17 @@
 // page.  having issues with the layout of certain features that grids
 // might solve
 
-.Profile {
-  .profileHeader {
-    margin: 0;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    border-bottom: 15px solid darken($theme-color, 5%);
-
-    .profilePic {
-      width: 30vw;
-      height:30vw;
-      margin: 10px;
-      border: 5px solid darken($theme-color, 10%);
-      border-radius: 5px;
-      box-shadow: 4px 4px 8px darken($theme-color, 5%);
-      background-color: lighten($theme-color, 20%);
-    }
-
-    .profileInfo {
-      flex: 1;
-
-      .userName {
-        @include display-hor-spaceB;
-        align-items: baseline;
-        border-bottom: thin solid darken($theme-color, 5%);
-
-        h1 {
-          margin: 0;
-        }
-
-        .likes {
-          margin-right: 1em;
-        }
-
-        button {
-          background-color: transparent;
-          border: none;
-          text-decoration: none;
-          font-family: inherit;
-          font-size: 1.5em;
-          color: inherit;
-
-          &:focus,
-          &:hover {
-            color: $theme-accent-color;
-          }
-        }
-      }
-    }
+.Reviews {
+  h1 {
+    margin-left: 1em;
   }
-
   section {
     box-sizing: border-box;
     padding: 20px;
 
-    .Home-title {
+    .Review-title {
       width: 100%;
-      @include display-hor-spaceB;
+      // @include display-hor-spaceB;
       align-items: baseline;
       margin-bottom: 10px;
       border-bottom: thick solid darken($theme-color, 10%);
@@ -80,14 +32,13 @@
       }
     }
 
-    .Home-content {
+    .Review-content {
       // box-sizing: border-box;
-      overflow-x: auto;
-      display: flex;
-      flex-direction: row;
+      // overflow-x: auto;
+      // display: flex;
+      flex-direction: column;
       justify-content: flex-start;
       align-items: baseline;
-      // want to add scrollable content here
       // width: auto;
       // @include display-hor-spaceA;
       padding: 10px;
@@ -96,6 +47,7 @@
       .reviewCard {
         // width: 90vw;
         margin-right: 1em;
+        margin-bottom: 1em;
 
         .review-section {
           width: 90vw;
@@ -106,9 +58,8 @@
             // width: 90vw;
             border-bottom: thin solid darken($theme-color, 10%);
 
-            p {
-              margin: 0;
-              padding-left: .5em;
+            a {
+              padding: .5em;
               text-decoration: none;
               color: $theme-accent-color;
             }

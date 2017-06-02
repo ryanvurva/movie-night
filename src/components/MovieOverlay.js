@@ -75,7 +75,7 @@ class MovieOverlay extends Component {
     const newItem = `movie:${this.props.match.params.id}`
     if (!watchlist.includes(newItem)) {
       const newWatchList = [...watchlist, newItem]
-      this.addToWatchList([...watchlist, newItem])
+      this.addToWatchlist([...watchlist, newItem])
       this.setState({ watchlist: newWatchList })
     }
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Card from './Card'
+import Card from './SearchCards'
 // import Card2 from './Card2'
 // import EntryList from './EntryList'
 

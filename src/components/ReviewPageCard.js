@@ -26,8 +26,7 @@ class ReviewCard extends Component {
     return <div className='reviewCard'>
       <div className='review-section'>
         <div className='Critic'>
-          <p>{auth.profile.name}'s opinion about: '{this.state.title}'</p>
-          {/* <NavLink to='/user/:id'>{this.props.fullName}'s</NavLink> opinion about '{this.state.title}': */}
+          <NavLink to={`/user/${this.props.profileRef.id}`}>{this.props.profileRef.fullName}'s</NavLink> opinion about '{this.state.title}':
         </div>
         <div className='Opinion'>
           <p>{this.props.review}</p>

@@ -79,7 +79,7 @@ class Auth {
             this.cmsProfileId = data.updateProfileMN.id
           })
         } else {
-          mutation(`createProfileMN(authID: "${this.profile.user_id}", fullName: "${this.profile.name}", picture: "${this.profile.picture_large}") {id}`).then(({ data }) => {
+          mutation(`createProfileMN(authID: "${this.profile.user_id}", isPublished: true, fullName: "${this.profile.name}", picture: "${this.profile.picture_large}") {id}`).then(({ data }) => {
             this.cmsProfileId = data.createProfileMN.id
           })
         }
