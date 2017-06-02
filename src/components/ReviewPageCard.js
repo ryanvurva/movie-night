@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { get } from './utils/api'
-import auth from './utils/auth'
+// import auth from './utils/auth'
 
 class ReviewCard extends Component {
   state = {
