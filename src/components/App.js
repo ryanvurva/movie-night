@@ -2,10 +2,9 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { observer } from 'mobx-react'
 
-// import auth from './utils/auth'
-
 import TMDB from '../images/powered-by-rectangle-blue.svg'
 
+// import auth from './utils/auth'
 // import api from './utils/api'
 // import cx from 'classnames'
 // import ui from '../ui'

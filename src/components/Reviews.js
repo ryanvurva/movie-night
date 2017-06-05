@@ -14,6 +14,7 @@ class Reviews extends Component {
       body: JSON.stringify({
         query: `query {
           allReviewsMNs {
+            contentName
             contentId
             review
             profileRef {
@@ -37,7 +38,7 @@ class Reviews extends Component {
         <div className='Review-content'>
           {this.state.reviews.map((review, i) => {
             return <ReviewCard key={i} {...review} />
-          })}
+          }).reverse()}
         </div>
       </section>
     </div>
