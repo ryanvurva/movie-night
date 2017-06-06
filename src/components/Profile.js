@@ -130,7 +130,7 @@ class Profile extends Component {
           <div className='Home-content'>
             {this.state.reviews.map((review, i) => {
               return <ReviewCard key={i} {...review} name={this.state.fullName} />
-            })}
+            }).reverse()}
           </div>
         </section>
       </div>

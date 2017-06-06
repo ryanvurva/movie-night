@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+// import { NavLink } from 'react-router-dom'
 import { observer } from 'mobx-react'
 
 import { get } from './utils/api'
 
 import Card from './Card'
 import Card2 from './Card2'
+import ReviewCard from './ReviewPageCard'
 
 import defaultPic from '../images/default.jpg'
 
@@ -16,7 +17,8 @@ class Home extends Component {
     playingMovies: [],
     upcomingMovies: [],
     popularTv: [],
-    topRatedTv: []
+    topRatedTv: [],
+    reviews: []
   }
 
   componentDidMount () {
@@ -35,6 +37,27 @@ class Home extends Component {
     get('/tv/top_rated').then((data) => {
       this.setState({ topRatedTv: data.results })
     })
+    window.fetch('https://api.graphcms.com/simple/v1/movienight', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        query: `query {
+          allReviewsMNs {
+            createdAt
+            contentName
+            contentId
+            review
+            profileRef {
+              id
+              fullName
+            }
+          }
+        }`
+      })
+    }).then(res => res.json())
+      .then(({ data }) => {
+        this.setState({ reviews: data.allReviewsMNs || [] })
+      })
   }
   render () {
     const { popularMovies } = this.state
@@ -159,36 +182,9 @@ class Home extends Component {
           {/* <NavLink to='/reviews'>...see all</NavLink> */}
         </div>
         <div className='Home-content'>
-          <div className='Home-review-card'>
-            <div className='Home-review-section'>
-              <div className='Critic'>
-                <NavLink to='/user/:name'>someGuy123's</NavLink> opinion about 'Some Movie':
-              </div>
-              <div className='Opinion'>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-            </div>
-          </div>
-          <div className='Home-review-card'>
-            <div className='Home-review-section'>
-              <div className='Critic'>
-                <NavLink to='/user/:name'>someGuy123's</NavLink> opinion about 'Some Movie':
-              </div>
-              <div className='Opinion'>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-            </div>
-          </div>
-          <div className='Home-review-card'>
-            <div className='Home-review-section'>
-              <div className='Critic'>
-                <NavLink to='/user/:name'>someGuy123's</NavLink> opinion about 'Some Movie':
-              </div>
-              <div className='Opinion'>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-            </div>
-          </div>
+          {this.state.reviews.map((review, i) => {
+            return <ReviewCard key={i} {...review} />
+          }).reverse()}
         </div>
       </section>
     </div>

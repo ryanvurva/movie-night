@@ -14,6 +14,7 @@ class Reviews extends Component {
       body: JSON.stringify({
         query: `query {
           allReviewsMNs {
+            createdAt
             contentName
             contentId
             review
