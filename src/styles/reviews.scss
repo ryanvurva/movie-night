@@ -1,9 +1,5 @@
 @import 'utility';
 
-// i think that learning css grids would be a great solution for this
-// page.  having issues with the layout of certain features that grids
-// might solve
-
 .Reviews {
   h1 {
     margin-left: 1em;
@@ -55,11 +51,11 @@
           border: thin solid darken($theme-color, 10%);
 
           .Critic {
+            padding: 0 .5em;
             // width: 90vw;
             border-bottom: thin solid darken($theme-color, 10%);
 
             a {
-              padding: .5em;
               text-decoration: none;
               color: $theme-accent-color;
             }

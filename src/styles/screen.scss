@@ -11,6 +11,7 @@
 @import 'overlay';
 @import 'search';
 @import 'reviews';
+@import 'users';
 
 html {
   @include full-height;
@@ -48,6 +49,7 @@ main {
 .Profile,
 .Reviews,
 .WatchList,
+.Users,
 .Vault,
 .Movies,
 .Search,

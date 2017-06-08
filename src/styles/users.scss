@@ -1,0 +1,57 @@
+@import 'utility';
+
+.Users {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .profileCard {
+    width: 80vw;
+    margin: 1em;
+    padding: 0;
+    border: thin solid black;
+    border-radius: 3px;
+    display: flex;
+
+    .image {
+      margin: 0;
+      padding: 0;
+      img {
+        margin: .3em .3em 0 .3em;
+        width: 20vw;
+      }
+    }
+
+    .info {
+      flex: 1;
+      margin: 10px 0 0 10px;
+
+      div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+          margin: 0 0 10px 0;
+          color: $theme-accent-color
+        }
+
+        p {
+          margin: 0;
+          padding-right: 1.5em;
+          font-size: 1.5em;
+        }
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+}

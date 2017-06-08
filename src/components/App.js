@@ -21,6 +21,7 @@ import Reviews from './Reviews'
 // import WatchList from './WatchList'
 import Overlay from './Overlay'
 import Search from './Search'
+import Users from './Users'
 
 @observer
 class App extends Component {
@@ -33,6 +34,7 @@ class App extends Component {
             {/* {auth.isSignedIn ? <Route exact path='/' component={Splash} /> : <Route exact path='/' component={Home} />} */}
             <Route exact path='/browse/movies' component={Movies} />
             <Route exact path='/browse/tv' component={TV} />
+            <Route exact path='/users' component={Users} />
             <Route exact path='/user/:id' component={Profile} />
             <Route exact path='/search/:query' component={Search} />
             <Route exact path='/reviews' component={Reviews} />

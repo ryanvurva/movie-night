@@ -103,12 +103,13 @@
           border: thin solid darken($theme-color, 10%);
 
           .Critic {
+            padding: 0 .5em;
             // width: 90vw;
             border-bottom: thin solid darken($theme-color, 10%);
 
             p {
               margin: 0;
-              padding-left: .5em;
+              // padding-left: .5em;
               text-decoration: none;
               color: $theme-accent-color;
             }

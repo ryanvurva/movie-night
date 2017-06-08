@@ -33,7 +33,7 @@ class LikeButtons extends Component {
 
   render () {
     return <div className='likes'>
-      <button onClick={this._submit}><i className='fa fa-thumbs-o-up' aria-hidden='true' /> {this.props.kudos}</button>
+      <button onClick={this.props._submit}><i className='fa fa-thumbs-o-up' aria-hidden='true' /> {this.props.kudos}</button>
     </div>
   }
 }

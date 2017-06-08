@@ -88,7 +88,7 @@ class Profile extends Component {
             <div className='likes'>
               <button onClick={this._submit}><i className='fa fa-thumbs-o-up' aria-hidden='true' /> {this.state.kudos}</button>
             </div>
-            {/* {auth.isSignedIn ? <LikeButtons kudos={this.state.kudos} /> : null} */}
+            {/* {auth.isSignedIn ? <LikeButtons onClick={this._submit} kudos={this.state.kudos} /> : null} */}
           </div>
           <div>
             <p>Reviews: {this.state.reviews.length}</p>

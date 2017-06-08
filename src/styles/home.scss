@@ -50,11 +50,12 @@
           margin-right: .7em;
 
           .Critic {
+            padding: 0 .5em;
             // width: 90vw;
             border-bottom: thin solid darken($theme-color, 10%);
 
             a {
-              padding: .5em;
+              // padding: .5em;
               text-decoration: none;
               color: $theme-accent-color;
             }

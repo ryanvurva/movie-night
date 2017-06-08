@@ -5,7 +5,6 @@ import ReviewCard from './ReviewPageCard'
 class Reviews extends Component {
   state = {
     reviews: []
-
   }
   componentDidMount () {
     window.fetch('https://api.graphcms.com/simple/v1/movienight', {
