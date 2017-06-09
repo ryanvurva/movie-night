@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // import { NavLink } from 'react-router-dom'
 import { get } from './utils/api'
-import auth from './utils/auth'
+// import auth from './utils/auth'
 
 class ReviewCard extends Component {
   state = {
@@ -26,7 +26,8 @@ class ReviewCard extends Component {
     return <div className='reviewCard'>
       <div className='review-section'>
         <div className='Critic'>
-          <p>{this.props.name}'s opinion about: '{this.state.title}'</p>
+          <p>{this.props.contentType}: '{this.state.title}':</p>
+          {/* <p>3 <i className='fa fa-comments-o' aria-hidden='true' /></p> */}
           {/* <NavLink to='/user/:id'>{this.props.fullName}'s</NavLink> opinion about '{this.state.title}': */}
         </div>
         <div className='Opinion'>

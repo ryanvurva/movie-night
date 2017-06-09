@@ -99,6 +99,8 @@
 
         .review-section {
           width: 90vw;
+          height: 200px;
+          overflow-y: auto;
           max-width: 940px;
           border: thin solid darken($theme-color, 10%);
 
@@ -106,6 +108,9 @@
             padding: 0 .5em;
             // width: 90vw;
             border-bottom: thin solid darken($theme-color, 10%);
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
 
             p {
               margin: 0;

@@ -3,8 +3,6 @@ import React, { Component } from 'react'
 
 import ProfileCard from './ProfileCard'
 
-// import Pic from '../images/Ryan-3.jpg'
-
 class Users extends Component {
   state = {
     users: []
@@ -34,12 +32,10 @@ class Users extends Component {
         this.setState({
           users: data.allProfileMNs || []
         })
-        console.log(this.state.users)
       })
   }
   render () {
     return <div className='Users'>
-      {/* <h2>Users</h2> */}
       {this.state.users.map((user, i) => {
         return <ProfileCard key={i} {...user} />
       })}

@@ -2,14 +2,11 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { observer } from 'mobx-react'
 
-// import Buttons from './Buttons'
 // import LikeButtons from './LikeButtons'
 
 import auth from './utils/auth'
 import { get } from './utils/api'
 import { mutation } from './utils/graphql'
-
-// import pic from '../images/movies/rogue-one.jpg'
 
 @observer
 class MovieOverlay extends Component {
@@ -89,12 +86,11 @@ class MovieOverlay extends Component {
       <div className='overlayLeft'>
         <img src={`http://image.tmdb.org/t/p/w342${movie.poster_path}`} />
         <div className='userFeatures'>
-          <div className='Buttons'>
+          {auth.isSignedIn ? <div className='Buttons'>
             <button onClick={this._vault} disabled={this.state.vault.includes(`movie:${movie.id}`)}><i className='fa fa-university' aria-hidden='true' /></button>
             <button onClick={this._watch} disabled={this.state.watchlist.includes(`movie:${movie.id}`)}><i className='fa fa-eye' aria-hidden='true' /></button>
             <NavLink to={`/overlay/review/movie/${movie.id}`}><i className='fa fa-pencil-square-o' aria-hidden='true' /></NavLink>
-          </div>
-          {/* {auth.isSignedIn ? <Buttons id={movie.id} /> : null} */}
+          </div> : null}
         </div>
       </div>
       <div className='overlayRight'>

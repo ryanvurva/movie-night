@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { observer } from 'mobx-react'
 
-// import Buttons from './TvButtons'
 // import LikeButtons from './LikeButtons'
 
 import auth from './utils/auth'
@@ -86,12 +85,11 @@ class TvOverlay extends Component {
       <div className='overlayLeft'>
         <img src={`http://image.tmdb.org/t/p/w342${show.poster_path}`} />
         <div className='userFeatures'>
-          <div className='Buttons'>
+          {auth.isSignedIn ? <div className='Buttons'>
             <button onClick={this._vault} disabled={this.state.vault.includes(`tv:${show.id}`)}><i className='fa fa-university' aria-hidden='true' /></button>
             <button onClick={this._watch} disabled={this.state.watchlist.includes(`tv:${show.id}`)}><i className='fa fa-eye' aria-hidden='true' /></button>
             <NavLink to={`/overlay/review/tv/${show.id}`}><i className='fa fa-pencil-square-o' aria-hidden='true' /></NavLink>
-          </div>
-          {/* {auth.isSignedIn ? <Buttons id={show.id} /> : null} */}
+          </div> : null}
         </div>
       </div>
       <div className='overlayRight'>

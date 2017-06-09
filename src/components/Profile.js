@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { observer } from 'mobx-react'
 
-// import auth from './utils/auth'
+import auth from './utils/auth'
 import { get } from './utils/api'
 import { mutation } from './utils/graphql'
 
@@ -42,6 +42,10 @@ class Profile extends Component {
               contentType
               contentId
               review
+              comment {
+                userName
+                comment
+              }
             }
           }
         }`
@@ -85,46 +89,46 @@ class Profile extends Component {
         <div className='profileInfo'>
           <div className='userName'>
             <h1>{this.state.fullName}</h1>
-            <div className='likes'>
+            {auth.isSignedIn ? <div className='likes'>
               <button onClick={this._submit}><i className='fa fa-thumbs-o-up' aria-hidden='true' /> {this.state.kudos}</button>
-            </div>
+            </div> : null}
             {/* {auth.isSignedIn ? <LikeButtons onClick={this._submit} kudos={this.state.kudos} /> : null} */}
           </div>
           <div>
-            <p>Reviews: {this.state.reviews.length}</p>
             <p>Vault: {this.state.vault.length}</p>
             <p>Watch-List: {this.state.watchlist.length}</p>
+            <p>Reviews: {this.state.reviews.length}</p>
           </div>
         </div>
       </div>
       <div className='profileContent'>
         <section>
           <div className='Home-title'>
-            <h2>Vault</h2>
+            <h2>Vault ({this.state.vault.length})</h2>
             {/* <NavLink to='#'>...see all</NavLink> */}
           </div>
           <div className='Home-content'>
             {this.state.vault.map((content) => {
               const [type, id] = content.split(':')
               return <ProfileCard type={type} id={id} key={content} />
-            })}
+            }).reverse()}
           </div>
         </section>
         <section>
           <div className='Home-title'>
-            <h2>Watch List</h2>
+            <h2>Watch List ({this.state.watchlist.length})</h2>
             {/* <NavLink to='#'>...see all</NavLink> */}
           </div>
           <div className='Home-content'>
             {this.state.watchlist.map((content) => {
               const [type, id] = content.split(':')
               return <ProfileCard type={type} id={id} key={content} />
-            })}
+            }).reverse()}
           </div>
         </section>
         <section>
           <div className='Home-title'>
-            <h2>{this.state.fullName}'s Reviews</h2>
+            <h2>{this.state.fullName}'s Reviews ({this.state.reviews.length})</h2>
             {/* <NavLink to='#'>...see all</NavLink> */}
           </div>
           <div className='Home-content'>
@@ -152,7 +156,7 @@ class ProfileCard extends Component {
       if (this.props.type === 'movie') {
         this.setState({
           image,
-          title: data.title || 'wtf',
+          title: data.title,
           date: data.release_date
         })
       } else {
