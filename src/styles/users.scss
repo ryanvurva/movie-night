@@ -17,6 +17,13 @@
     border: thin solid black;
     border-radius: 3px;
     display: flex;
+    box-shadow: 0 0 12px lighten($theme-color, 10%);
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 0 8px lighten($theme-accent-color, 10%);
+      animation: flicker 2s linear infinite;
+    }
 
     .image {
       margin: 0;
@@ -54,6 +61,34 @@
 
         p {
           margin: 0;
+        }
+      }
+    }
+  }
+}
+
+@keyframes flicker {
+	0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    box-shadow: 0 0 8px lighten($theme-accent-color, 10%);
+		// opacity: .99;
+		// text-shadow: -1px -1px 0 hsla(0, 0%, 100%, 0.4), 1px -1px 0 hsla(0, 0%, 100%, 0.4), -1px 1px 0 hsla(0, 0%, 100%, 0.4), 1px 1px 0 hsla(0, 0%, 100%, 0.4), 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
+	}
+	20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    box-shadow: 0 0 2px lighten($theme-accent-color, 30%)
+		// opacity: 0.4;
+		// text-shadow: none;
+	}
+}
+
+@media only screen and (max-width: 505px) {
+  .Users {
+    .profileCard {
+      flex-direction: column;
+      align-items: center;
+
+      .image {
+        img {
+          width: 70vw;
         }
       }
     }

@@ -25,12 +25,12 @@
   		text-shadow: none;
   		left: 49%;
   		text-align: left;
-  		animation: flicker 3s linear infinite;
+  		animation: logoFlicker 3s linear infinite;
   	}
   }
 }
 
-@keyframes flicker {
+@keyframes logoFlicker {
 	0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
 		opacity: .99;
 		text-shadow: -1px -1px 0 hsla(0, 0%, 100%, 0.4), 1px -1px 0 hsla(0, 0%, 100%, 0.4), -1px 1px 0 hsla(0, 0%, 100%, 0.4), 1px 1px 0 hsla(0, 0%, 100%, 0.4), 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
@@ -62,7 +62,7 @@
     		text-shadow: none;
     		left: 48%;
     		text-align: left;
-    		animation: flicker 3s linear infinite;
+    		animation: logoFlicker 3s linear infinite;
     	}
 
       a {

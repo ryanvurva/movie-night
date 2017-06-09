@@ -25,6 +25,7 @@ class ProfileCard extends Component {
           </div>
           <div className='userInfo'>
             <p>member since: {this.props.createdAt}</p>
+            {/* <p>member since: {this.props.createdAt}</p> */}
             <hr />
             <p>vault: {this.props.vault.length}</p>
             <p>watchlist: {this.props.watchlist.length}</p>
