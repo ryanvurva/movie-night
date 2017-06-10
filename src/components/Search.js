@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
+// import { observable } from 'mobx-react'
 
-import Card from './SearchCards'
+// import Card from './SearchCards'
 // import Card2 from './Card2'
 // import EntryList from './EntryList'
 
@@ -8,6 +10,7 @@ import defaultPic from '../images/default.jpg'
 
 import { get } from './utils/api'
 
+// @observable
 class Search extends Component {
   state = {
     query: null,
@@ -70,6 +73,20 @@ class Search extends Component {
           {results}
         </div>
       </section>
+    </div>
+  }
+}
+
+class Card extends Component {
+  render () {
+    return <div className='Card'>
+      <div className='Card-image'>
+        <NavLink to={`/overlay/${this.props.type}/${this.props.id}`}><img src={this.props.image} /></NavLink>
+      </div>
+      <div className='Card-info'>
+        <NavLink to={`/overlay/${this.props.type}/${this.props.id}`}><p>{this.props.title}</p></NavLink>
+        <p>({this.props.date})</p>
+      </div>
     </div>
   }
 }

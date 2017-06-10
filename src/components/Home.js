@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 // import { NavLink } from 'react-router-dom'
 import { observer } from 'mobx-react'
 
-import { get } from './utils/api'
+import { get, browse } from './utils/api'
 
 import Card from './Card'
 import Card2 from './Card2'
@@ -13,6 +13,7 @@ import defaultPic from '../images/default.jpg'
 @observer
 class Home extends Component {
   state = {
+    page: 1,
     popularMovies: [],
     playingMovies: [],
     upcomingMovies: [],
@@ -22,9 +23,12 @@ class Home extends Component {
   }
 
   componentDidMount () {
-    get('/movie/popular').then((data) => {
+    browse('/movie/popular', `${this.pageNumber}`).then((data) => {
       this.setState({ popularMovies: data.results })
     })
+    // get('/movie/popular').then((data) => {
+    //   this.setState({ popularMovies: data.results })
+    // })
     get('/movie/now_playing').then((data) => {
       this.setState({ playingMovies: data.results })
     })
@@ -59,6 +63,18 @@ class Home extends Component {
         this.setState({ reviews: data.allReviewsMNs || [] })
       })
   }
+
+  _nextPage = (event) => {
+    event.preventDefault()
+    const page = this.state.page
+    const pageNumber = page + 1
+    browse('/movie/popular', `${pageNumber}`).then((data) => {
+      this.setState({ popularMovies: data.results })
+    })
+    this.setState({ page: pageNumber })
+    console.log(pageNumber)
+  }
+
   render () {
     const { popularMovies } = this.state
     const popularMovieCards = popularMovies.map((movieItem, i) => {
@@ -134,7 +150,7 @@ class Home extends Component {
       <section>
         <div className='Home-title'>
           <h2>Popular Movies</h2>
-          {/* <NavLink to='/movies/popular'>...see all</NavLink> */}
+          {/* <button onClick={this._nextPage}>...see more</button> */}
         </div>
         <div className='Home-content'>
           {popularMovieCards}
@@ -143,7 +159,6 @@ class Home extends Component {
       <section>
         <div className='Home-title'>
           <h2>In Theaters</h2>
-          {/* <NavLink to='/movies/latest'>...see all</NavLink> */}
         </div>
         <div className='Home-content'>
           {playingMovieCards}
@@ -152,7 +167,6 @@ class Home extends Component {
       <section>
         <div className='Home-title'>
           <h2>Coming Soon</h2>
-          {/* <NavLink to='/movies/upcoming'>...see all</NavLink> */}
         </div>
         <div className='Home-content'>
           {upcomingMovieCards}
@@ -161,7 +175,6 @@ class Home extends Component {
       <section>
         <div className='Home-title'>
           <h2>Popular TV Series</h2>
-          {/* <NavLink to='/tv/popular'>...see all</NavLink> */}
         </div>
         <div className='Home-content'>
           {popularTvCards}
@@ -170,7 +183,6 @@ class Home extends Component {
       <section>
         <div className='Home-title'>
           <h2>Top Rated TV Series</h2>
-          {/* <NavLink to='/tv/top-rated'>...see all</NavLink> */}
         </div>
         <div className='Home-content'>
           {topRatedTvCards}
@@ -179,7 +191,6 @@ class Home extends Component {
       <section>
         <div className='Home-title'>
           <h2>Recent Reviews</h2>
-          {/* <NavLink to='/reviews'>...see all</NavLink> */}
         </div>
         <div className='Home-content'>
           {this.state.reviews.map((review, i) => {

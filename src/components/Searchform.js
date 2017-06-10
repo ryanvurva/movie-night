@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom'
 
 class SearchForm extends Component {
   _submit = (event) => {
-    event.preventDefault()
+    // event.preventDefault()
     const query = this.refs.query.value
     const path = query.length > 0 ? `/search/${query}` : '/'
     this.refs.query.value = ''
