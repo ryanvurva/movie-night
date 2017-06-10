@@ -1,18 +1,10 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
-// import moment from 'moment'
+import moment from 'moment'
 
 class ProfileCard extends Component {
-  // state = {
-  //   vault: [],
-  //   watchlist: [],
-  //   reviews: []
-  // }
-  componentDidMount () {
-    // this.updateState()
-    // console.log(this.props.reviewRef.length)
-  }
   render () {
+    let date = moment(this.props.createdAt).format('MM/DD/YYYY')
     return <NavLink to={`/user/${this.props.id}`}>
       <div className='profileCard'>
         <div className='image'>
@@ -24,12 +16,11 @@ class ProfileCard extends Component {
             <p><i className='fa fa-thumbs-o-up' aria-hidden='true' /> {this.props.kudos}</p>
           </div>
           <div className='userInfo'>
-            <p>member since: {this.props.createdAt}</p>
-            {/* <p>member since: {this.props.createdAt}</p> */}
+            <p>Member since: {date}</p>
             <hr />
-            <p>vault: {this.props.vault.length}</p>
-            <p>watchlist: {this.props.watchlist.length}</p>
-            <p>reviews: {this.props.reviewRef.length}</p>
+            <p>Vault: {this.props.vault.length}</p>
+            <p>Watchlist: {this.props.watchlist.length}</p>
+            <p>Reviews: {this.props.reviewRef.length}</p>
           </div>
         </div>
       </div>

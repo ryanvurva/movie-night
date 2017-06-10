@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { observer } from 'mobx-react'
+import moment from 'moment'
 
 import auth from './utils/auth'
 import { get } from './utils/api'
@@ -16,6 +17,7 @@ class Profile extends Component {
   state = {
     id: '',
     fullName: '',
+    date: '',
     picture: '',
     kudos: '',
     vault: [],
@@ -33,6 +35,7 @@ class Profile extends Component {
           ProfileMN(id: "${id}") {
             id
             authID
+            createdAt
             vault
             watchlist
             kudos
@@ -56,6 +59,7 @@ class Profile extends Component {
           fullName: data.ProfileMN.fullName,
           picture: data.ProfileMN.picture,
           id: data.ProfileMN.id,
+          date: data.ProfileMN.createdAt,
           kudos: data.ProfileMN.kudos,
           vault: data.ProfileMN.vault || [],
           watchlist: data.ProfileMN.watchlist || [],
@@ -81,6 +85,7 @@ class Profile extends Component {
   }
 
   render () {
+    let memberSince = moment(this.state.createdAt).format('MM/DD/YYYY')
     return <div className='Profile'>
       <div className='profileHeader'>
         <div className='profilePic'>
@@ -95,6 +100,7 @@ class Profile extends Component {
             {/* {auth.isSignedIn ? <LikeButtons onClick={this._submit} kudos={this.state.kudos} /> : null} */}
           </div>
           <div>
+            <p>Member since {memberSince}</p>
             <p>Vault: {this.state.vault.length}</p>
             <p>Watch-List: {this.state.watchlist.length}</p>
             <p>Reviews: {this.state.reviews.length}</p>
@@ -170,13 +176,14 @@ class ProfileCard extends Component {
   }
 
   render () {
+    let date = moment(this.state.date).format('MM/DD/YYYY')
     return <div className='Card'>
       <div className='Card-image'>
         <NavLink to={`/overlay/${this.props.type}/${this.props.id}`}><img src={this.state.image} /></NavLink>
       </div>
       <div className='Card-info'>
         <NavLink to={`/overlay/${this.props.type}/${this.props.id}`}><p>{this.state.title}</p></NavLink>
-        <p>({this.state.date})</p>
+        <p>({date})</p>
       </div>
     </div>
   }
