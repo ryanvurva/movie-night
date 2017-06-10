@@ -78,7 +78,19 @@ footer {
     div {
       margin: 0 5px;
     }
+
+    .smallCaps {
+      font-variant: small-caps;
+      font-size: 1.2em;
+    }
   }
+
+  // .footer-space-2 {
+  //   .smallCaps {
+  //     font-variant: small-caps;
+  //     font-size: 1.2em;
+  //   }
+  // }
 }
 
 @media only screen and (max-width: 505px) {

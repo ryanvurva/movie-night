@@ -10,7 +10,7 @@ class ProfileCard extends Component {
   // }
   componentDidMount () {
     // this.updateState()
-    console.log(this.props.reviewRef.length)
+    // console.log(this.props.reviewRef.length)
   }
   render () {
     return <NavLink to={`/user/${this.props.id}`}>

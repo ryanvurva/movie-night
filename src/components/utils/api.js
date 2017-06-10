@@ -11,21 +11,4 @@ const get = (path, query) => {
   })
 }
 
-// get('movie/popular').then((data) => {
-//   console.log(data)
-// })
-
-// const post = (path, body) => {
-//   const url = API_BASE + path + '?api_key=' + KEY
-//   return window.fetch(url, {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify(body)
-//   }).then((response) => {
-//     return response.json()
-//   })
-// }
-
 export { get }

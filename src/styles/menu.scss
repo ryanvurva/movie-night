@@ -152,7 +152,7 @@ aside.menuDesktop {
 
         &:hover {
           color: $theme-accent-color;
-          // animation: logoFlicker 2s linear infinite;
+          animation: menuFlicker 3s linear infinite;
         }
       }
 
@@ -174,6 +174,15 @@ aside.menuDesktop {
     transform: translateY(-100vw);
     box-shadow: 0 0 0 transparent;
   }
+}
+
+@keyframes menuFlicker {
+	0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+		opacity: .99;
+	}
+	20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+		opacity: 0.4;
+	}
 }
 
 @media only screen and (max-width: 505px) {

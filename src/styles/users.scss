@@ -22,7 +22,7 @@
 
     &:hover {
       box-shadow: 0 0 8px lighten($theme-accent-color, 10%);
-      animation: flicker 2s linear infinite;
+      animation: flicker 3s linear infinite;
     }
 
     .image {
