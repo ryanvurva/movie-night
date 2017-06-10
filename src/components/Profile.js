@@ -85,7 +85,7 @@ class Profile extends Component {
   }
 
   render () {
-    let memberSince = moment(this.state.createdAt).format('MM/DD/YYYY')
+    // let memberSince = moment(this.state.createdAt).format('MM/DD/YYYY')
     return <div className='Profile'>
       <div className='profileHeader'>
         <div className='profilePic'>
@@ -100,7 +100,7 @@ class Profile extends Component {
             {/* {auth.isSignedIn ? <LikeButtons onClick={this._submit} kudos={this.state.kudos} /> : null} */}
           </div>
           <div>
-            <p>Member since {memberSince}</p>
+            {/* <p>Member since {memberSince}</p> */}
             <p>Vault: {this.state.vault.length}</p>
             <p>Watch-List: {this.state.watchlist.length}</p>
             <p>Reviews: {this.state.reviews.length}</p>
