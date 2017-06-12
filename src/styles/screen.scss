@@ -12,6 +12,7 @@
 @import 'search';
 @import 'reviews';
 @import 'users';
+@import 'splash';
 
 html {
   @include full-height;
@@ -47,6 +48,7 @@ main {
 .Home,
 .Chat,
 .Profile,
+.Splash,
 .Reviews,
 .WatchList,
 .Users,

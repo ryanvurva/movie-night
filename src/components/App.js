@@ -4,21 +4,19 @@ import { observer } from 'mobx-react'
 
 import TMDB from '../images/powered-by-rectangle-blue.svg'
 
-// import auth from './utils/auth'
+import auth from './utils/auth'
 // import api from './utils/api'
 // import cx from 'classnames'
 // import ui from '../ui'
 
 import Movies from './Movies'
 import TV from './Tv'
-// import Splash from './Splash'
+import Splash from './Splash'
 import Home from './Home'
 import Menu from './Menu'
 import Nav from './Nav'
 import Profile from './Profile.js'
 import Reviews from './Reviews'
-// import Vault from './Vault'
-// import WatchList from './WatchList'
 import Overlay from './Overlay'
 import Search from './Search'
 import Users from './Users'
@@ -31,14 +29,14 @@ class App extends Component {
         <Nav />
         <main>
           <Switch>
-            {/* {auth.isSignedIn ? <Route exact path='/' component={Splash} /> : <Route exact path='/' component={Home} />} */}
+            {auth.isSignedIn ? <Route exact path='/' component={Home} /> : <Route exact path='/' component={Splash} />}
             <Route exact path='/browse/movies' component={Movies} />
             <Route exact path='/browse/tv' component={TV} />
             <Route exact path='/users' component={Users} />
             <Route exact path='/user/:id' component={Profile} />
             <Route exact path='/search/:query' component={Search} />
             <Route exact path='/reviews' component={Reviews} />
-            <Route exact path='/' component={Home} />
+            {/* <Route exact path='/' component={Home} /> */}
           </Switch>
         </main>
         <footer>

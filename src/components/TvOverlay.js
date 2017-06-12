@@ -86,9 +86,9 @@ class TvOverlay extends Component {
         <img src={`http://image.tmdb.org/t/p/w342${show.poster_path}`} />
         <div className='userFeatures'>
           {auth.isSignedIn ? <div className='Buttons'>
-            <button onClick={this._vault} disabled={this.state.vault.includes(`tv:${show.id}`)}><i className='fa fa-university' aria-hidden='true' /></button>
-            <button onClick={this._watch} disabled={this.state.watchlist.includes(`tv:${show.id}`)}><i className='fa fa-eye' aria-hidden='true' /></button>
-            <NavLink to={`/overlay/review/tv/${show.id}`}><i className='fa fa-pencil-square-o' aria-hidden='true' /></NavLink>
+            <button onClick={this._vault} title='add to your vault' disabled={this.state.vault.includes(`tv:${show.id}`)}><i className='fa fa-university' aria-hidden='true' /></button>
+            <button onClick={this._watch} title='add to your watchlist' disabled={this.state.watchlist.includes(`tv:${show.id}`)}><i className='fa fa-eye' aria-hidden='true' /></button>
+            <NavLink to={`/overlay/review/tv/${show.id}`} title='write your own review'><i className='fa fa-pencil-square-o' aria-hidden='true' /></NavLink>
           </div> : null}
         </div>
       </div>
