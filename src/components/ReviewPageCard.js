@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import moment from 'moment'
 
-import { get } from './utils/api'
+// import { get } from './utils/api'
 // import auth from './utils/auth'
 
 class ReviewCard extends Component {
@@ -15,13 +15,13 @@ class ReviewCard extends Component {
   }
 
   updateContent () {
-    get(`/${this.props.contentType}/${this.props.contentId}`).then((data) => {
-      if (this.props.contentType === 'movie') {
-        this.setState({ title: data.title })
-      } else {
-        this.setState({ title: data.name })
-      }
-    })
+    // get(`/${this.props.contentType}/${this.props.contentId}`).then((data) => {
+    //   if (this.props.contentType === 'movie') {
+    //     this.setState({ title: data.title })
+    //   } else {
+    //     this.setState({ title: data.name })
+    //   }
+    // })
   }
 
   render () {

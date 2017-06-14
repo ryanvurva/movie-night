@@ -18,8 +18,8 @@ class ProfileCard extends Component {
           <div className='userInfo'>
             <p>Member since: {date}</p>
             <hr />
-            <p>Vault: {this.props.vault.length}</p>
-            <p>Watchlist: {this.props.watchlist.length}</p>
+            <p>Vault: {this.props.vault === null ? 0 : this.props.vault.length}</p>
+            <p>Watchlist: {this.props.watchlist === null ? 0 : this.props.watchlist.length}</p>
             <p>Reviews: {this.props.reviewRef.length}</p>
           </div>
         </div>
