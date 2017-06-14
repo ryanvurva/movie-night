@@ -5,7 +5,7 @@
   // flex-direction: column;
   // justify-content: flex-start;
   margin-right: 1.7em;
-  width: 20vw;
+  width: 15vw;
   // background-color: #333;
 
   .Card-image {
@@ -17,7 +17,7 @@
     }
 
     img {
-      width: 20vw;
+      width: 15vw;
       border: thin solid transparent;
       box-shadow: 0 0 10px darken($theme-color, 10%);
 
@@ -33,6 +33,7 @@
       white-space: nowrap;
       overflow-x: auto;
       margin: 5px 0;
+      max-width: 15vw;
     }
 
     a {
@@ -97,9 +98,13 @@
           box-shadow: none;
           outline: 0;
           font-size: 1em;
-          color: $theme-font-color
+          color: $theme-font-color;
           // display: none;
         }
+      }
+
+      p {
+        max-width: 40vw;
       }
     }
   }
