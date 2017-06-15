@@ -4,7 +4,8 @@
     "deploy": "yarn build && surge ./public --domain movienight.co",
     "start": "webpack-dev-server",
     "prebuild": "rm -f public/index.html public/app-*.js public/vendor-*.js public/screen-*.css",
-    "build": "NODE_ENV=production webpack --progress"
+    "build": "NODE_ENV=production webpack --progress",
+    "postbuild": "cp public/index.html public/200.html"
   },
   "dependencies": {
     "auth0-lock": "^10.16.0",
