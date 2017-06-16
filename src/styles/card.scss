@@ -31,9 +31,11 @@
   .Card-info {
     p {
       white-space: nowrap;
-      overflow-x: auto;
+      overflow-x: hidden;
+      text-overflow: ellipsis;
       margin: 5px 0;
       max-width: 15vw;
+      border: 0px solid transparent;
     }
 
     a {

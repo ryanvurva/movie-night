@@ -51,13 +51,31 @@
           border: thin solid darken($theme-color, 10%);
 
           .Critic {
+            // width: 90vw;
+            max-width: 940px;
             padding: 0 .5em;
             // width: 90vw;
             border-bottom: thin solid darken($theme-color, 10%);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-            a {
-              text-decoration: none;
-              color: $theme-accent-color;
+            .whoWhatWhen {
+              flex: 1;
+
+              a {
+                text-decoration: none;
+                color: $theme-accent-color;
+              }
+            }
+
+            // a {
+            //   text-decoration: none;
+            //   color: $theme-accent-color;
+            // }
+
+            .approvals {
+              // flex: 1;
             }
           }
 

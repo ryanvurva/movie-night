@@ -13,6 +13,7 @@ class Reviews extends Component {
       body: JSON.stringify({
         query: `query {
           allReviewsMNs {
+            kudos
             createdAt
             contentName
             contentId

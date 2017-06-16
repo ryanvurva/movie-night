@@ -42,6 +42,7 @@ class Profile extends Component {
             picture
             fullName
             reviewRef {
+              kudos
               contentType
               contentId
               review

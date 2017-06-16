@@ -49,14 +49,27 @@ nav.Desktop {
     // height: 80px;
 
     .loginAvatar {
-      height: 1.2em;
+      // height: 1.2em;
       font-size: 1.5em;
-    }
 
-    img {
-      width: 1.1em;
-      margin: auto;
-      border-radius: 25px;
+      a {
+      }
+
+      img {
+        width: 1.1em;
+        height: 1.1em;
+        margin: auto;
+        border-radius: 25px;
+      }
+
+      p {
+        margin: 0;
+
+        &:hover {
+          color: $theme-accent-color;
+          cursor: pointer;
+        }
+      }
     }
 
     button {
@@ -67,11 +80,21 @@ nav.Desktop {
       font-family: inherit;
       font-size: inherit;
       margin: 0;
+
+      &:hover {
+        color: $theme-accent-color;
+        cursor: pointer;
+      }
     }
 
-    &:hover {
-      color: $theme-accent-color;
+    .logout {
+      margin-bottom: 5px;
     }
+
+    // &:hover {
+    //   color: $theme-accent-color;
+    //   cursor: pointer;
+    // }
   }
 
   .Login > div {
