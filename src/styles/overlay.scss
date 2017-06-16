@@ -20,6 +20,7 @@
       }
 
       .userFeatures {
+        max-width: 400px;
 
         .Buttons {
           padding: 5px 20px;
@@ -128,7 +129,7 @@
         flex: 1;
         margin-top: 5px;
         padding: 0 0 0 5px;
-        max-height: 400px;
+        max-height: 600px;
         overflow-y: auto;
 
         p {

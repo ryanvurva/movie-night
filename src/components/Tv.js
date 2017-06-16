@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import { NavLink } from 'react-router-dom'
 import { observer } from 'mobx-react'
 
 import { get } from './utils/api'
@@ -15,21 +14,14 @@ class TV extends Component {
   }
   componentDidMount () {
     get('/tv/popular').then((data) => {
-      // console.log(data.results)
       this.setState({ popularTv: data.results })
     })
     get('/tv/airing_today').then((data) => {
-      // console.log(data.results)
       this.setState({ airingToday: data.results })
     })
     get('/tv/top_rated').then((data) => {
-      // console.log(data.results)
       this.setState({ topRated: data.results })
     })
-    // get('/discover/tv').then((data) => {
-    //   console.log(data.results)
-    //   this.setState({ topRated: data.results })
-    // })
   }
   render () {
     const { airingToday } = this.state

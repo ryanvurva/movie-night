@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
-// import store from './utils/store'
-// import ui from './utils/ui'
-
 class SearchForm extends Component {
   _submit = (event) => {
     // event.preventDefault()

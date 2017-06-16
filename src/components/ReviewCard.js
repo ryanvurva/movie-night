@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-// import { NavLink } from 'react-router-dom'
 import { get } from './utils/api'
-// import auth from './utils/auth'
 
 class ReviewCard extends Component {
   state = {
@@ -28,7 +26,6 @@ class ReviewCard extends Component {
         <div className='Critic'>
           <p>{this.props.contentType}: '{this.state.title}':</p>
           {/* <p>3 <i className='fa fa-comments-o' aria-hidden='true' /></p> */}
-          {/* <NavLink to='/user/:id'>{this.props.fullName}'s</NavLink> opinion about '{this.state.title}': */}
         </div>
         <div className='Opinion'>
           <p>{this.props.review}</p>

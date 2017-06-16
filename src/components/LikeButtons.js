@@ -14,9 +14,6 @@ class LikeButtons extends Component {
   componentDidMount () {
     query(`ProfileMN(authID: "${auth.profile.user_id}") { kudos id }`).then(({ data }) => {
       this.setState({ kudos: data.ProfileMN.kudos, id: data.ProfileMN.id })
-      // console.log(data)
-      // console.log(this.state.kudos)
-      // console.log(this.state.id)
     })
   }
   increaseKudos (plusOne) {

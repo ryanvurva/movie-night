@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import auth from './utils/auth'
-// import { mutation } from './utils/graphql'
 
 class Buttons extends Component {
   state = {
@@ -17,7 +16,6 @@ class Buttons extends Component {
   }
 
   componentDidMount () {
-    // const id = this.props.match.params.id
     window.fetch('https://api.graphcms.com/simple/v1/movienight', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -50,22 +48,6 @@ class Buttons extends Component {
         console.log(this.state.watchlist)
       })
   }
-  // addToVault () {
-    // mutation(`mutation {
-    //   updateProfileMN(id: "cj3c05x1wb5rk0146mrjyrknv" vault: ["movie:11", "tv:60625", "movie:118340"]) {
-    //     vault
-    //   }
-    // }`)
-  // }
-  // addToWatchlist () {
-    // mutation(``)
-  // }
-  // _vault = (event) => {
-  //   event.preventDefault()
-  // }
-  // _watch = (event) => {
-  //   event.preventDefault()
-  // }
   render () {
     return <div className='Buttons'>
       <button onClick={this._vault}><i className='fa fa-university' aria-hidden='true' /></button>

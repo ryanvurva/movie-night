@@ -7,10 +7,6 @@ import MovieOverlay from './MovieOverlay'
 import ReviewOverlay from './ReviewOverlay'
 import TvReviewOverlay from './TvReviewOverlay'
 
-// import auth from './utils/auth.js'
-
-// import pic from '../images/tv/silicon-valley.jpg'
-
 @observer
 class Overlay extends Component {
   render () {

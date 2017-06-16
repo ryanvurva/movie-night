@@ -9,7 +9,6 @@ import { mutation } from './utils/graphql'
 
 import defaultImage from '../images/default.jpg'
 
-// import LikeButtons from './LikeButtons'
 import ReviewCard from './ReviewCard'
 
 @observer
@@ -66,11 +65,6 @@ class Profile extends Component {
           watchlist: data.ProfileMN.watchlist || [],
           reviews: data.ProfileMN.reviewRef || []
         })
-        // console.log(this.state.vault)
-        // console.log(this.state.watchlist)
-        // console.log(this.state.kudos)
-        // console.log(this.state.reviews)
-        // console.log(auth.profile)
       })
   }
   increaseKudos (plusOne) {

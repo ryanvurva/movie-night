@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { observer } from 'mobx-react'
 
-// import Buttons from './Buttons'
-// import LikeButtons from './LikeButtons'
-
 import auth from './utils/auth'
 import { get } from './utils/api'
 import { mutation } from './utils/graphql'
@@ -54,10 +51,6 @@ class ReviewOverlay extends Component {
               <h2>{review.title}</h2>
             </div>
           </div>
-          {/* <div className='userPopularity'>
-            <NavLink to='/reviews/:movie'>58 reviews</NavLink>
-            {auth.isSignedIn ? <LikeButtons /> : null}
-          </div> */}
         </div>
         <div className='aboutThis'>
           <form>
@@ -68,10 +61,6 @@ class ReviewOverlay extends Component {
             </div>
           </form>
         </div>
-        {/* <div className='exitOverlay'>
-          <button onClick={this._submit}><i className='fa fa-sign-in' aria-hidden='true' /> submit</button>
-          <NavLink to='#' onClick={this._goBack}><i className='fa fa-times-circle' aria-hidden='true' /> close</NavLink>
-        </div> */}
       </div>
     </div>
   }

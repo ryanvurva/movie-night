@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { observer } from 'mobx-react'
 
-// import LikeButtons from './LikeButtons'
-
 import auth from './utils/auth'
 import { get } from './utils/api'
 import { mutation } from './utils/graphql'
@@ -98,10 +96,6 @@ class TvOverlay extends Component {
             <h2>{show.name}</h2>
             <p>({show.first_air_date})</p>
           </div>
-          {/* <div className='userPopularity'>
-            <NavLink to='/reviews/:show'>12 reviews</NavLink>
-            {auth.isSignedIn ? <LikeButtons /> : null}
-          </div> */}
         </div>
         <div className='aboutThis'>
           <p>{show.overview}</p>

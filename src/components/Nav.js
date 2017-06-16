@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import ui from './utils/ui'
-// import { get } from './utils/api'
 
 import Login from './Login'
 import Searchform from './Searchform'

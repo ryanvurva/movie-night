@@ -30,14 +30,12 @@ class Menu extends Component {
             <li onClick={() => ui.toggleMenu()}><NavLink to='/browse/tv'><i className='fa fa-television' aria-hidden='true' /> - TV</NavLink></li>
             <li onClick={() => ui.toggleMenu()}><NavLink to='/reviews'><i className='fa fa-address-card-o' aria-hidden='true' /> - Reviews</NavLink></li>
             <li onClick={() => ui.toggleMenu()}><NavLink to='/users'><i className='fa fa-address-book-o' aria-hidden='true' /> - Users</NavLink></li>
-            {/* <li onClick={() => ui.toggleMenu()}><NavLink to='/vault/:name'><i className='fa fa-university' aria-hidden='true' /> - Vaults</NavLink></li> */}
           </ul>
         </section>
       </aside>
       <aside className='menuDesktop'>
         <section>
           <ul>
-            {/* <li><NavLink to='/:name'><i className='fa fa-id-card-o' aria-hidden='true' /> - View Profile</NavLink></li> */}
             <li><NavLink to='/browse/movies'><i className='fa fa-film' aria-hidden='true' /> - Movies</NavLink></li>
             <li>|</li>
             <li><NavLink to='/browse/tv'><i className='fa fa-television' aria-hidden='true' /> - TV</NavLink></li>

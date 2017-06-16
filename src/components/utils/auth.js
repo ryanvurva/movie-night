@@ -2,7 +2,6 @@ import Auth0Lock from 'auth0-lock'
 import IdTokenVerifier from 'idtoken-verifier'
 import { observable, autorun, computed, action } from 'mobx'
 import { query, mutation } from './graphql'
-// import store from './store'
 
 const CLIENT_ID = '2MbGCIU5HQ-wJo325Nu_SrP7g0yPNQtq'
 const CLIENT_DOMAIN = 'movienight.auth0.com'
@@ -86,16 +85,6 @@ class Auth {
       })
     }
   }
-
-  // @action increaseKudos () {
-  //   query(`ProfileMN(authID: "${this.profile.user_id}") { id }`).then(({ data }) => {
-  //     if (data.ProfileMN) {
-  //       mutation(`updateProfileMN(id: "${data.ProfileMN.id}", fullName: "${this.profile.name}", picture: "${this.profile.picture_large}") {id}`).then(({ data }) => {
-  //         this.cmsProfileId = data.updateProfileMN.id
-  //       })
-  //     }
-  //   })
-  // }
 }
 
 const auth = new Auth()

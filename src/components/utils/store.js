@@ -2,7 +2,7 @@
 // import auth from './auth'
 // import * as api from './api'
 
-class Store {
+// class Store {
   // @observable movies = []
 
   // @action load () {
@@ -20,10 +20,10 @@ class Store {
   //   this.refs.query.value = ''
   //   this.props.history.push(path)
   // }
-}
+// }
 
-const store = new Store()
+// const store = new Store()
 
-window.store = store
+// window.store = store
 
-export default store
+// export default store

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
-// import ui from '../ui'
 
 class Buttons extends Component {
   render () {

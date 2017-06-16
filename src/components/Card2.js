@@ -3,12 +3,6 @@ import { NavLink } from 'react-router-dom'
 import { observer } from 'mobx-react'
 import moment from 'moment'
 
-// import * as api from './utils/api'
-// import store from './utils/store'
-// import auth from './utils/auth'
-
-// import Buttons from './Buttons'
-
 @observer
 class Card extends Component {
   render () {

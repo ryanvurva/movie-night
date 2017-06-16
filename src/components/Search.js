@@ -1,16 +1,10 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
-// import { observable } from 'mobx-react'
-
-// import Card from './SearchCards'
-// import Card2 from './Card2'
-// import EntryList from './EntryList'
 
 import defaultPic from '../images/default.jpg'
 
 import { get } from './utils/api'
 
-// @observable
 class Search extends Component {
   state = {
     query: null,
@@ -27,17 +21,6 @@ class Search extends Component {
       })
     }
   }
-
-  // componentDidUpdate () {
-  //   const query = this.props.match.params.query
-  //   if (query !== this.state.query) {
-  //     get('/search/multi', query).then((data) => {
-  //       console.log(data.results)
-  //       this.setState({ entries: data.results })
-  //     })
-  //   }
-  //   this.doSearch()
-  // }
 
   render () {
     const { entries } = this.state
