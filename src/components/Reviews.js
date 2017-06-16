@@ -16,6 +16,7 @@ class Reviews extends Component {
             kudos
             createdAt
             contentName
+            contentType
             contentId
             review
             profileRef {
