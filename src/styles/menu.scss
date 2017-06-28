@@ -128,16 +128,16 @@ aside.menuDesktop {
     text-align: right;
   }
 
-  button {
-    // background-color: transparent;
-    border: none;
-    // color: inherit;
-    font-size: inherit;
-
-    &:hover {
-      color: $theme-font-color;
-    }
-  }
+  // button {
+  //   // background-color: transparent;
+  //   border: none;
+  //   // color: inherit;
+  //   font-size: inherit;
+  //
+  //   &:hover {
+  //     color: $theme-font-color;
+  //   }
+  // }
 
   section {
     width: 100%;
@@ -154,6 +154,10 @@ aside.menuDesktop {
           color: $theme-accent-color;
           animation: menuFlicker 3s linear infinite;
         }
+
+        // &.active {
+        //   color: $theme-accent-color;
+        // }
       }
 
       button {
